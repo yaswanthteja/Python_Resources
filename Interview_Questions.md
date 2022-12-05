@@ -43,7 +43,7 @@ else:
   
 ```
 
-# Write code of Greatest Common Divisor 
+# 4.Write code of Greatest Common Divisor 
 ```
 num1 = int(input("Enter First Number:"))
 num2 = int(input("Enter Second Number:"))
@@ -62,7 +62,7 @@ def gcdFunction(num1, num2):
 gcdFunction(num1, num2)
 
 ```
-# Write code of  Perfect number
+# 5.Write code of  Perfect number
 ```
 n = int(input("Enter any number: "))
 sump= 0
@@ -74,7 +74,7 @@ if (sump == n):
 else:
     print(" The number is not a Perfect number")
 ```
-# Write a code to Remove all characters from string except alphabets
+# 6.Write a code to Remove all characters from string except alphabets
 ```
 #take user input
 String1 = input('Enter the String :')
@@ -87,7 +87,7 @@ for i in String1:
         String2+=i
 print('Alphabets in string are :' + String2)
 ```
-# Write a program to check whether a character is a vowel or consonant
+# 7.Write a program to check whether a character is a vowel or consonant
 ```
 #get user input
 Char =  input() 
@@ -100,7 +100,7 @@ else:
     print("Character is Consonant")
 
 ```
-# Write a program for Binary to Decimal to conversion
+# 8.Write a program for Binary to Decimal to conversion
 ```
 num = int(input("Enter number:"))
 binary_val = num
