@@ -87,4 +87,31 @@ for i in String1:
         String2+=i
 print('Alphabets in string are :' + String2)
 ```
+# Write a program to check whether a character is a vowel or consonant
+```
+#get user input
+Char =  input() 
+#Check if the Char belong to set of Vowels
+if (Char == 'a' or Char == 'e' or Char == 'i' or Char == 'o' or Char == 'u'): 
+    #if true 
+    print("Character is Vowel") 
+else: 
+    #if false
+    print("Character is Consonant")
 
+```
+# Write a program for Binary to Decimal to conversion
+```
+num = int(input("Enter number:"))
+binary_val = num
+decimal_val = 0
+base = 1
+while num > 0:
+    rem = num % 10
+    decimal_val = decimal_val + rem * base
+    num = num // 10
+    base = base * 2
+
+print("Binary Number is {} and Decimal Number is {}".format(binary_val, decimal_val))
+```
+    
