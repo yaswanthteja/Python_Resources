@@ -42,3 +42,49 @@ else:
   print("No")
   
 ```
+
+# Write code of Greatest Common Divisor 
+```
+num1 = int(input("Enter First Number:"))
+num2 = int(input("Enter Second Number:"))
+ 
+
+def gcdFunction(num1, num2):
+    if num1 > num2:
+        small = num2
+    else:
+        small = num1
+    for i in range(1, small+1):
+        if (num1 % i == 0) and (num2 % i == 0):
+            gcd = i
+    print("GCD of two Number: {}".format(gcd))
+
+gcdFunction(num1, num2)
+
+```
+# Write code of  Perfect number
+```
+n = int(input("Enter any number: "))
+sump= 0
+for i in range(1, n):
+    if(n % i == 0):
+        sump= sump + i
+if (sump == n):
+    print(" The number is a Perfect number")
+else:
+    print(" The number is not a Perfect number")
+```
+# Write a code to Remove all characters from string except alphabets
+```
+#take user input
+String1 = input('Enter the String :')
+#initialize empty String
+String2 = ''
+for i in String1:
+    #check for alphabets
+    if (ord(i) >= 65 and ord(i) <= 90) or (ord(i) >= 97 and ord(i) <= 122):
+        #concatenate to empty string
+        String2+=i
+print('Alphabets in string are :' + String2)
+```
+
