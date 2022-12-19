@@ -284,7 +284,7 @@ Ans: A session basically allows you to remember information from one request to 
 ### 40. Is Flask an MVC model and if yes give an example showing MVC pattern for your application?
 Ans: Basically, Flask is a minimalistic framework which behaves same as MVC framework. So MVC is a perfect fit for Flask, and the pattern for MVC we will consider for the following example
 
-
+```
 from flask import Flaskapp = Flask(_name_)
 @app.route(“/”)
 
@@ -310,7 +310,7 @@ Def hello():
 While you model or main part will be
 app.run(debug = True)
 
- 
+``` 
 
 
 
