@@ -288,7 +288,7 @@ Ans: Basically, Flask is a minimalistic framework which behaves same as MVC fram
 from flask import Flaskapp = Flask(_name_)
 @app.route(“/”)
 
-Def hello():
+def hello():
 
    return “Hello World”
 
@@ -303,7 +303,7 @@ app = Flask(_name_)
 View part will be
 @app.route(“/”)
 
-Def hello():
+def hello():
 
    return “Hello World”
 
