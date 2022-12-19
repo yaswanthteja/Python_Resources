@@ -281,6 +281,166 @@ Either it should be the import path for your application Or the path to a Python
 Ans: A session basically allows you to remember information from one request to another. In a flask, it uses a signed cookie so the user can look at the session contents and modify. The user can modify the session if only it has the secret key Flask.secret_key.
 
 
+### 40. Is Flask an MVC model and if yes give an example showing MVC pattern for your application?
+Ans: Basically, Flask is a minimalistic framework which behaves same as MVC framework. So MVC is a perfect fit for Flask, and the pattern for MVC we will consider for the following example
+
+
+from flask import Flaskapp = Flask(_name_)
+@app.route(“/”)
+
+Def hello():
+
+   return “Hello World”
+
+app.run(debug = True)
+
+In this code your,
+Configuration part will be
+from flask import Flask
+
+app = Flask(_name_)
+
+View part will be
+@app.route(“/”)
+
+Def hello():
+
+   return “Hello World”
+
+While you model or main part will be
+app.run(debug = True)
+
+ 
+
+
+
+
+### 41. What type of a language is python? Interpreted or Compiled?
+
+Ans: Beginner’s Answer:
+
+Python is an interpreted, interactive, object­oriented programming language.
+
+Expert Answer:
+
+Python is an interpreted language, as opposed to a compiled one, though the
+distinction can be blurry because of the presence of the bytecode compiler. This means
+that source files can be run directly without explicitly creating an executable which is
+then run.
+
+
+
+### 42. What do you mean by python being an “interpreted language”? (Continues from previous question)
+Ans: An interpreted language​is a programming language​for which most of its
+implementations execute instructions directly, without previously compiling a program
+into machine­language​instructions. In context of Python, it means that Python program
+runs directly from the source code.
+
+
+
+
+
+
+### 43. What is python’s standard way of identifying a block of code?
+Ans: Indentation.
+
+
+
+
+
+
+
+### 44. Please provide an example implementation of a function called “my_func” that returns the square of a given variable “x”. (Continues from previous question)
+Ans:
+defmy_func(x):
+returnx**2
+
+
+
+
+
+
+
+### 45. Is python statically typed or dynamically typed?
+Ans: ​Dynamic.
+In a statically typed language, the type of variables must be known (and usually
+declared) at the point at which it is used. Attempting to use it will be an error. In a
+dynamically typed language, objects still have a type, but it is determined at runtime.
+You are free to bind names (variables) to different objects with a different type. So long
+as you only perform operations valid for the type the interpreter doesn’t care what type
+they actually are.
+
+
+
+
+
+### 46. Is python strongly typed or weakly typed language?
+Ans: ​Strong.
+In a weakly typed language a compiler / interpreter will sometimes change the
+type of a variable. For example, in some languages (like JavaScript) you can add
+strings to numbers ‘x’ + 3 becomes ‘x3’. This can be a problem because if you have
+made a mistake in your program, instead of raising an exception execution will continue
+but your variables now have wrong and unexpected values. In a strongly typed
+language (like Python) you can’t perform operations inappropriate to the type of the
+object ­ attempting to add numbers to strings will fail. Problems like these are easier to
+diagnose because the exception is raised at the point where the error occurs rather than
+at some other, potentially far removed, place.
+
+
+
+
+
+
+
+### 47. Create a unicode string in python with the string “This is a test string”?
+Ans: some_variable=u’Thisisateststring’
+Or
+some_variable=u”Thisisateststring”
+
+
+
+
+
+
+
+### 48. What is the python syntax for switch case statements?
+Ans: Python doesn’t support switch­case statements. You can use if­else statements
+for this purpose.
+
+
+
+
+
+
+
+
+
+
+### 49. What is a lambda statement? Provide an example.
+Ans: A lambda statement is used to create new function objects and then return them at
+runtime. Example:
+my_func=lambdax:x**2
+creates a function called my_func that returns the square of the argument
+passed.
+
+
+
+
+
+
+
+
+### 50.What are the rules for local and global variables in Python?
+Ans: If a variable is defined outside function then it is implicitly global​. If variable is
+assigned new value inside the function means it is local​. If we want to make it global we
+
+need to explicitly define it as global. Variable referenced inside the function are implicit
+global​
+
+
+
+
+
 
 
 
