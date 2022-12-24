@@ -20,6 +20,35 @@ for i in range(5):
     * * * * * 
 ```
 
+## Inverted Full Pyramid
+
+
+```
+for i in range(5):
+  for s in range(i):
+    print(" ",end="")  #end with no space 
+  for j in range (i,5):
+    print("*",end=" ")
+  print()
+
+#output 
+
+
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+
+
+
+
+```
+
+
+
+
+
 ## Half Pyramid
 
 ```
