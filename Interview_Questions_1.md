@@ -438,9 +438,49 @@ need to explicitly define it as global. Variable referenced inside the function 
 global​
 
 
+ ### 51 What is the difference between a list and a tuple? When should you use each?
+A list is a mutable data structure while a tuple is an immutable one.
+A mutable object in Python has the ability to change its values.
 
+Lists are dynamic: you can add items to them or override and remove existing ones.
+Tuples are fixed-size: they don’t have an appendor an extendmethod. You cannot remove items from them either.
+Both tuples and lists support indexing and allow using the inoperator to check for existing elements in them.
 
+→ There are some situations where I think tuples might be useful.
 
+If you declare a collection of items that you know will never change or that you will loop over only without changing its values, use tuples.
+If you look for performance, tuples are faster than lists since they’re read-only structures. If you don’t need write operations, consider using tuples.
+Tuples can make your code safer if you want to prevent accidentally writing data that doesn’t need to be changed.
+Here’s a code sample that show how tuples differ from lists.
 
+```
+>>> numbers = [1, 2, 3, 4, 5]
+>>> numbers[1] = 100
+>>> print(numbers)
+[1, 100, 3, 4, 5]
+
+>>> names = ("john", "joe", "alice")
+>>> names[0] = "bob")
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-2-25012ce34a87> in <module>
+----> 1 names[0] = "bob"
+
+TypeError: 'tuple' object does not support item assignment
+```
+
+### 52 What is the difference between multiprocessing and multithreading? When should you use each?
+Multiprocessing and Multithreading are programming paradigms that aim to speed up your code.
+
+When you use multiprocessing, you parallelize your computation over processes. Processes are independent and don’t communicate with each other: they don’t share the same memory area and have strict isolation between. In terms of applications, multiprocessing is suited for CPU-intensive workloads. It does, however, have a large memory footprint that is proportional to the number of processes.
+
+On the other hand, in multithreaded applications, threads live inside a single process. Consequently, they share the same memory area: they can modify the same variables and can interfere with one another. While processes are strictly executed in parallel, only one thread is executed at a given point in time in Python, and this is due to the Global Interpreter Lock (GIL). Multithreading is suited to IO-bound applications such as web scraping or fetching data from a database.
+
+### 53 What is the difference between a module, a package, and a library?
+A module is simply a Python file that’s intended to be imported into scripts or other modules. It contains functions, classes, and global variables.
+
+A package is a collection of modules that are grouped together inside a folder to provide consistent functionality. Packages can be imported just like modules. They usually have an __init__.pyfile in them that tells the Python interpreter to process them as such.
+
+A library is a collection of packages.
 
 
