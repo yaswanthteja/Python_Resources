@@ -483,4 +483,21 @@ A package is a collection of modules that are grouped together inside a folder t
 
 A library is a collection of packages.
 
+### 53 Are function arguments passed by reference or by value?
+All function arguments are passed by reference in Python: this means that if you pass a parameter to a function, the function gets a reference to that same object.
+
+If the object is mutable and the function changes it, the parameter will mutate in the outer scope of the function. Let’s see an example:
+
+```
+>>> def append_number(numbers):
+        numbers.append(5)
+
+>>> numbers = [1, 2, 3, 4]
+>>> print(f"before: {numbers}"
+[1, 2, 3, 4]
+
+>>> append_number(numbers)
+>>> numbers
+[1, 2, 3, 4, 5]
+```
 
