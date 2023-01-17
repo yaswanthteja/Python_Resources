@@ -46,3 +46,226 @@ Ans: The heap allocates a block of memory for the stud object (refer below examp
 Ans: Python has a unique kind of procedure called a function Object() { [native code] } that is used to set up the class' instance variables. The class's function Object() { [native code] }, often known as the default method, is the init method. The init method is automatically invoked when memory has been allocated by the new function. It is possible to declare instance variables using this function Object() { [native code] } method. The function Object() { [native code] } is executed for each instance if a class generates two.
 
 
+
+
+
+
+### 13. What kinds of variables are there in Python?
+Ans: 
+The following 2 categories of variables are initializable and modifiable within the class.
+
+  - Instance Variable
+  - Class Variable / Static Variable
+### 14. What in Python is an instance variable?
+Ans: Variables that are specific to an instance of an object are defined in the class; other instances cannot access these variables. The self arguments and the class function Object() { [native code] } method define and initialise instance variables. We may use the self keyword to specify instance variables in the init method. Class variables are less often used than instance variables.
+
+### 15. What exactly is a static variable or class variable?
+Ans: All instances of the class have access to the class variables. Class variables are declared at the beginning of the Python class. Changes to one class variable have an impact on the class variable of the other instance. Class variables can also be accessed outside of a class; to do so, use the class name and class variable name.
+
+### 16. What Python function is new?
+Ans: The new method produces a class object. It will employ in order to manage the production of a fresh instance of the class. Memory is set aside for the item. An object's instance variables require memory to store them. When an object is created, this method will be invoked. A type can be sent as the first parameter to the new method, which then returns a fresh instance of that type. The creation of a new instance will be managed by the new method. The new method gives the calling class its new instance back.
+
+### 17. What in Python is init?
+Ans: Python classes have an init function and function Object() { [native code] }. Following memory allocation from the new method, this method is automatically invoked. The init method is present in all classes.
+
+### 18. What various sorts of Python methods are there?
+Ans: The class has three distinct kinds of methods. All of the class activities are carried out with these techniques.
+- Instance Methods
+- Class Methods
+- Static Methods
+### 19. What does Python's instance method mean?
+Ans: Methods known as instance methods operate on a class's instance variables. The memory address is crucial information that the instance method needs to know, and it can be found out thanks to its first parameter, self. Using the self. variable name within the self method, we can quickly retrieve instance variables.
+
+### 20. What do Python class methods do?
+Ans: A class method is a method that operates on static and class variables. The @classmethod decorator must be used to create a method that is a member of a class. Cls, which refers to the class itself, is the input argument for the class method.
+
+### 21. What do Python's static methods mean?
+Ans: When processing that relates to a class but does not need the class or any of its instances is needed, the static method is utilised.
+
+### 22. What does Python's Nested Class mean?
+Ans: A class is referred to be an inner class or nested class if it is declared inside another class. The code may become more object-oriented by using inner classes. Although it is possible to specify more than one inner class in a class, doing so is not advised.
+
+### 23. What does Python's inheritance mean?
+Ans: The new class must be derived from the existing class through inheritance. The current class's variables and methods can be accessed in the new class through inheritance. In Python, every class is descended from the object class. The object class becomes the superclass when a Python class is created on the inside. Code accessibility is inheritance's key benefit.
+
+### 24. What kinds of inheritance are there in Python?
+Ans: The four main forms of inheritance are listed below.
+- Single Inheritance
+- Multi-level Inheritance
+- Hierarchical Inheritance
+- Multiple Inheritance
+### 25. What in Python Is a Single Inheritance?
+Ans: Single inheritance is the process through which a class derives from a single base or parent class. The child class has access by default to the base class's function Object() { [native code] } function.
+
+### 26. What does Python's function Object() { [native code] } overriding mean?
+Ans: The child class cannot access the function Object() { [native code] } of a parent class if we write constructors in both classes. Only the child class function Object() { [native code] } is available in this situation; the parent class function Object() { [native code] } is no longer used. When the current function Object() { [native code] } has to be changed, function Object() { [native code] } overriding is utilised.
+```
+class University:
+  def __init__(self):
+    self.name = 'Yele University'
+    print("You are in University Class Constructor")
+ 
+class College (University):
+  def __init__(self):
+    self.name = 'Yale School of Medicine'
+    print('You are in college Class Constructor')
+ 
+  def show(self):
+    print('College class instance method:',self.name)
+ 
+college = College()
+college.show()
+```
+### 27. What does Python's Super Method mean?
+Ans: If we write a function Object() { [native code] } for each class, the child class cannot use the function Object() { [native code] } from the parent class. The child class function Object() { [native code] } takes the place of the parent class function Object() { [native code] } in this scenario. The super function must be used if we wish to access the function Object() { [native code] } of the parent class.
+```
+class University:
+  def __init__(self):
+    self.name = 'Yele University'
+    print("You are in University Class Constructor")
+   
+  def disp(self):
+    print('You are in University class disp method')
+ 
+class College (University):
+  def __init__(self):
+    super().__init__()
+    self.name = 'Yale School of Medicine'
+    print('You are in college Class Constructor')
+ 
+  def show(self):
+    print('College class instance method:',self.name)
+ 
+college = College()
+college.show()
+college.disp()
+```
+### 28. What does Python's multi-level inheritance mean?
+Ans: The class inherits a feature from another derived class via multi-level inheritance (Child Class). The class under Multi-Level Inheritance derives a different child class. The University class inherits from the College class in the example below, and the Student class inherits from the College class. The Student class in this sort of inheritance has access to the variables and methods from the University and College classes.
+  ```
+  def __init__(self):
+    self.name = 'Yele University'
+    print("You are in University Class Constructor")
+   
+  def disp(self):
+    print('You are in University class disp method')
+ 
+class College (University):
+  def __init__(self):
+    self.name = 'Yale School of Medicine'
+    print('You are in college Class Constructor')
+ 
+  def show(self):
+    print('College class instance method:',self.name)
+ 
+class Student(College):
+  def __init__(self):
+    self.name='Martin'
+    print('You are in student Class Constructor')
+ 
+  def view(self):
+    print('Student class instance method:',self.name)
+ 
+student = Student()
+student.view()
+student.show()
+student.disp()
+```
+### 29. What does Python's hierarchical inheritance mean?
+Ans: We may inherit a class from many classes via hierarchical inheritance. The MedicalCollege and LawCollege classes in the example below have inherited the University Base/Parent class. Both of the child classes may now access the parent class's variables and methods.
+```
+class University:
+  def __init__(self):
+    self.name = 'Yele University'
+    print("You are in University Class Constructor")
+   
+  def disp(self):
+    print('You are in University class disp method')
+ 
+class MedicalCollege (University):
+  def __init__(self):
+    self.name = 'Yale School of Medicine'
+    print('You are in Medical college Class Constructor')
+ 
+  def show(self):
+    print('Medical College class instance method:',self.name)
+ 
+class LawCollege (University):
+  def __init__(self):
+    self.name = 'Yale Law School'
+    print('You are in Law college Class Constructor')
+ 
+  def view(self):
+    print('Law College class instance method:',self.name) 
+ 
+lawcollege = LawCollege()
+lawcollege.view()
+lawcollege.disp()
+ 
+medicalcollege = MedicalCollege()
+medicalcollege.show()
+medicalcollege.disp()
+```
+
+### 30. What does Python's Multiple Inheritance mean?
+Ans: Many Inheritance is the term used when a class inherits from multiple classes. The workings of numerous inheritances are seen in the example presented below.
+```
+class Father:
+  def __init__(self):
+    print('You are in Father Class Constructor')
+   
+  def disp(self):
+    print("Father Class instance Method")
+         
+class Mother:
+  def __init__(self):
+    print("You are in Mother Class Constructor")
+   
+  def show(self):
+    print("Mother Class instance Method")
+         
+class Son(Father, Mother):
+    def __init__(self):
+        print("You are in Son Class Constructor")
+   
+    def view(self):
+        print("Son Class Instance Method")
+         
+         
+son = Son()
+son.view()
+son.show()
+son.disp()
+```
+### 31. What does Python's MRO (Method Resolution Order) mean?
+Ans:
+Method Resolution Order is referred to as MRO.
+A class inherits from many classes under multiple inheritance.
+If we attempt to access a method by building an object from the child class, the methods of the child class are first searched for the method.
+If the method is not found in the child class, the inheritance classes are searched from left to right.
+The display method is present in both the Father and Mother classes in the example presented below.
+In MRO, methods and variables are searched from left to right because while conducting inheritance, father class is written first and mother class is written afterwards.
+After the kid class, the father class's factors and research methodologies are prioritised in
+
+```
+class Father:
+  def __init__(self):
+    print('You are in Father Class Constructor')
+   
+  def show(self):
+    print("Father Class instance Method")
+         
+class Mother:
+  def __init__(self):
+    print("You are in Mother Class Constructor")
+   
+  def show(self):
+    print("Mother Class instance Method")
+         
+class Son(Father, Mother):
+    def __init__(self):
+        print("You are in Son Class Constructor")
+     
+son = Son()
+son.show() 
+```
