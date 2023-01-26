@@ -501,3 +501,63 @@ If the object is mutable and the function changes it, the parameter will mutate 
 [1, 2, 3, 4, 5]
 ```
 
+
+
+### 54 What is namespace in Python?
+In Python, a namespace is a system that assigns a unique name to each and every object. A variable or a method might be considered an object. Python has its own namespace, which is kept in the form of a Python dictionary. Let’s look at a directory-file system structure in a computer as an example. It should go without saying that a file with the same name might be found in numerous folders. However, by supplying the absolute path of the file, one may be routed to it if desired.
+
+A namespace is essentially a technique for ensuring that all of the names in a programme are distinct and may be used interchangeably. You may already be aware that everything in Python is an object, including strings, lists, functions, and so on. Another notable thing is that Python uses dictionaries to implement namespaces. A name-to-object mapping exists, with the names serving as keys and the objects serving as values. The same name can be used by many namespaces, each mapping it to a distinct object. Here are a few namespace examples:
+
+Local Namespace: This namespace stores the local names of functions. This namespace is created when a function is invoked and only lives till the function returns.
+
+Global Namespace: Names from various imported modules that you are utilizing in a project are stored in this namespace. It’s formed when the module is added to the project and lasts till the script is completed.
+
+Built-in Namespace: This namespace contains the names of built-in functions and exceptions.
+
+## 55 How is memory managed in Python?
+This is one of the most commonly asked python interview questions
+
+Memory management in python comprises a private heap containing all objects and data structure. The heap is managed by the interpreter and the programmer does not have access to it at all. The Python memory manager does all the memory allocation. Moreover, there is an inbuilt garbage collector that recycles and frees memory for the heap space.
+
+## 56 How do you delete a file in Python?
+Files can be deleted in Python by using the command os.remove (filename) or os.unlink(filename)
+
+
+## 57 What are Python decorators?
+Decorators are functions that take another function as an argument to modify its behavior without changing the function itself. These are useful when we want to dynamically increase the functionality of a function without changing it.
+
+Here is an example:
+```
+def smart_divide(func):
+    def inner(a, b):
+        print("Dividing", a, "by", b)
+        if b == 0:
+            print("Make sure Denominator is not zero")
+            return
+return func(a, b)
+    return inner
+@smart_divide
+def divide(a, b):
+    print(a/b)
+divide(1,0)
+```
+Here smart_divide is a decorator function that is used to add functionality to simple divide function.
+
+
+## 58 What is Scope Resolution in Python?
+The variable’s accessibility is defined in python according to the location of the variable declaration, called the scope of variables in python. Scope Resolution refers to the order in which these variables are looked for a name to variable matching. Following is the scope defined in python for variable declaration.
+
+a. Local scope – The variable declared inside a loop, the function body is accessible only within that function or loop.
+
+b. Global scope – The variable is declared outside any other code at the topmost level and is accessible everywhere.
+
+c. Enclosing scope – The variable is declared inside an enclosing function, accessible only within that enclosing function.
+
+d. Built-in Scope – The variable declared inside the inbuilt functions of various modules of python has the built-in scope and is accessible only within that particular module.
+
+The scope resolution for any variable is made in java in a particular order, and that order is
+
+Local Scope -> enclosing scope -> global scope -> built-in scope
+
+
+
