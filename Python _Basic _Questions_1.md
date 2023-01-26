@@ -559,5 +559,29 @@ The scope resolution for any variable is made in java in a particular order, and
 
 Local Scope -> enclosing scope -> global scope -> built-in scope
 
+## 59 What do you mean by Python literals?
+A literal is a simple and direct form of expressing a value. Literals reflect the primitive type options available in that language. Integers, floating-point numbers, Booleans, and character strings are some of the most common forms of literal. Python supports the following literals:
 
+Literals in Python relate to the data that is kept in a variable or constant. There are several types of literals present in Python
+
+String Literals: It’s a sequence of characters wrapped in a set of codes. Depending on the number of quotations used, there can be single, double, or triple strings. Single characters enclosed by single or double quotations are known as character literals.
+
+Numeric Literals: These are unchangeable numbers that may be divided into three types: integer, float, and complex.
+
+Boolean Literals: True or False, which signify ‘1’ and ‘0,’ respectively, can be assigned to them.
+
+Special Literals: It’s used to categorize fields that have not been generated. ‘None’ is the value that is used to represent it.
+
+String literals: “halo” , ‘12345’
+Int literals: 0,1,2,-1,-2
+Long literals: 89675L
+Float literals: 3.14
+Complex literals: 12j
+Boolean literals: True or False
+Special literals: None
+Unicode literals: u”hello”
+List literals: [], [5, 6, 7]
+Tuple literals: (), (9,), (8, 9, 0)
+Dict literals: {}, {‘x’:1}
+Set literals: {8, 9, 10}
 
