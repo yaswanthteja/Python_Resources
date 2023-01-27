@@ -594,3 +594,36 @@ Consider two sets of code shown below:
 In the first example, we only assigned a value to one element of ‘l’, so the output is [3, 2, 3, 4].
 
 In the second example, we have created a whole new object for ‘l’. But, the values [3, 2, 3, 4] doesn’t show up in the output as it is outside the definition of the function.
+
+
+## 61 How Do You Use Print() Without the Newline?
+The solution to this depends on the Python version you are using. 
+
+Python v2
+
+>>print(“Hi. ”),
+
+>>print(“How are you?”)
+
+Output: Hi. How are you?
+
+Python v3
+
+>>print(“Hi”,end=“ ”)
+
+>>print(“How are you?”)
+
+Output: Hi. How are you?
+
+
+## 62 Is Python Object-oriented or Functional Programming?
+Python is considered a multi-paradigm language.
+
+Python follows the object-oriented paradigm 
+
+Python allows the creation of objects and their manipulation through specific methods 
+It supports most of the features of OOPS such as inheritance and polymorphism
+Python follows the functional programming paradigm
+
+Functions may be used as the first-class object 
+Python supports Lambda functions which are characteristic of the functional paradigm 
