@@ -627,3 +627,23 @@ Python follows the functional programming paradigm
 
 Functions may be used as the first-class object 
 Python supports Lambda functions which are characteristic of the functional paradigm 
+
+## 63 What Are *args and *kwargs?
+*args 
+
+It is used in a function prototype to accept a varying number of arguments.
+It's an iterable object. 
+Usage - def fun(*args)
+*kwargs 
+
+It is used in a function prototype to accept the varying number of keyworded arguments.
+It's an iterable object
+Usage - def fun(**kwargs):
+fun(colour=”red”.units=2)
+
+## 64 “in Python, Functions Are First-class Objects.” What Do You Infer from This?
+It means that a function can be treated just like an object. You can assign them to variables, or pass them as arguments to other functions. You can even return them from other functions.
+
+
+## 65 What Is the Output Of: Print(__name__)? Justify Your Answer.
+__name__ is a special variable that holds the name of the current module. Program execution starts from main or code with 0 indentations. Thus, __name__ has a value __main__ in the above case. If the file is imported from another module, __name__ holds the name of this module.
