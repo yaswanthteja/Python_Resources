@@ -647,3 +647,18 @@ It means that a function can be treated just like an object. You can assign them
 
 ## 65 What Is the Output Of: Print(__name__)? Justify Your Answer.
 __name__ is a special variable that holds the name of the current module. Program execution starts from main or code with 0 indentations. Thus, __name__ has a value __main__ in the above case. If the file is imported from another module, __name__ holds the name of this module.
+
+
+## 66  What is the Lambda function?
+A lambda function is a type of anonymous function. This function can take as many parameters as you want, but just one statement.
+
+## 67. Why Lambda is used in Python?
+Lambda is typically utilized in instances where an anonymous function is required for a short period of time. Lambda functions can be applied in two different ways:
+
+Assigning Lambda functions to a variable
+Wrapping Lambda function into another function
+
+## 68 Differentiate between deep and shallow copy.
+When a new instance type is formed, a shallow copy is used to maintain the values that were copied in the previous instance. Shallow copy is used to copy reference pointers in the same way as values are copied. These references refer to the original objects, and any modifications made to any member of the class will have an impact on the original copy. Shallow copy enables faster program execution and is dependent on the size of the data being utilized.
+
+Deep copy is a technique for storing previously copied values. The reference pointers to the objects are not copied during deep copy. It creates a reference to an object and stores the new object that is referenced to by another object. The changes made to the original copy will have no effect on any subsequent copies that utilize the item. Deep copy slows down program performance by creating many copies of each object that is called.
