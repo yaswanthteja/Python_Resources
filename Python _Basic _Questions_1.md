@@ -585,3 +585,12 @@ Tuple literals: (), (9,), (8, 9, 0)
 Dict literals: {}, {‘x’:1}
 Set literals: {8, 9, 10}
 
+## 60 Are Arguments in Python Passed by Value or by Reference?
+Arguments are passed in python by a reference. This means that any changes made within a function are reflected in the original object.
+
+Consider two sets of code shown below:
+![image](https://user-images.githubusercontent.com/93423367/215160015-8ccda4f9-830e-4de5-b2cf-bdd70accc90b.png)
+
+In the first example, we only assigned a value to one element of ‘l’, so the output is [3, 2, 3, 4].
+
+In the second example, we have created a whole new object for ‘l’. But, the values [3, 2, 3, 4] doesn’t show up in the output as it is outside the definition of the function.
