@@ -662,3 +662,11 @@ Wrapping Lambda function into another function
 When a new instance type is formed, a shallow copy is used to maintain the values that were copied in the previous instance. Shallow copy is used to copy reference pointers in the same way as values are copied. These references refer to the original objects, and any modifications made to any member of the class will have an impact on the original copy. Shallow copy enables faster program execution and is dependent on the size of the data being utilized.
 
 Deep copy is a technique for storing previously copied values. The reference pointers to the objects are not copied during deep copy. It creates a reference to an object and stores the new object that is referenced to by another object. The changes made to the original copy will have no effect on any subsequent copies that utilize the item. Deep copy slows down program performance by creating many copies of each object that is called.
+
+
+## 69 How is a file deleted in Python?
+The file can be deleted by either of these commands:
+```
+os.remove(filename)
+os.unlink(filename)
+```
