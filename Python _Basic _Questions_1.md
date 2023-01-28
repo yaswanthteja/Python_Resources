@@ -670,3 +670,31 @@ The file can be deleted by either of these commands:
 os.remove(filename)
 os.unlink(filename)
 ```
+## 70Python supports negative indexes. What are they and why are they used?
+The sequences in Python are indexed. It consists of positive and negative numbers. Positive numbers use 0 as the first index, 1 as the second index, and so on. Hence, any index for a positive number n is n-1.
+
+Unlike positive numbers, index numbering for the negative numbers starts from -1 and it represents the last index in the sequence. Likewise, -2 represents the penultimate index. These are known as negative indexes. Negative indexes are used for:
+
+- Removing any new-line spaces from the string, thus allowing the string to except the last character, represented as S[:-1]
+- Showing the index to representing the string in the correct order
+
+## 71  What is monkey patching in Python?
+The dynamic modifications made to a class or module at runtime are termed as monkey patching in Python. Consider the following code snippet:
+```
+# m.py
+class MyClass:
+def f(self):
+print "f()"
+We can monkey-patch the program something like this:
+```
+```
+import m
+def monkey_f(self):
+print "monkey_f()"
+m.MyClass.f = monkey_f
+obj = m.MyClass()
+obj.f()
+```
+The output for the program will be monkey_f().
+
+The examples demonstrate changes made in the behavior of f() in MyClass using the function we defined i.e. monkey_f() outside of the module m.
