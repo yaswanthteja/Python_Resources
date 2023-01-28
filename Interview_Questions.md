@@ -131,3 +131,13 @@ for i in String1:
 print('Alphabets in string are :' + String2)
 ```
 
+## Can we reverse a list in Python?
+Yes, we can reserve a list in Python using the reverse() method. The code is as follows:
+```
+def reverse(s):
+ str = "" 
+ for i in s: 
+   str = i + str
+  return str
+  
+  ```
