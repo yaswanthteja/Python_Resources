@@ -18,6 +18,18 @@ Ans: Yes, it is feasible if the base class is a static method or if additional c
 ### 3. How do you make a Python class that is empty?
 Ans: A class that is empty has no defined members. By employing the pass keyword, it is made (the pass command does nothing in python). Outside of the class, we can produce objects for this class.
 
+- An empty class does not have any members defined in it. It is created by using the pass keyword (the pass command does nothing in python). We can create objects for this class outside the class.
+For example-
+```
+class EmptyClassDemo:
+   pass
+obj=EmptyClassDemo()
+obj.name="Interviewbit"
+print("Name created= ",obj.name)
+```
+Output:
+Name created = Interviewbit
+
 ### 4. Explain the differences between override and new modifiers.
 Ans: The base class function is not to be utilised; instead, the new modifier instructs the compiler to use the new implementation. When overriding a base class function inside a child class, the Override modifier is helpful.
 
