@@ -367,3 +367,83 @@ class Son(Father, Mother):
 son = Son()
 son.show() 
 ```
+
+
+## 32  How do you access parent members in the child class?
+Following are the ways using which you can access parent class members within a child class:
+
+By using Parent class name: You can use the name of the parent class to access the attributes as shown in the example below:
+```
+class Parent(object):  
+   # Constructor
+   def __init__(self, name):
+       self.name = name    
+ 
+class Child(Parent): 
+   # Constructor
+   def __init__(self, name, age):
+       Parent.name = name
+       self.age = age
+ 
+   def display(self):
+       print(Parent.name, self.age)
+ 
+# Driver Code
+obj = Child("Interviewbit", 6)
+obj.display()
+```
+By using super(): The parent class members can be accessed in child class using the super keyword.
+
+```
+class Parent(object):
+   # Constructor
+   def __init__(self, name):
+       self.name = name    
+ 
+class Child(Parent):
+   # Constructor
+   def __init__(self, name, age):         
+       ''' 
+       In Python 3.x, we can also use super().__init__(name)
+       ''' 
+       super(Child, self).__init__(name)
+       self.age = age
+ 
+   def display(self):
+      # Note that Parent.name cant be used 
+      # here since super() is used in the constructor
+      print(self.name, self.age)
+  
+# Driver Code
+obj = Child("Interviewbit", 6)
+obj.display()
+
+```
+## 33. Are access specifiers used in python?
+Python does not make use of access specifiers specifically like private, public, protected, etc. However, it does not derive this from any variables. It has the concept of imitating the behaviour of variables by making use of a single (protected) or double underscore (private) as prefixed to the variable names. By default, the variables without prefixed underscores are public.
+
+Example:
+```
+# to demonstrate access specifiers
+
+class InterviewbitEmployee:
+   
+    # protected members
+    _emp_name = None
+    _age = None
+    
+    # private members
+    __branch = None
+    
+    # constructor
+    def __init__(self, emp_name, age, branch): 
+         self._emp_name = emp_name
+         self._age = age
+         self.__branch = branch
+    
+    #public member
+    def display():
+        print(self._emp_name +" "+self._age+" "+self.__branch)
+```
+## 34. Is it possible to call parent class without its instance creation?
+Yes, it is possible if the base class is instantiated by other child classes or if the base class is a static method.
