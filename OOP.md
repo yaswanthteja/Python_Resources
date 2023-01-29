@@ -90,12 +90,34 @@ Ans: The new class must be derived from the existing class through inheritance. 
 
 ### 24. What kinds of inheritance are there in Python?
 Ans: The four main forms of inheritance are listed below.
+
+Inheritance gives the power to a class to access all attributes and methods of another class. It aids in code reusability and helps the developer to maintain applications without redundant code. The class inheriting from another class is a child class or also called a derived class. The class from which a child class derives the members are called parent class or superclass.
+
 - Single Inheritance
 - Multi-level Inheritance
 - Hierarchical Inheritance
 - Multiple Inheritance
+- 
 ### 25. What in Python Is a Single Inheritance?
 Ans: Single inheritance is the process through which a class derives from a single base or parent class. The child class has access by default to the base class's function Object() { [native code] } function.
+![image](https://user-images.githubusercontent.com/93423367/215339614-3b8fa090-c08d-4bf4-a3d8-514b82763e00.png)
+```
+# Parent class
+class ParentClass:
+    def par_func(self):
+         print("I am parent class function")
+
+# Child class
+class ChildClass(ParentClass):
+    def child_func(self):
+         print("I am child class function")
+
+# Driver code
+obj1 = ChildClass()
+obj1.par_func()
+obj1.child_func()
+
+```
 
 ### 26. What does Python's function Object() { [native code] } overriding mean?
 Ans: The child class cannot access the function Object() { [native code] } of a parent class if we write constructors in both classes. Only the child class function Object() { [native code] } is available in this situation; the parent class function Object() { [native code] } is no longer used. When the current function Object() { [native code] } has to be changed, function Object() { [native code] } overriding is utilised.
@@ -141,7 +163,48 @@ college.show()
 college.disp()
 ```
 ### 28. What does Python's multi-level inheritance mean?
+
 Ans: The class inherits a feature from another derived class via multi-level inheritance (Child Class). The class under Multi-Level Inheritance derives a different child class. The University class inherits from the College class in the example below, and the Student class inherits from the College class. The Student class in this sort of inheritance has access to the variables and methods from the University and College classes.
+
+ The members of the parent class, A, are inherited by child class which is then inherited by another child class, B. The features of the base class and the derived class are further inherited into the new derived class, C. Here, A is the grandfather class of class C.
+![image](https://user-images.githubusercontent.com/93423367/215339714-cb246104-695b-4a88-bae6-378f80afe8d1.png)
+
+
+
+```
+# Parent class
+class A:
+   def __init__(self, a_name):
+       self.a_name = a_name
+   
+# Intermediate class
+class B(A):
+   def __init__(self, b_name, a_name):
+       self.b_name = b_name
+       # invoke constructor of class A
+       A.__init__(self, a_name)
+
+# Child class
+class C(B):
+   def __init__(self,c_name, b_name, a_name):
+       self.c_name = c_name
+       # invoke constructor of class B
+       B.__init__(self, b_name, a_name)
+       
+   def display_names(self):
+       print("A name : ", self.a_name)
+       print("B name : ", self.b_name)
+       print("C name : ", self.c_name)
+
+#  Driver code
+obj1 = C('child', 'intermediate', 'parent')
+print(obj1.a_name)
+obj1.display_names()
+
+
+```
+
+
   ```
   def __init__(self):
     self.name = 'Yele University'
@@ -172,7 +235,16 @@ student.show()
 student.disp()
 ```
 ### 29. What does Python's hierarchical inheritance mean?
+
+
+
 Ans: We may inherit a class from many classes via hierarchical inheritance. The MedicalCollege and LawCollege classes in the example below have inherited the University Base/Parent class. Both of the child classes may now access the parent class's variables and methods.
+
+
+
+When a parent class is derived by more than one child class, it is called hierarchical inheritance.
+![image](https://user-images.githubusercontent.com/93423367/215339797-6321cb5b-eca9-4c9f-b9b0-58a3de4c5d41.png)
+
 ```
 class University:
   def __init__(self):
@@ -209,6 +281,32 @@ medicalcollege.disp()
 
 ### 30. What does Python's Multiple Inheritance mean?
 Ans: Many Inheritance is the term used when a class inherits from multiple classes. The workings of numerous inheritances are seen in the example presented below.
+
+ This is achieved when one child class derives members from more than one parent class. All features of parent classes are inherited in the child class.
+ ![image](https://user-images.githubusercontent.com/93423367/215339865-cbcc2a26-7e28-462d-ba13-0140da0ac9be.png)
+
+```
+# Parent class1
+class Parent1:
+   def parent1_func(self):
+       print("Hi I am first Parent")
+
+# Parent class2
+class Parent2:
+   def parent2_func(self):
+       print("Hi I am second Parent")
+
+# Child class
+class Child(Parent1, Parent2):
+   def child_func(self):
+       self.parent1_func()
+       self.parent2_func()
+
+# Driver's code
+obj1 = Child()
+obj1.child_func()
+```
+ 
 ```
 class Father:
   def __init__(self):
