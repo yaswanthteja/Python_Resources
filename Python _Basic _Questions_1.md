@@ -15,7 +15,20 @@ Ans: PEP 8 is a coding convention, a set of recommendation, about how to write y
 ### 3. What is pickling and unpickling?
 
 Ans: Pickle module accepts any Python object and converts it into a string representation and dumps it into a file by using dump function, this process is called pickling. While the process of retrieving original Python objects from the stored string representation is called unpickling.
+ 
+Python library offers a feature - serialization out of the box. Serializing an object refers to transforming it into a format that can be stored, so as to be able to deserialize it, later on, to obtain the original object. Here, the pickle module comes into play.
 
+Pickling:
+
+Pickling is the name of the serialization process in Python. Any object in Python can be serialized into a byte stream and dumped as a file in the memory. The process of pickling is compact but pickle objects can be compressed further. Moreover, pickle keeps track of the objects it has serialized and the serialization is portable across versions.
+The function used for the above process is pickle.dump().
+Unpickling:
+
+Unpickling is the complete inverse of pickling. It deserializes the byte stream to recreate the objects stored in the file and loads the object to memory.
+The function used for the above process is pickle.load().
+Note: Python has another, more primitive, serialization module called marshall, which exists primarily to support .pyc files in Python and differs significantly from the pickle.
+
+![image](https://user-images.githubusercontent.com/93423367/215339063-67defdcb-0825-4b90-a12e-73db0f1e7d87.png)
 
 
 
