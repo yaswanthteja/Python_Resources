@@ -459,3 +459,31 @@ class InterviewbitEmployee:
 ```
 ## 34. Is it possible to call parent class without its instance creation?
 Yes, it is possible if the base class is instantiated by other child classes or if the base class is a static method.
+
+
+## 35.How to overload constructors or methods in Python?
+Python's constructor: _init__ () is the first method of a class. Whenever we try to instantiate an object __init__() is automatically invoked by python to initialize members of an object. We can't overload constructors or methods in Python. It shows an error if we try to overload.
+
+Example:
+```
+class student:    
+    def __init__(self, name):    
+        self.name = name    
+    def __init__(self, name, email):    
+        self.name = name    
+        self.email = email    
+         
+# This line will generate an error    
+#st = student("rahul")    
+    
+# This line will call the second constructor    
+st = student("rahul", "your@gmail.com")    
+print("Name: ", st.name)  
+print("Email id: ", st.email)  
+```
+
+Output:
+```
+Name:  rahul
+Email id:  yourname@gmail.com
+```
