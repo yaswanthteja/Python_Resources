@@ -749,6 +749,56 @@ obj.patch()
 
 # monk_p() is being called
 ```
+## 73 
+What are the different types of arguments in Python?
+There are mainly four types of arguments. They are positional arguments, default arguments, keyword arguments, and arbitrary arguments.
+
+Positional Arguments: the normal arguments that we define in user-defined functions are called positional arguments. All positional arguments are required while invoking the function.
+```
+>>> def add(a, b):
+...     return a + b
+...
+>>> add(1, 2)
+3
+>>> add(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add() missing 1 required positional argument: 'b'
+>>>
+```
+Default Arguments: we can provide the value to the arguments in the function definition itself as default value. When the user didn’t pass the value, the function will consider the default value.
+
+>>> def add(a, b=3):
+...     return a + b
+...
+>>> add(1, 2)
+3
+>>> add(1)
+4
+Keyword Arguments: we can specify the name of the arguments while invoking the function and assign values to them. The keyword arguments help us to avoid ordering which is mandatory in positional arguments.
+
+>>> def add(a, b):
+...     print("a ", a)
+...     print("b ", b)
+...     return a + b
+...
+>>> add(b=4, a=2)
+a  2
+b  4
+6
+Arbitrary Arguments: we use arbitrary arguments to collect a bunch of values at a time when we don’t know the number of arguments that function will get. We * and ** operators in the function definition to collect the arguments.
+
+>>> def add(*args):
+...     return sum(args)
+...
+>>> add(1, 2, 3, 4, 5)
+15
+>>> def dict_args(**kwargs):
+...     print(kwargs)
+...
+>>> dict_args(a='Geekflare', b='Geekflare Tools', c='Geekflare Online Compiler')
+{'a': 'Geekflare', 'b': 'Geekflare Tools', 'c': 'Geekflare Online Compiler'}
+
 
 
 
