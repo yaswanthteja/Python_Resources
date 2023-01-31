@@ -749,8 +749,8 @@ obj.patch()
 
 # monk_p() is being called
 ```
-## 73 
-What are the different types of arguments in Python?
+
+## 73 What are the different types of arguments in Python?
 There are mainly four types of arguments. They are positional arguments, default arguments, keyword arguments, and arbitrary arguments.
 
 Positional Arguments: the normal arguments that we define in user-defined functions are called positional arguments. All positional arguments are required while invoking the function.
@@ -767,7 +767,7 @@ TypeError: add() missing 1 required positional argument: 'b'
 >>>
 ```
 Default Arguments: we can provide the value to the arguments in the function definition itself as default value. When the user didn’t pass the value, the function will consider the default value.
-
+```
 >>> def add(a, b=3):
 ...     return a + b
 ...
@@ -786,8 +786,9 @@ Keyword Arguments: we can specify the name of the arguments while invoking the f
 a  2
 b  4
 6
+```
 Arbitrary Arguments: we use arbitrary arguments to collect a bunch of values at a time when we don’t know the number of arguments that function will get. We * and ** operators in the function definition to collect the arguments.
-
+```
 >>> def add(*args):
 ...     return sum(args)
 ...
@@ -798,7 +799,7 @@ Arbitrary Arguments: we use arbitrary arguments to collect a bunch of values at 
 ...
 >>> dict_args(a='Geekflare', b='Geekflare Tools', c='Geekflare Online Compiler')
 {'a': 'Geekflare', 'b': 'Geekflare Tools', 'c': 'Geekflare Online Compiler'}
-
+```
 
 
 
