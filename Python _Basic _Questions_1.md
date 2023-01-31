@@ -711,3 +711,47 @@ obj.f()
 The output for the program will be monkey_f().
 
 The examples demonstrate changes made in the behavior of f() in MyClass using the function we defined i.e. monkey_f() outside of the module m.
+
+
+## 72 What is monkey patching in Python?
+
+Monkey patching in Python is a dynamic technique that can change the behavior of the code at run-time. In short, you can modify a class or module at run-time.
+
+Example:
+
+Let’s learn monkey patching with an example. 
+
+We have created a class `monkey` with a `patch()` function. We have also created a `monk_p` function outside the class. 
+
+We will now replace the `patch` with the `monk_p` function by assigning `monkey.patch` to `monk_p`.
+
+In the end, we will test the modification by creating the object using the `monkey` class and running the `patch()` function. 
+
+Instead of displaying “patch() is being called”, it has displayed “monk_p() is being called”. 
+```
+class monkey:
+
+    def patch(self):
+
+          print ("patch() is being called")
+
+def monk_p(self):
+
+    print ("monk_p() is being called")
+
+# replacing address of "patch" with "monk_p"
+
+monkey.patch = monk_p
+
+obj = monkey()
+
+obj.patch()
+
+# monk_p() is being called
+```
+
+
+
+
+
+
