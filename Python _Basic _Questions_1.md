@@ -801,7 +801,19 @@ Arbitrary Arguments: we use arbitrary arguments to collect a bunch of values at 
 {'a': 'Geekflare', 'b': 'Geekflare Tools', 'c': 'Geekflare Online Compiler'}
 ```
 
+## 73  What are the steps required to make a script executable on Unix?
 
+Answer: The steps that are required to make a script executable are to:
+– First, create a script file and write the code that has to be executed in it.
+– Make the file mode as executable by making the first line starts with #! this is the line that python interpreter reads.
+– Set the permission for the file by using chmod +x file. The file uses the line that is the most important line to be used:
+#!/usr/local/bin/python
+– This explains the pathname that is given to the python interpreter and it is independent of the environment programs.
+– The absolute pathname should be included so that the interpreter can interpret and execute the code accordingly. The sample code that is written:
+#! /bin/sh
+# Write your code here
+exec python $0 ${1+”$@”}
+# Write the function that needs to be included.
 
 
 
