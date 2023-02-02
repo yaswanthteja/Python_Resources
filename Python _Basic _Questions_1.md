@@ -811,10 +811,26 @@ Answer: The steps that are required to make a script executable are to:
 – This explains the pathname that is given to the python interpreter and it is independent of the environment programs.
 – The absolute pathname should be included so that the interpreter can interpret and execute the code accordingly. The sample code that is written:
 #! /bin/sh
-# Write your code here
+-  Write your code here
 exec python $0 ${1+”$@”}
-# Write the function that needs to be included.
+- Write the function that needs to be included.
 
+## 74  What are iterators?
+Iterators are objects in Python which remember their state of iteration. It initializes the data with the __iter__ method and returns the next element using the __next__ method.
 
+We need to call the next(iterator) to get the next element from the iterator. And we can convert a sequence data type to an iterator using the iter built-in method.
+```
+>>> a = [1, 2]
+>>> iterator = iter(a)
+>>> next(iterator)
+1
+>>> next(iterator)
+2
+>>> next(iterator)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+StopIteration
+>>>
+```
 
 
