@@ -833,4 +833,26 @@ StopIteration
 >>>
 ```
 
+## 75 What is a unittest?
+Ans. The unit testing framework of Python is known as unittest. It has similar features with unit testing frameworks in other languages.
 
+Unittest supports some important concepts of object-oriented Programming:
+
+Test fixture
+Test case
+Test suite
+Test runner
+Example:
+```
+import unittest
+
+class ABC(unittest.TestCase):
+
+def xyz():
+
+…
+
+if __name__ == “__main__”:
+
+unittest.main()
+```
