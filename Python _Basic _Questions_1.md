@@ -856,3 +856,20 @@ if __name__ == “__main__”:
 
 unittest.main()
 ```
+
+
+## 76  What is the most prevalent Python built-in data types?
+Numbers- Integers, complex numbers, and floating points are Python's most prevalent built-in data structures. For example, 1, 8.1, 3+6i.
+
+List- A list is a collection of objects that are arranged in a specific order. A list's components could be of multiple data kinds. For example, [[10,'itika',7] .4]
+
+Tuple- It's also a set of items in a specific order. Tuples, not like lists, are immutable, meaning we cannot modify them. For example, (7,'itika',2)
+
+String- A string is a collection of characters. Single or double quotations are used to declare them. "Itika," "She is learning coding through Javatpoint", and so on.
+
+Set- A set is a group of unrelated elements which are not in any particular sequence. (2, 3, 4, 5)
+
+Dictionary- A dictionary is a collection of key and value combinations in which each value may be accessed by its key. The sequence of the items is irrelevant. For example, {3:'ape', 6:'monkey'}
+
+Boolean- True and False is indeed the two possible boolean values.
+
