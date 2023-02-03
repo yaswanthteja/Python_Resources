@@ -117,7 +117,7 @@ print("Binary Number is {} and Decimal Number is {}".format(binary_val, decimal_
    
    
 
-## Write a code to Remove all characters from string except alphabets
+## 9 Write a code to Remove all characters from string except alphabets
 ```
 #take user input
 String1 = input('Enter the String :')
@@ -131,7 +131,7 @@ for i in String1:
 print('Alphabets in string are :' + String2)
 ```
 
-## Can we reverse a list in Python?
+## 10  Can we reverse a list in Python?
 Yes, we can reserve a list in Python using the reverse() method. The code is as follows:
 ```
 def reverse(s):
@@ -141,3 +141,59 @@ def reverse(s):
   return str
   
   ```
+
+
+
+
+## 11 Write a Python script to implement the Bubble sort algorithm.
+Code
+```
+# Python program to show how to implement bubble sort  
+  
+def bubble_Sort(array):  
+    n = len(array)  
+  
+for i in range(n-1):  
+         
+for j in range(0, n-i-1):  
+             
+if array[j] > array[j + 1] :  
+                array[j], array[j + 1] = array[j + 1], array[j]  
+     
+print(array)  
+  
+#example array  
+arr = [23, 14, 64, 13, 64, 23, 86]  
+  
+bubble_Sort(arr)  
+```
+Output:
+```
+[13, 14, 23, 23, 64, 64, 86]
+```
+
+## 12 In Python, create a program that generates a Fibonacci sequence.
+Code
+```
+#taking number of terms to print the series  
+n = 9  
+first = 0 #first value of series  
+second = 1 #second value of series  
+series = [first, second]  
+if n == 0:  
+     
+print("The required fibonacci series is",first)  
+else:  
+     
+for i in range(0,n-2):   
+         
+num = series[i] + series[i+1]  
+         
+series.append(num)  
+print(series)  
+```
+```
+Output:
+
+[0, 1, 1, 2, 3, 5, 8, 13, 21]
+```
