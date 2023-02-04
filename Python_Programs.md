@@ -240,3 +240,51 @@ array_2 = [1,1,3,4,5,6,6]
 removeDuplicates(array_2)
 # 5
 ```
+# 14 Find the maximum single sell profit
+You are provided with the list of stock prices, and you have to return the buy and sell price to make the highest profit. 
+
+Note: We have to make maximum profit from a single buy/sell, and if we can’t make a profit, we have to reduce our losses. 
+
+Example 1: stock_price = [8, 4, 12, 9, 20, 1], buy = 4, and sell = 20. Maximizing the profit. 
+
+Example 2: stock_price = [8, 6, 5, 4, 3, 2, 1], buy = 6, and sell = 5. Minimizing the loss.
+
+Solution:
+
+- We will calculate the global profit by subtracting global sell (the first element in the list) from current buy (the second element in the list). 
+- Run the loop for the range of 1 to the length of the list. 
+- Within the loop, calculate the current profit using list elements and current buy value. 
+- If the current profit is greater than the global profit, change the global profit with the current profit and global sell to the i element of the list.
+- If the current buy is greater than the current element of the list, change the current buy with the current element of the list. 
+- In the end, we will return global buy and sell value. To get global buy value, we will subtract global sell from global profit.
+- The question is a bit tricky, and you can come up with your unique algorithm to solve the problems. 
+
+```
+def buy_sell_stock_prices(stock_prices):
+    current_buy = stock_prices[0]
+    global_sell = stock_prices[1]
+    global_profit = global_sell - current_buy
+
+    for i in range(1, len(stock_prices)):
+        current_profit = stock_prices[i] - current_buy
+
+        if current_profit > global_profit:
+            global_profit = current_profit
+            global_sell = stock_prices[i]
+
+        if current_buy > stock_prices[i]:
+            current_buy = stock_prices[i]
+
+    return global_sell - global_profit, global_sell
+
+stock_prices_1 = [10,9,16,17,19,23]
+buy_sell_stock_prices(stock_prices_1)
+# (9, 23)
+
+
+stock_prices_2 = [8, 6, 5, 4, 3, 2, 1]
+buy_sell_stock_prices(stock_prices_2)
+# (6, 5)
+
+```
+
