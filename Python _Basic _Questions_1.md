@@ -925,3 +925,17 @@ For example, if we are multiplying two lists and two Numpy arrays of 1 million e
 
 - Vesititly 
 Numpy arrays are convenient to use as they offer simple array multiple, addition, and a lot more built-in functionality. Whereas Python lists are incapable of running basic operations. 
+
+
+
+## 78  What is Scope in Python?
+Every object in Python functions within a scope. A scope is a block of code where an object in Python remains relevant. Namespaces uniquely identify all the objects inside a program. However, these namespaces also have a scope defined for them where you could use their objects without any prefix. A few examples of scope created during code execution in Python are as follows:
+
+- A local scope refers to the local objects available in the current function.
+- A global scope refers to the objects available throughout the code execution since their inception.
+- A module-level scope refers to the global objects of the current module accessible in the program.
+- An outermost scope refers to all the built-in names callable in the program. The objects in this scope are searched last to find the name referenced.
+- Note: Local scope objects can be synced with global scope objects using keywords such as global.
+
+
+
