@@ -937,5 +937,12 @@ Every object in Python functions within a scope. A scope is a block of code wher
 - An outermost scope refers to all the built-in names callable in the program. The objects in this scope are searched last to find the name referenced.
 - Note: Local scope objects can be synced with global scope objects using keywords such as global.
 
+## 79 .What are Python namespaces?
 
+Ans: A namespace in python refers to the name which is assigned to each object in python. The objects are variables and functions. As each object is created, its name along with space(the address of the outer function in which the object is), gets created. The namespaces are maintained in python like a dictionary where the key is the namespace and value is the address of the object. There 4 types of namespace in python-
+
+- Built-in namespace– These namespaces contain all the built-in objects in python and are available whenever python is running.
+- Global namespace– These are namespaces for all the objects created at the level of the main program.
+- Enclosing namespaces– These namespaces are at the higher level or outer function.
+- Local namespaces– These namespaces are at the local or inner function.
 
