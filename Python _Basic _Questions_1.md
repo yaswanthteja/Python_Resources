@@ -946,3 +946,22 @@ Ans: A namespace in python refers to the name which is assigned to each object i
 - Enclosing namespaces– These namespaces are at the higher level or outer function.
 - Local namespaces– These namespaces are at the local or inner function.
 
+## 80 . How is Multithreading achieved in Python?
+Ans: 
+
+Python has a multi-threading package but if you want to multi-thread to speed your code up, then it’s usually not a good idea to use it.
+Python has a construct called the Global Interpreter Lock (GIL). The GIL makes sure that only one of your ‘threads’ can execute at any one time. A thread acquires the GIL, does a little work, then passes the GIL onto the next thread.
+This happens very quickly so to the human eye it may seem like your threads are executing in parallel, but they are really just taking turns using the same CPU core.
+All this GIL passing adds overhead to execution. This means that if you want to make your code run faster then using the threading package often isn’t a good idea.
+
+## 81 . What is the process of compilation and linking in python?
+Ans: The compiling and linking allow the new extensions to be compiled properly without any error and the linking can be done only when it passes the compiled procedure. If the dynamic loading is used then it depends on the style that is being provided with the system. The python interpreter can be used to provide the dynamic loading of the configuration setup files and will rebuild the interpreter.
+
+The steps that are required in this as:
+
+Create a file with any name and in any language that is supported by the compiler of your system. For example file.c or file.cpp
+Place this file in the Modules/ directory of the distribution which is getting used.
+Add a line in the file Setup.local that is present in the Modules/ directory.
+Run the file using spam file.o
+After a successful run of this rebuild the interpreter by using the make command on the top-level directory.
+If the file is changed then run rebuildMakefile by using the command as ‘make Makefile’.
