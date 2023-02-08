@@ -1,7 +1,32 @@
 
+What is a Data Structure in python?
+The Data Structure is a description of how data is organised (stored), modified, and accessed. By specifying how different sorts of data connect to one another, it also develops relationships and forms algorithms. The data structure of any computer language is a crucial concept in algorithmic design.
 
 
-# 1: Create a list by picking an odd-index items from the first list and even index items from the second
+What Are the Various Data Structure Types?
+The numerous forms of data structures are as follows:
+
+- Lists : Lists are a collection of related objects that are linked to the data items before and after them.
+
+ - Arrays: Arrays are a collection of values with the same value.
+
+- Stacks: LIFO data structures, or stacks, are those in which the element placed last is accessed first.
+
+- Queues: Queues are a first-in-first-out data structure.
+
+- Graphs: In this data structure, data values are stored in nodes connected by edges.
+
+- Trees: Like a linked list, the data values are linked in a hierarchical structure.
+
+- Hash table: A table in which each value is assigned a key and then preserved, making individual values more accessible.
+
+- Heaps: A binary tree data structure that allows you to compare parent and child data values.
+
+
+
+
+
+# : Create a list by picking an odd-index items from the first list and even index items from the second
 Given two lists, l1 and l2, write a program to create a third list l3 by picking an odd-index element from the list l1 and even index elements from the list l2.
 
 Given:
