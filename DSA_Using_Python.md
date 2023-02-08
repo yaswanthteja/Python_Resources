@@ -1,9 +1,9 @@
 
-What is a Data Structure in python?
+# What is a Data Structure in python?
 The Data Structure is a description of how data is organised (stored), modified, and accessed. By specifying how different sorts of data connect to one another, it also develops relationships and forms algorithms. The data structure of any computer language is a crucial concept in algorithmic design.
 
 
-What Are the Various Data Structure Types?
+# What Are the Various Data Structure Types?
 The numerous forms of data structures are as follows:
 
 - Lists : Lists are a collection of related objects that are linked to the data items before and after them.
@@ -22,6 +22,16 @@ The numerous forms of data structures are as follows:
 
 - Heaps: A binary tree data structure that allows you to compare parent and child data values.
 
+# What Applications Do Data Structures Have?
+Data structures are useful for a number of things, including:
+
+- Dynamic memory allocation should be implemented.
+
+- Model sets and other types of data
+
+- Network modelling
+
+- Identifying and resolving the most basic issues
 
 
 
