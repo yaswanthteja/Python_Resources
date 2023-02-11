@@ -288,3 +288,19 @@ buy_sell_stock_prices(stock_prices_2)
 
 ```
 
+
+
+## 15 How would you convert a list into a tuple?
+
+
+```
+
+my_list = [50, "Twenty", 110, "Fifty", "Ten", 20, 10, 80, "Eighty"]
+ 
+my_tuple = (my_list[0], my_list[len(my_list) - 1], len(my_list))
+print(my_tuple)
+
+```
+All we have to do is create a tuple with three elements. The first element of the tuple is the first element of the list, which can be found using my_list[0].
+
+The second element of the tuple is the last element in the list. my_list[len(my_list) - 1] will give us this element. We could also have used the pop() method, but that would alter the list.
