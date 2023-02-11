@@ -36,7 +36,7 @@ Data structures are useful for a number of things, including:
 
 
 
-# : Create a list by picking an odd-index items from the first list and even index items from the second
+#  Create a list by picking an odd-index items from the first list and even index items from the second
 Given two lists, l1 and l2, write a program to create a third list l3 by picking an odd-index element from the list l1 and even index elements from the list l2.
 
 Given:
