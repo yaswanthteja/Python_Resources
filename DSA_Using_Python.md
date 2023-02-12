@@ -190,5 +190,30 @@ A stack can carry out three basic operations:
 
 
 
+## In Python, how do you add values to an array?
+The append(), extend(), and insert (i,x) procedures can be used to add elements to an array.
+```
+a=arr.array('d', [1.1 , 2.1 ,3.1] )
+a.append(3.4)
+print(a)
+a.extend([4.5,6.3,6.8])
+print(a)
+a.insert(2,3.8)
+print(a)
+```
+Output:
+```
+array(‘d’, [1.1, 2.1, 3.1, 3.4])
+array(‘d’, [1.1, 2.1, 3.1, 3.4, 4.5, 6.3, 6.8]) array(‘d’, [1.1, 2.1, 3.8, 3.1, 3.4, 4.5, 6.3, 6.8])
+```
 
+##  What's the best way to remove values from a Python array?
+The pop() and remove() methods can be used to remove elements from an array. The difference between these two functions is that the first returns the removed value, while the second does not.
+```
+a=arr.array('d', [1.1, 2.2, 3.8, 3.1, 3.7, 1.2, 4.6])
+print(a.pop())
+print(a.pop(3))
+a.remove(1.1)
+print(a)
+```
 
