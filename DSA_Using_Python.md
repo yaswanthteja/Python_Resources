@@ -148,3 +148,47 @@ print(anagram("cool", "loco"))
 print(anagram("men", "women"))
 ```
 
+
+## What exactly is a stack?
+A stack is an abstract data type that provides a linear data structure, analogous to a physical stack or pile where objects may only be removed from the top. As a result, item insertion (push) and deletion (pop) take place only at one end of the stack, the top of the stack, and in a certain order: LIFO (Last In First Out) or FILO (First In Last Out) (First In Last Out).
+
+Implementation in Python
+```
+stack = []
+ 
+# append() function to push
+# element in the stack
+stack.append('a')
+stack.append('b')
+stack.append('c')
+ 
+print('Initial stack')
+print(stack)
+ 
+# pop() function to pop
+# element from stack in 
+# LIFO order
+print('\nElements popped from stack:')
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+ 
+print('\nStack after elements are popped:')
+print(stack)
+ 
+# uncommenting print(stack.pop())  
+# will cause an IndexError 
+# as the stack is now empty
+```
+
+##  What operations can you do with a stack?
+A stack is a linear data structure that works on the same idea as a list, except that in a stack, components are only added and deleted from one end, the TOP. As a result, a stack is known as a LIFO (Last-In-First-Out) data structure, because the last component inserted is the first component removed.
+A stack can carry out three basic operations:
+
+1. PUSH: When you use the push action, a new element is added to the stack. The new function is at the top of the priority list. However, before we insert the value, we must first verify if TOP=MAX–1, since if it is, the stack is filled and no more insertions are possible.
+2. POP: To remove the topmost member of a stack, use the pop action. We must first verify if TOP=NULL before deleting the item, because if it is, the stack is empty and no further deletions are permitted. You'll get a UNDERFLOW notice if you try to remove a value from a stack that is already empty.
+
+
+
+
+
