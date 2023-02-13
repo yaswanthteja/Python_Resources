@@ -493,8 +493,11 @@ Email id:  yourname@gmail.com
 ## Types of constructor
 Types of constructors depend upon languages
 
-Private Constructor
-Default Constructor
-Copy Constructor
-Static Constructor
-Parameterized Constructor
+- Private Constructor
+- Default Constructor
+- Copy Constructor
+- Static Constructor
+- Parameterized Constructor
+
+![image](https://user-images.githubusercontent.com/93423367/218506068-b1f5e4fa-dbe7-48b7-bc18-cab616f2309f.png)
+
