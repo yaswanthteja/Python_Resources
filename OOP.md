@@ -487,3 +487,14 @@ Output:
 Name:  rahul
 Email id:  yourname@gmail.com
 ```
+
+
+
+## Types of constructor
+Types of constructors depend upon languages
+
+Private Constructor
+Default Constructor
+Copy Constructor
+Static Constructor
+Parameterized Constructor
