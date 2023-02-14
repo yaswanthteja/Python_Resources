@@ -965,3 +965,17 @@ Add a line in the file Setup.local that is present in the Modules/ directory.
 Run the file using spam file.o
 After a successful run of this rebuild the interpreter by using the make command on the top-level directory.
 If the file is changed then run rebuildMakefile by using the command as ‘make Makefile’.
+
+
+## What is pass in Python?
+The pass keyword represents a null operation in Python. It is generally used for the purpose of filling up empty blocks of code which may execute during runtime but has yet to be written. Without the pass statement in the following code, we may run into some errors during code execution.
+
+```
+def myEmptyFunc():
+   # do nothing
+   pass
+myEmptyFunc()    # nothing happens
+## Without the pass keyword
+# File "<stdin>", line 3
+# IndentationError: expected an indented block
+```
