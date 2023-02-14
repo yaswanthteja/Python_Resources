@@ -937,7 +937,7 @@ Every object in Python functions within a scope. A scope is a block of code wher
 - An outermost scope refers to all the built-in names callable in the program. The objects in this scope are searched last to find the name referenced.
 - Note: Local scope objects can be synced with global scope objects using keywords such as global.
 
-## 79 .What are Python namespaces?
+### 79 .What are Python namespaces?
 
 Ans: A namespace in python refers to the name which is assigned to each object in python. The objects are variables and functions. As each object is created, its name along with space(the address of the outer function in which the object is), gets created. The namespaces are maintained in python like a dictionary where the key is the namespace and value is the address of the object. There 4 types of namespace in python-
 
@@ -946,7 +946,7 @@ Ans: A namespace in python refers to the name which is assigned to each object i
 - Enclosing namespaces– These namespaces are at the higher level or outer function.
 - Local namespaces– These namespaces are at the local or inner function.
 
-## 80 . How is Multithreading achieved in Python?
+### 80 . How is Multithreading achieved in Python?
 Ans: 
 
 Python has a multi-threading package but if you want to multi-thread to speed your code up, then it’s usually not a good idea to use it.
@@ -980,7 +980,7 @@ myEmptyFunc()    # nothing happens
 # IndentationError: expected an indented block
 ```
 
-## Write a Program to match a string that has the letter ‘a’ followed by 4 to 8 'b’s.
+### Write a Program to match a string that has the letter ‘a’ followed by 4 to 8 'b’s.
 We can use the re module of python to perform regex pattern comparison here.
 ```
 import re
@@ -993,4 +993,20 @@ def match_text(txt_data):
 print(match_text("abc"))         #prints Match not found
 print(match_text("aabbbbbc"))    #prints Match found
 ```
+### Write a Program to convert date from yyyy-mm-dd format to dd-mm-yyyy format.
+We can again use the re module to convert the date string as shown below:
+```
+import re
+def transform_date_format(date):
+   return re.sub(r'(\d{4})-(\d{1,2})-(\d{1,2})', '\\3-\\2-\\1', date)
+date_input = "2021-08-01"
+print(transform_date_format(date_input))
+```
+You can also use the datetime module as shown below:
+```
+from datetime import datetime
+new_date = datetime.strptime("2021-08-01", "%Y-%m-%d").strftime("%d:%m:%Y")
+print(new_data)
+```
+
 
