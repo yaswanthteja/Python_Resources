@@ -979,3 +979,18 @@ myEmptyFunc()    # nothing happens
 # File "<stdin>", line 3
 # IndentationError: expected an indented block
 ```
+
+## Write a Program to match a string that has the letter ‘a’ followed by 4 to 8 'b’s.
+We can use the re module of python to perform regex pattern comparison here.
+```
+import re
+def match_text(txt_data):
+       pattern = 'ab{4,8}'
+       if re.search(pattern,  txt_data):    #search for pattern in txt_data
+           return 'Match found'
+       else:
+           return('Match not found')
+print(match_text("abc"))         #prints Match not found
+print(match_text("aabbbbbc"))    #prints Match found
+```
+
