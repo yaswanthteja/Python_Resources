@@ -1009,4 +1009,45 @@ new_date = datetime.strptime("2021-08-01", "%Y-%m-%d").strftime("%d:%m:%Y")
 print(new_data)
 ```
 
+## What is a decorator?
+Another questions I’ve been asked in every interview. It’s deserves a post itself, but you’re prepared if you can walk through writing your own example.
 
+A decorator allows adding functionality to an existing function by passing that existing function to a decorator, which executes the existing function as well as additional code.
+
+We’ll write a decorator that that logs when another function is called.
+
+Write the decorator function. This takes a function, func, as an argument. It also defines a function, log_function_called, which calls func() and executes some code, print(f'{func} called.'). Then it return the function it defined
+```
+def logging(func):
+  def log_function_called():
+    print(f'{func} called.')
+    func()
+  return log_function_called
+  ```
+Let’s write other functions that we’ll eventually add the decorator to (but not yet).
+```
+def my_name():
+  print('chris')
+def friends_name():
+  print('naruto')
+my_name()
+friends_name()
+#=> chris
+#=> naruto
+```
+Now add the decorator to both.
+```
+@logging
+def my_name():
+ print('chris')
+@logging
+def friends_name():
+ print('naruto')
+my_name()
+friends_name()
+#=> <function my_name at 0x10fca5a60> called.
+#=> chris
+#=> <function friends_name at 0x10fca5f28> called.
+#=> naruto
+```
+See how we can now easily add logging to any function we write just by adding @logging above it.
