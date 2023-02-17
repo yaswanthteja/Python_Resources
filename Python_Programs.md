@@ -304,3 +304,37 @@ print(my_tuple)
 All we have to do is create a tuple with three elements. The first element of the tuple is the first element of the list, which can be found using my_list[0].
 
 The second element of the tuple is the last element in the list. my_list[len(my_list) - 1] will give us this element. We could also have used the pop() method, but that would alter the list.
+
+
+## Write a program to display only those numbers from a list that satisfy the following conditions
+
+- The number must be divisible by five
+- If the number is greater than 150, then skip it and move to the next number
+- If the number is greater than 500, then stop the loop
+
+
+
+Given:
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+```
+Expected output:
+```
+
+75
+150
+145
+```
+Solution
+```
+numbers = [12, 75, 150, 180, 145, 525, 50]
+# iterate each item of a list
+for item in numbers:
+    if item > 500:
+        break
+    elif item > 150:
+        continue
+    # check if number is divisible by 5
+    elif item % 5 == 0:
+        print(item)
+```
