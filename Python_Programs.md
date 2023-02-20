@@ -338,3 +338,26 @@ for item in numbers:
     elif item % 5 == 0:
         print(item)
 ```
+
+
+## Python program to find out the average of a set of integers
+```
+count = int(input("Enter the count of numbers: "))
+i = 0
+sum = 0
+for i in range(count):
+    x = int(input("Enter an integer: "))
+    sum = sum + x
+avg = sum/count
+print("The average is: ", avg)
+```
+Output:
+```
+Enter the count of numbers: 5
+Enter an integer: 3
+Enter an integer: 6
+Enter an integer: 8
+Enter an integer: 5
+Enter an integer: 7
+The average is:  5.8
+```
