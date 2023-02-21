@@ -383,3 +383,15 @@ Enter an integer greater than 1: 24
 24 is not a prime number
 
 ```
+
+ ## Python program to convert the temperature in degree centigrade to Fahrenheit
+ ```
+c = input("Enter temperature in Centigrade: ")
+f = (9*(int(c))/5)+32
+print("Temperature in Fahrenheit is: ", f)
+```
+Output:
+```
+Enter temperature in Centigrade: 30
+Temperature in Fahrenheit is:  86.0
+```
