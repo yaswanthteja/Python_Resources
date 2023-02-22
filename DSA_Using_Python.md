@@ -309,3 +309,28 @@ Output:
 Enter the number to be found out: 7
 Successful search, the element is found at position 2
 ```
+## Python program to implement binary search
+```
+def binarySearch(numbers, low, high, x):
+    if (high >= low):
+        mid = low + (high - low)//2
+        if (numbers[mid] == x):
+            return mid
+        elif (numbers[mid] > x):
+            return binarySearch(numbers, low, mid-1, x)
+        else:
+            return binarySearch(numbers, mid+1, high, x)
+    else:
+        return -1
+numbers = [ 1,4,6,7,12,17,25 ]   #binary search requires sorted numbers
+x = 7
+result = binarySearch(numbers, 0, len(numbers)-1, x)
+if (result != -1):
+    print("Search successful, element found at position ", result)
+else:
+    print("The given element is not present in the array")
+```
+Output:
+```
+Search successful, element found at position  3
+```
