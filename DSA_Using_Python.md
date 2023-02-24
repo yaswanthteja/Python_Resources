@@ -383,3 +383,21 @@ Output
 ```
 633d7356947eec543c50b76a1852f92427f4dca9
 ```
+
+
+## Given a list of integers, write a Python program to find the sum of all the elements in the list using recursion.
+
+Answer:
+
+One possible solution to this problem is to use a recursive function to add up the elements of the list. Here is the Python code:
+
+```
+def sum_list_recursive(lst):
+    if len(lst) == 0:
+        return 0
+    else:
+        return lst[0] + sum_list_recursive(lst[1:])
+        
+        
+```
+
