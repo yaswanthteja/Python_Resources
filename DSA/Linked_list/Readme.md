@@ -277,7 +277,132 @@ The two linked list are not the same.
 ```
 
 
+## 4. Python program to solve the Josephus problem using a linked list.
 
+Problem Description
+The program uses a circular single linked list to solve the Josephus problem.
 
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class LinkedList with instance variable head.
+3. The variable head points to the first element in the circular linked list.
+4. Define methods get_node, get_prev_node, insert_after, insert_before, insert_at_end, remove and append.
+5. The method get_node takes an index as argument and traverses the list from a specified node that many times to return the node at that index. The specified node is given by the second argument passed to it.
+6. The method get_prev_node takes a reference node as argument and returns the previous node.
+7. The methods insert_after and insert_before insert a node after or before some reference node in the list.
+8. The methods insert_at_end inserts a node at the last position of the list.
+9. The method remove takes a node as argument and removes it from the list.
+10. The method appends a node with the data item passed to the end of the list.
+11. Define function has_one_node which returns True only if the circular list passed to it has only one node.
+12. Define function get_josephus_solution which takes a circular linked list and a number k as argument.
+13. The function get_josephus_solution returns the solution to the Josephus problem where the people are represented by the nodes in the circular linked list and every kth person is executed.
+14. Create an instance of CircularLinkedList and find the solution to the Josephus problem for a given k.
 
+Program/Source Code
+Here is the source code of a Python program to solve the Josephus problem using a linked list. The program output is shown below.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+ 
+class CircularLinkedList:
+    def __init__(self):
+        self.head = None
+ 
+    def append(self, data):
+        node = Node(data)
+        self.insert_at_end(node)
+ 
+    def get_node(self, index, start):
+        if self.head is None:
+            return None
+        current = start
+        for i in range(index):
+            current = current.next
+        return current
+ 
+    def get_prev_node(self, ref_node):
+        if self.head is None:
+            return None
+        current = self.head
+        while current.next != ref_node:
+            current = current.next
+        return current
+ 
+    def insert_after(self, ref_node, new_node):
+        new_node.next = ref_node.next
+        ref_node.next = new_node
+ 
+    def insert_before(self, ref_node, new_node):
+        prev_node = self.get_prev_node(ref_node)
+        self.insert_after(prev_node, new_node)
+ 
+    def insert_at_end(self, new_node):
+        if self.head is None:
+            self.head = new_node
+            new_node.next = new_node
+        else:
+            self.insert_before(self.head, new_node)
+ 
+    def remove(self, node):
+        if self.head.next == self.head:
+            self.head = None
+        else:
+            prev_node = self.get_prev_node(node)
+            prev_node.next = node.next
+            if self.head == node:
+                self.head = node.next
+ 
+ 
+def has_one_node(cllist):
+    if cllist.head.next == cllist.head:
+        return True
+    else:
+        return False
+ 
+ 
+def get_josephus_solution(cllist, k):
+    if cllist.head is None:
+        return None
+    start = cllist.head
+    while not has_one_node(cllist):
+        to_remove = cllist.get_node(k - 1, start)
+        start = to_remove.next
+        cllist.remove(to_remove)
+    return cllist.head.data
+ 
+ 
+a_cllist = CircularLinkedList()
+n = int(input('Input number of people: '))
+k = int(input('The kth person will be executed. Input k: '))
+for i in range(1, n + 1):
+    a_cllist.append(i)
+ 
+ans = get_josephus_solution(a_cllist, k)
+print('The person at position {} won\'t be killed.'.format(ans))
+```
+Program Explanation
+1. The user is prompted to enter the values of n and k.
+2. An instance of CircularLinkedList is created with n nodes where the nodes have values from 1 to n.
+3. The function get_josephus_solution is called with the circular linked list and k as arguments.
+4. The return value is the position of the person who won’t be executed in the Josephus problem.
 
+```
+Runtime Test Cases
+Case 1:
+Input number of people: 5
+The kth person will be executed. Input k: 3
+The person at position 4 won't be killed.
+ 
+Case 2:
+Input number of people: 15
+The kth person will be executed. Input k: 7
+The person at position 5 won't be killed.
+ 
+Case 3:
+Input number of people: 8
+The kth person will be executed. Input k: 2
+The person at position 1 won't be killed.
+```
