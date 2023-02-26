@@ -1,6 +1,6 @@
 
 
-## This is a Python program to create a linked list and display its elements.
+## 1.This is a Python program to create a linked list and display its elements.
 
 Problem Description
 The program creates a linked list using data items input from the user and displays it.
@@ -78,7 +78,7 @@ Enter data item: 2
 The linked list: 2 9 3 2
 ```
 
-## This is a Python program to remove duplicates from a linked list.
+## 2.This is a Python program to remove duplicates from a linked list.
 
 Problem Description
 The program creates a linked list and removes duplicates from it.
@@ -183,4 +183,101 @@ Please enter the elements in the linked list: 1 3 3 14 5 1 0
 The list with duplicates removed: 
 1 3 14 5 0
 ```
+
+## 3. two linked lists are the same.
+
+Problem Description
+The program creates two linked lists using data items input from the user and checks whether they are the same.
+
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class LinkedList with instance variables head and last_node.
+3. The variable head points to the first element in the linked list while last_node points to the last.
+4. Define methods append and display inside the class LinkedList to append data and display the linked list respectively.
+5. Define a function is_equal which takes two linked lists as arguments.
+6. The function is_equal returns True only if the two linked lists are of the same length and contain the same data items.
+7. Create two instances of LinkedList and append data to it.
+8. Check whether they are the same.
+
+Program/Source Code
+Here is the source code of a Python program to check whether two linked lists are the same. The program output is shown below.
+```
+
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+ 
+def is_equal(llist1, llist2):
+    current1 = llist1.head
+    current2 = llist2.head
+    while (current1 and current2):
+        if current1.data != current2.data:
+            return False
+        current1 = current1.next
+        current2 = current2.next
+    if current1 is None and current2 is None:
+        return True
+    else:
+        return False
+ 
+ 
+llist1 = LinkedList()
+llist2 = LinkedList()
+ 
+data_list = input('Please enter the elements in the first linked list: ').split()
+for data in data_list:
+    llist1.append(int(data))
+ 
+data_list = input('Please enter the elements in the second linked list: ').split()
+for data in data_list:
+    llist2.append(int(data))
+ 
+if is_equal(llist1, llist2):
+    print('The two linked lists are the same.')
+else:
+    print('The two linked list are not the same.', end = '')
+```
+Program Explanation
+1. Two instances of LinkedList are created.
+2. The user is prompted to enter the data items for the two lists.
+3. The function is_equal determines whether the two linked lists are the same.
+4. This result is then displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Please enter the elements in the first linked list: 5 8 10 12
+Please enter the elements in the second linked list: 5 8 10 12
+The two linked lists are the same.
+ 
+Case 2:
+Please enter the elements in the first linked list: 12 3 4 5 0
+Please enter the elements in the second linked list: 12 3
+The two linked list are not the same.
+ 
+Case 3:
+Please enter the elements in the first linked list: 4 1
+Please enter the elements in the second linked list: 2 19 4
+The two linked list are not the same.
+```
+
+
+
+
+
 
