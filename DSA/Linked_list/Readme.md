@@ -499,3 +499,125 @@ Please enter the elements in the linked list: 1 2
 The nth element from the end will be printed. Please enter n: 2
 The nth element from the end: 1
 ```
+
+## 6.Python program to interchange two nodes in a linked list.
+
+Problem Description
+The program creates a single linked list and allows the user to interchange two nodes in the list.
+
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class LinkedList with instance variables head and last_node.
+3. The variable head points to the first element in the linked list while last_node points to the last.
+4. Define methods get_node, get_prev_node, append and display.
+5. get_node takes an index as argument and traverses the list from the first node that many times to return the node at that index.
+6. get_prev_node takes a reference node as argument and returns the previous node.
+7. The method display traverses the list from the first node and prints the data of each node.
+8. The method append appends a node with the data item passed to the end of the list.
+9. Define the function interchange which takes a linked list and two indices n and m as arguments.
+10. The function interchange interchanges the nodes at indices n and m.
+11. Create an instance of LinkedList, append data to it and perform the exchange operation.
+
+Program/Source Code
+Here is the source code of a Python program to exchange two elements in a linked list. The program output is shown below.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end = ' ')
+            current = current.next
+ 
+    def get_node(self, index):
+        current = self.head
+        for i in range(index):
+            if current is None:
+                return None
+            current = current.next
+        return current
+ 
+    def get_prev_node(self, ref_node):
+        current = self.head
+        while (current and current.next != ref_node):
+            current = current.next
+        return current
+ 
+ 
+def interchange(llist, n, m):
+    node1 = llist.get_node(n)
+    node2 = llist.get_node(m)
+    prev_node1 = llist.get_prev_node(node1)
+    prev_node2 = llist.get_prev_node(node2)
+    if prev_node1 is not None:
+        prev_node1.next = node2
+    else:
+        llist.head = node2
+    if prev_node2 is not None:
+        prev_node2.next = node1
+    else:
+        llist.head = node1
+    temp = node2.next
+    node2.next = node1.next
+    node1.next = temp
+ 
+ 
+a_llist = LinkedList()
+ 
+data_list = input('Please enter the elements in the linked list: ').split()
+for data in data_list:
+    a_llist.append(int(data))
+ 
+ans = input('Please enter the two indices of the two elements that'
+            ' you want to exchange: ').split()
+n = int(ans[0])
+m = int(ans[1])
+ 
+interchange(a_llist, n, m)
+ 
+print('The new list: ')
+a_llist.display()
+```
+Program Explanation
+1. An instance of LinkedList is created.
+2. The user is prompted to enter the data items for the list.
+3. The user is asked to enter n and m, the indices of the nodes which will be interchanged.
+4. The function interchange is called to perform the exchange operation.
+5. The linked list is displayed.
+```
+Runtime Test Cases
+Case 1:
+Please enter the elements in the linked list: 1 2
+Please enter the two indices of the two elements that you want to exchange: 0 1
+The new list: 
+2 1 
+ 
+Case 2:
+Please enter the elements in the linked list: 4 5 1
+Please enter the two indices of the two elements that you want to exchange: 1 2
+The new list: 
+4 1 5 
+ 
+Case 3:
+Please enter the elements in the linked list: 3 1 30 4 5 10 23
+Please enter the two indices of the two elements that you want to exchange: 2 5
+The new list: 
+3 1 10 4 5 30 23
+```
