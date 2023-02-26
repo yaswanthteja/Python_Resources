@@ -406,3 +406,96 @@ Input number of people: 8
 The kth person will be executed. Input k: 2
 The person at position 1 won't be killed.
 ```
+
+
+## 5.Python program to print the Nth node from the end of a linked list.
+
+Problem Description
+The program creates a linked list and prints the Nth node from the end of the list.
+
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class LinkedList with instance variables head and last_node.
+3. The variable head points to the first element in the linked list while last_node points to the last.
+4. Define method append.
+5. The method append appends a node with the data item passed to the end of the list.
+6. Define the function length_llist which takes a linked list as argument and returns its length.
+7. Define the function return_n_from_last which takes a linked list as argument and a number n.
+8. The function return_n_from_last returns the data item of the node which is n nodes from the end of the list.
+9. Create an instance of LinkedList, append data to it and print the nth-last element of the list.
+
+Program/Source Code
+Here is the source code of a Python program to print the Nth-last node of the list. The program output is shown below.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+ 
+def length_llist(llist):
+    length = 0
+    current = llist.head
+    while current:
+        current = current.next
+        length = length + 1
+    return length
+ 
+ 
+def return_n_from_last(llist, n):
+    l = length_llist(llist)
+    current = llist.head
+    for i in range(l - n):
+        current = current.next
+    return current.data
+ 
+ 
+a_llist = LinkedList()
+ 
+data_list = input('Please enter the elements in the linked list: ').split()
+for data in data_list:
+    a_llist.append(int(data))
+ 
+n = int(input('The nth element from the end will be printed. Please enter n: '))
+value = return_n_from_last(a_llist, n)
+ 
+print('The nth element from the end: {}'.format(value))
+```
+Program Explanation
+1. An instance of LinkedList is created.
+2. The user is prompted to enter the data items for the list.
+3. The user is asked to enter the value of n.
+4. The function return_n_from_last is called to get the value of the nth-last element of the list.
+5. This value is then printed.
+
+```
+Runtime Test Cases
+Case 1:
+Please enter the elements in the linked list: 10 20 40 50 60
+The nth element from the end will be printed. Please enter n: 3
+The nth element from the end: 40
+ 
+Case 2:
+Please enter the elements in the linked list: 4 23 3
+The nth element from the end will be printed. Please enter n: 1
+The nth element from the end: 3
+ 
+Case 3:
+Please enter the elements in the linked list: 1 2
+The nth element from the end will be printed. Please enter n: 2
+The nth element from the end: 1
+```
