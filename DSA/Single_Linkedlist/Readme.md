@@ -469,3 +469,99 @@ Case 3:
 Please enter the elements in the linked list: 1 4 5 4 5 1
 The linked list is not palindromic.
 ```
+
+
+## 4.Python program to convert a given singly linked list to a circular list.
+
+Problem Description
+The program creates a singly linked list and converts it into a circular list.
+
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class LinkedList with instance variables head and last_node.
+3. The variable head points to the first element in the single linked list while last_node points to the last.
+4. Define method append to append data items to the list.
+5. Define function convert_to_circular which takes a singly linked list as argument.
+6. The function convert_to_circular converts the list passed into a circular list by making the last node point to the first.
+7. Define function print_last_node_points_to to display what the last node of the passed linked list points to.
+8. Create an instance of LinkedList, append data to it and convert it to a circular list.
+
+Program/Source Code
+Here is the source code of a Python program to convert a singly linked list to a circular list. The program output is shown below.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+ 
+def convert_to_circular(llist):
+    if llist.last_node:
+        llist.last_node.next = llist.head
+ 
+ 
+def print_last_node_points_to(llist):
+    last = llist.last_node
+    if last is None:
+        print('List is empty.')
+        return
+    if last.next is None:
+        print('Last node points to None.')
+    else:
+        print('Last node points to element with data {}.'.format(last.next.data))
+ 
+ 
+a_llist = LinkedList()
+ 
+data_list = input('Please enter the elements in the linked list: ').split()
+for data in data_list:
+    a_llist.append(int(data))
+ 
+print_last_node_points_to(a_llist)
+ 
+print('Converting linked list to a circular linked list...')
+convert_to_circular(a_llist)
+ 
+print_last_node_points_to(a_llist)
+```
+Program Explanation
+1. An instance of LinkedList is created.
+2. The user is prompted to enter the data items for the list.
+3. The singly linked list is converted to a circular list by passing the list to the function convert_to_circular.
+4. The user is shown to what the last node of the list points to before and after the conversion by calling the function print_last_node_points_to.
+
+```
+Runtime Test Cases
+Case 1:
+Please enter the elements in the linked list: 7 2 3 40 1
+Last node points to None.
+Converting linked list to a circular linked list...
+Last node points to element with data 7.
+ 
+Case 2:
+Please enter the elements in the linked list: 3
+Last node points to None.
+Converting linked list to a circular linked list...
+Last node points to element with data 3.
+ 
+Case 3:
+Please enter the elements in the linked list: 1 2
+Last node points to None.
+Converting linked list to a circular linked list...
+Last node points to element with data 1.
+```
+
