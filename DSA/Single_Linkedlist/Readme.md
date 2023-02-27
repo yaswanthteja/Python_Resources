@@ -383,3 +383,89 @@ The list: 6
 What would you like to do? quit
 ```
 
+## 3. Python program to check whether a singly linked list is a palindrome.
+
+Problem Description
+The program creates a linked list using data items input from the user and determines whether it is a palindrome.
+
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class LinkedList with instance variables head and last_node.
+3. The variable head points to the first element in the linked list while last_node points to the last.
+4. Define methods append and display inside the class LinkedList to append data and display the linked list respectively.
+5. Define method get_prev_node which takes a reference node as argument and returns the node before it.
+6. Define a function is_palindrome which returns True if the linked list passed to it is a palindrome.
+7. The function is_palindrome iterates through the linked list from the start and the last node towards the middle to check if the list is a palindrome.
+8. Create an instance of LinkedList, append data to it and determine whether it is a palindrome.
+
+Program/Source Code
+Here is the source code of a Python program to check whether a singly linked list is a palindrome.
+```
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+    def get_prev_node(self, ref_node):
+        current = self.head
+        while (current and current.next != ref_node):
+            current = current.next
+        return current
+ 
+ 
+def is_palindrome(llist):
+    start = llist.head
+    end = llist.last_node
+    while (start != end and end.next != start):
+        if start.data != end.data:
+            return False
+        start = start.next
+        end = llist.get_prev_node(end)
+    return True
+ 
+ 
+a_llist = LinkedList()
+ 
+data_list = input('Please enter the elements in the linked list: ').split()
+for data in data_list:
+    a_llist.append(int(data))
+ 
+if is_palindrome(a_llist):
+    print('The linked list is palindromic.')
+else:
+    print('The linked list is not palindromic.')
+```    
+Program Explanation
+1. An instance of LinkedList is created.
+2. The user is prompted to enter the data items for the list.
+3. The function is_palindrome is called with the list as argument to determine whether it is a palindrome.
+4. The result is then displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Please enter the elements in the linked list: 7 8 1 8 7
+The linked lists is palindromic.
+ 
+Case 2:
+Please enter the elements in the linked list: 1 2 3 3 2 1
+The linked list is palindromic.
+ 
+Case 3:
+Please enter the elements in the linked list: 1 4 5 4 5 1
+The linked list is not palindromic.
+```
