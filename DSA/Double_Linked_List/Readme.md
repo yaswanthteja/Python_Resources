@@ -189,6 +189,90 @@ The list: 9 1 10
 What would you like to do? quit
 ```
 
+## 2.Python program to find the largest element in a doubly linked list.
 
+Problem Description
+The program creates a doubly linked list and finds the largest element in the list.
 
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class DoublyLinkedList with instance variables first and last.
+3. The variable first points to the first element in the doubly linked list while last points to the last element.
+4. Define methods insert_at_end and append.
+5. The method insert_at_end inserts a node at the last position of the list.
+6. The method append takes a data item as argument and appends a node with that data item to the list.
+7. The function find_largest takes a linked list as argument and returns the largest element in the list. It returns None if the list is empty.
+8. Create an instance of DoublyLinkedList, append data to it and find the largest element in it.
 
+Program/Source Code
+Here is the source code of a Python program to find the largest element in a doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+       self.prev = None
+ 
+ 
+class DoublyLinkedList:
+    def __init__(self):
+        self.first = None
+        self.last = None
+ 
+    def append(self, data):
+        self.insert_at_end(Node(data))
+ 
+    def insert_at_end(self, new_node):
+        if self.last is None:
+            self.last = new_node
+            self.first = new_node
+        else:
+            new_node.prev = self.last
+            self.last.next = new_node
+            self.last = new_node
+ 
+ 
+def find_largest(dllist):
+    if dllist.first is None:
+        return None
+    largest = dllist.first.data
+    current = dllist.first.next
+    while current:
+        if current.data > largest:
+            largest = current.data
+        current = current.next
+    return largest
+ 
+ 
+a_dllist = DoublyLinkedList()
+ 
+data_list = input('Please enter the elements in the doubly linked list: ').split()
+for data in data_list:
+    a_dllist.append(int(data))
+ 
+largest = find_largest(a_dllist)
+if largest:
+    print('The largest element is {}.'.format(largest))
+else:
+    print('The list is empty.')
+```
+Program Explanation
+1. An instance of DoublyLinkedList is created.
+2. The user is prompted to enter the data items of the list.
+3. The largest element is found by calling find_largest.
+4. The result is displayed.
+```
+Runtime Test Cases
+Case 1:
+Please enter the elements in the doubly linked list: 5 10 9 3
+The largest element is 10.
+ 
+Case 2:
+Please enter the elements in the doubly linked list: 
+The list is empty.
+ 
+Case 3:
+Please enter the elements in the doubly linked list: 234 10 4 200
+The largest element is 234.
+
+```
