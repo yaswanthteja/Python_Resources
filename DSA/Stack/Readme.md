@@ -301,8 +301,10 @@ Program Explanation
 2. The user is presented with a menu to perform push and pop operations on the stack.
 3. The chosen operation is performed by calling the corresponding method of the stack.
 
+
+## Runtime Test Cases
 ```
-Runtime Test Cases
+
 Case 1:
 Menu
 push <value>
@@ -504,7 +506,7 @@ Program Explanation
 5. If the reversed string and the original string are the same, then the string is palindromic.
 6. The result is displayed.
 
-Runtime Test Cases
+## Runtime Test Cases
 ```
 Case 1:
 Please enter the string: madam
@@ -580,7 +582,7 @@ Program Explanation
 4. If a pop is required when the stack is empty or the stack is not empty when the expression has been iterated over, then the expression is not correctly parenthesized.
 5. Display the result.
 
-Runtime Test Cases
+## Runtime Test Cases
 ```
 Case 1:
 Please enter the expression: (3 + 4 * (1 + (2))/(7 * (8 + 9)))
