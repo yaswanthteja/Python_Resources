@@ -418,7 +418,7 @@ Program Explanation
 4. The stack is reversed by passing it to the function reverse_stack.
 5. The stack is displayed again.
 
-Runtime Test Cases
+## Runtime Test Cases
 ```
 Case 1:
 Please enter the elements to push: 7 3 1 5
