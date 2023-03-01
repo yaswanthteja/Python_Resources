@@ -184,7 +184,7 @@ Program Explanation
 2. The user is presented with a menu to perform push and pop operations on the stack.
 3. The chosen operation is performed by calling the corresponding method of the stack.
 
-Runtime Test Cases
+## Runtime Test Cases
 ```
 Case 1:
 Menu
