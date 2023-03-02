@@ -244,3 +244,140 @@ Popped value from left:  2
 What would you like to do? quit
 
 ```
+
+## 3.Python program to implement a queue using two stacks.
+
+Problem Description
+The program creates a queue using stacks and allows the user to perform enqueue and dequeue operations on it.
+
+Problem Solution
+1. Create a class Node with instance variables data and next.
+2. Create a class Stack with instance variable items initialized to an empty list.
+3. Define methods push, pop and is_empty inside the class Stack.
+4. The method push appends data to items.
+5. The method pop pops the first element in items.
+6. The method is_empty returns True only if items is empty.
+7. Create a class Queue with instance variables inbox and outbox, both initialized to an empty stack.
+8. Define methods enqueue, dequeue and is_empty inside the class Queue.
+9. The method enqueue pushes data to the stack inbox.
+10. The method dequeue pops from the stack outbox if it is not empty. If it is empty, then all the elements from inbox are popped and pushed to outbox before popping from outbox.
+11. The method is_empty returns True only if both the stacks inbox and outbox are empty.
+12. Create an instance of Queue and present a menu to the user to perform operations on the queue.
+
+Program/Source Code
+Here is the source code of a Python program to implement a queue using two stacks. The program output is shown below.
+```
+class Queue:
+    def __init__(self):
+        self.inbox = Stack()
+        self.outbox = Stack()
+ 
+    def is_empty(self):
+        return (self.inbox.is_empty() and self.outbox.is_empty())
+ 
+    def enqueue(self, data):
+        self.inbox.push(data)
+ 
+    def dequeue(self):
+        if self.outbox.is_empty():
+            while not self.inbox.is_empty():
+                popped = self.inbox.pop()
+                self.outbox.push(popped)
+        return self.outbox.pop()
+ 
+ 
+class Stack:
+    def __init__(self):
+        self.items = []
+ 
+    def is_empty(self):
+        return self.items == []
+ 
+    def push(self, data):
+        self.items.append(data)
+ 
+    def pop(self):
+        return self.items.pop()
+ 
+ 
+a_queue = Queue()
+while True:
+    print('enqueue <value>')
+    print('dequeue')
+    print('quit')
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'enqueue':
+        a_queue.enqueue(int(do[1]))
+    elif operation == 'dequeue':
+        if a_queue.is_empty():
+            print('Queue is empty.')
+        else:
+            dequeued = a_queue.dequeue()
+            print('Dequeued element: ', int(dequeued))
+    elif operation == 'quit':
+        break
+```
+Program Explanation
+1. An instance of Queue is created.
+2. The user is presented with a menu to perform enqueue and dequeue operations on the queue.
+3. The chosen operation is performed by calling the corresponding method.
+
+```
+Runtime Test Cases
+Case 1:
+enqueue <value>
+dequeue
+quit
+What would you like to do? enqueue 7
+enqueue <value>
+dequeue
+quit
+What would you like to do? enqueue 8
+enqueue <value>
+dequeue
+quit
+What would you like to do? dequeue
+Dequeued element:  7
+enqueue <value>
+dequeue
+quit
+What would you like to do? dequeue
+Dequeued element:  8
+enqueue <value>
+dequeue
+quit
+What would you like to do? dequeue
+Queue is empty.
+enqueue <value>
+dequeue
+quit
+What would you like to do? quit
+ 
+Case 2:
+enqueue <value>
+dequeue
+quit
+What would you like to do? dequeue
+Queue is empty.
+enqueue <value>
+dequeue
+quit
+What would you like to do? enqueue 1
+enqueue <value>
+dequeue
+quit
+What would you like to do? enqueue 2
+enqueue <value>
+dequeue
+quit
+What would you like to do? dequeue
+Dequeued element:  1
+enqueue <value>
+dequeue
+quit
+What would you like to do? quit
+```
+
+
