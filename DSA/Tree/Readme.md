@@ -605,3 +605,169 @@ BFS traversal: 5 7 8 4 3 1 2
 What would you like to do? quit
 
 ```
+
+
+## 5. Python program to find the Nth node in the in-order traversal of a binary tree.
+
+Problem Description
+The program creates a binary tree and presents a menu to the user to perform operations on the tree including printing the Nth term in its in-order traversal.
+
+Problem Solution
+1. Create a class BinaryTree with instance variables key, left and right.
+2. Define methods set_root, insert_left, insert_right, inorder_nth, inorder_nth_helper and search.
+3. The method set_root takes a key as argument and sets the variable key equal to it.
+4. The methods insert_left and insert_right insert a node as the left and right child respectively.
+5. The method search returns a node with a specified key.
+6. The method inorder_nth displays the nth element in the in-order traversal of the tree. It calls the recursive method inorder_nth_helper.
+
+Program/Source Code
+Here is the source code of a Python program to find the Nth node in the in-order traversal of a binary tree. The program output is shown below.
+```
+class BinaryTree:
+    def __init__(self, key=None):
+        self.key = key
+        self.left = None
+        self.right = None
+ 
+    def set_root(self, key):
+        self.key = key
+ 
+    def inorder_nth(self, n):
+        return self.inorder_nth_helper(n, [])
+ 
+    def inorder_nth_helper(self, n, inord):
+        if self.left is not None:
+            temp = self.left.inorder_nth_helper(n, inord)
+            if temp is not None:
+                return temp
+        inord.append(self)
+        if n == len(inord):
+            return self
+        if self.right is not None:
+            temp = self.right.inorder_nth_helper(n, inord)
+            if temp is not None:
+                return temp
+ 
+    def insert_left(self, new_node):
+        self.left = new_node
+ 
+    def insert_right(self, new_node):
+        self.right = new_node
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        if self.left is not None:
+            temp =  self.left.search(key)
+            if temp is not None:
+                return temp
+        if self.right is not None:
+            temp =  self.right.search(key)
+            return temp
+        return None
+ 
+ 
+btree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data> at root')
+print('insert <data> left of <data>')
+print('insert <data> right of <data>')
+print('inorder <index>')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        new_node = BinaryTree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+                btree = new_node
+        else:
+            position = do[4].strip().lower()
+            key = int(position)
+            ref_node = None
+            if btree is not None:
+                ref_node = btree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            if suboperation == 'left':
+                ref_node.insert_left(new_node)
+            elif suboperation == 'right':
+                ref_node.insert_right(new_node)
+ 
+    elif operation == 'inorder':
+        if btree is not None:
+            index = int(do[1].strip().lower())
+            node = btree.inorder_nth(index)
+            if node is not None:
+                print('nth term of inorder traversal: {}'.format(node.key))
+            else:
+                print('index exceeds maximum possible index.')
+        else:
+            print('Tree is empty.')
+ 
+    elif operation == 'quit':
+        break
+```
+Program Explanation
+1. A variable is created to store the binary tree.
+2. The user is presented with a menu to perform operations on the binary tree.
+3. The corresponding methods are called to perform each operation.
+4. The method inorder_nth is called to display the nth element in the in-order traversal of the tree.
+
+
+## Runtime Test Cases
+
+```
+
+Case 1:
+Menu (this assumes no duplicate keys)
+insert <data> at root
+insert <data> left of <data>
+insert <data> right of <data>
+inorder <index>
+quit
+What would you like to do? insert 1 at root
+What would you like to do? insert 2 left of 1
+What would you like to do? insert 3 right of 1
+What would you like to do? inorder 1
+nth term of inorder traversal: 2
+What would you like to do? inorder 2
+nth term of inorder traversal: 1
+What would you like to do? inorder 3
+nth term of inorder traversal: 3
+What would you like to do? inorder 4
+index exceeds maximum possible index.
+What would you like to do? quit
+ 
+Case 2:
+Menu (this assumes no duplicate keys)
+insert <data> at root
+insert <data> left of <data>
+insert <data> right of <data>
+inorder <index>
+quit
+What would you like to do? insert 1 at root
+What would you like to do? insert 3 left of 1
+What would you like to do? insert 7 right of 1
+What would you like to do? insert 5 right of 3
+What would you like to do? insert 6 left of 5
+What would you like to do? inorder 1
+nth term of inorder traversal: 3
+What would you like to do? inorder 2
+nth term of inorder traversal: 6
+What would you like to do? inorder 3
+nth term of inorder traversal: 5
+What would you like to do? inorder 4
+nth term of inorder traversal: 1
+What would you like to do? inorder 5
+nth term of inorder traversal: 7
+What would you like to do? inorder 6
+index exceeds maximum possible index.
+What would you like to do? quit
+```
