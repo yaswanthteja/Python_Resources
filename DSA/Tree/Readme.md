@@ -771,3 +771,177 @@ What would you like to do? inorder 6
 index exceeds maximum possible index.
 What would you like to do? quit
 ```
+
+## 6. Python program to perform depth-first search on a binary tree using recursion.
+
+Problem Description
+The program creates a binary tree and presents a menu to the user to perform operations on the tree including depth-first search.
+
+Problem Solution
+1. Create a class BinaryTree with instance variables key, left and right.
+2. Define methods set_root, insert_left, insert_right, depth_first and search.
+3. The method set_root takes a key as argument and sets the variable key equal to it.
+4. The methods insert_left and insert_right insert a node as the left and right child respectively.
+5. The method depth_first displays a depth first traversal of the tree.
+6. The method search returns a node with a specified key.
+
+Program/Source Code
+Here is the source code of a Python program to perform depth-first search on a binary tree using recursion. The program output is shown below.
+```
+class BinaryTree:
+    def __init__(self, key=None):
+        self.key = key
+        self.left = None
+        self.right = None
+ 
+    def set_root(self, key):
+        self.key = key
+ 
+    def insert_left(self, new_node):
+        self.left = new_node
+ 
+    def insert_right(self, new_node):
+        self.right = new_node
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        if self.left is not None:
+            temp =  self.left.search(key)
+            if temp is not None:
+                return temp
+        if self.right is not None:
+            temp =  self.right.search(key)
+            return temp
+        return None
+ 
+    def depth_first(self):
+        print('entering {}...'.format(self.key))
+        if self.left is not None:
+            self.left.depth_first()
+        print('at {}...'.format(self.key))
+        if self.right is not None:
+            self.right.depth_first()
+        print('leaving {}...'.format(self.key))
+ 
+ 
+btree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data> at root')
+print('insert <data> left of <data>')
+print('insert <data> right of <data>')
+print('dfs')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        new_node = BinaryTree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+                btree = new_node
+        else:
+            position = do[4].strip().lower()
+            key = int(position)
+            ref_node = None
+            if btree is not None:
+                ref_node = btree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            if suboperation == 'left':
+                ref_node.insert_left(new_node)
+            elif suboperation == 'right':
+                ref_node.insert_right(new_node)
+ 
+    elif operation == 'dfs':
+        print('depth-first search traversal:')
+        if btree is not None:
+            btree.depth_first()
+        print()
+ 
+    elif operation == 'quit':
+        break
+```
+Program Explanation
+1. A variable is created to store the binary tree.
+2. The user is presented with a menu to perform operations on the tree.
+3. The corresponding methods are called to perform each operation.
+4. The method depth_first is called to display a DFS traversal of the tree.
+
+
+## Runtime Test Cases
+```
+
+Case 1:
+Menu (this assumes no duplicate keys)
+insert <data> at root
+insert <data> left of <data>
+insert <data> right of <data>
+dfs
+quit
+What would you like to do? insert 1 at root
+What would you like to do? insert 2 left of 1
+What would you like to do? insert 3 right of 1
+What would you like to do? insert 4 left of 2
+What would you like to do? insert 5 right of 2
+What would you like to do? insert 6 left of 5
+What would you like to do? insert 7 right of 5
+What would you like to do? dfs
+depth-first search traversal:
+entering 1...
+entering 2...
+entering 4...
+at 4...
+leaving 4...
+at 2...
+entering 5...
+entering 6...
+at 6...
+leaving 6...
+at 5...
+entering 7...
+at 7...
+leaving 7...
+leaving 5...
+leaving 2...
+at 1...
+entering 3...
+at 3...
+leaving 3...
+leaving 1...
+ 
+What would you like to do? quit
+ 
+Case 2:
+Menu (this assumes no duplicate keys)
+insert <data> at root
+insert <data> left of <data>
+insert <data> right of <data>
+dfs
+quit
+What would you like to do? insert 3 at root
+What would you like to do? insert 4 left of 3
+What would you like to do? insert 5 right of 3
+What would you like to do? insert 6 left of 4
+What would you like to do? dfs
+depth-first search traversal:
+entering 3...
+entering 4...
+entering 6...
+at 6...
+leaving 6...
+at 4...
+leaving 4...
+at 3...
+entering 5...
+at 5...
+leaving 5...
+leaving 3...
+ 
+What would you like to do? quit
+```
