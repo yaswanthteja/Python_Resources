@@ -316,3 +316,162 @@ BFS traversal display: 11
 What would you like to do? quit
 
 ```
+## 3.Python program to find the number of nodes in a binary tree.
+
+Problem Description
+The program creates a binary tree and counts the number of nodes in the tree.
+
+Problem Solution
+1. Create a class BinaryTree with instance variables key, left and right.
+2. Define methods set_root, insert_left, insert_right, inorder and search.
+3. The method set_root takes a key as argument and sets the variable key equal to it.
+4. The methods insert_left and insert_right insert a node as the left and right child respectively.
+5. The method inorder displays the inorder traversal.
+6. The method search returns a node with a specified key.
+7. Define the function count_nodes which takes a binary tree as argument.
+8. The recursive function count_nodes returns the number of nodes in the binary tree.
+
+Program/Source Code
+Here is the source code of a Python program to count the number of nodes in a binary tree. The program output is shown below.
+```
+class BinaryTree:
+    def __init__(self, key=None):
+        self.key = key
+        self.left = None
+        self.right = None
+ 
+    def set_root(self, key):
+        self.key = key
+ 
+    def inorder(self):
+        if self.left is not None:
+            self.left.inorder()
+        print(self.key, end=' ')
+        if self.right is not None:
+            self.right.inorder()
+ 
+    def insert_left(self, new_node):
+        self.left = new_node
+ 
+    def insert_right(self, new_node):
+        self.right = new_node
+ 
+    def search(self, key):
+        if self.key == key:
+            return self
+        if self.left is not None:
+            temp =  self.left.search(key)
+            if temp is not None:
+                return temp
+        if self.right is not None:
+            temp =  self.right.search(key)
+            return temp
+        return None
+ 
+ 
+def count_nodes(node):
+    if node is None:
+        return 0
+    return 1 + count_nodes(node.left) + count_nodes(node.right)
+ 
+ 
+btree = None
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data> at root')
+print('insert <data> left of <data>')
+print('insert <data> right of <data>')
+print('count')
+print('quit')
+ 
+while True:
+    print('inorder traversal of binary tree: ', end='')
+    if btree is not None:
+        btree.inorder()
+    print()
+ 
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        new_node = BinaryTree(data)
+        suboperation = do[2].strip().lower() 
+        if suboperation == 'at':
+                btree = new_node
+        else:
+            position = do[4].strip().lower()
+            key = int(position)
+            ref_node = None
+            if btree is not None:
+                ref_node = btree.search(key)
+            if ref_node is None:
+                print('No such key.')
+                continue
+            if suboperation == 'left':
+                ref_node.insert_left(new_node)
+            elif suboperation == 'right':
+                ref_node.insert_right(new_node)
+ 
+    elif operation == 'count':
+        print('Number of nodes in tree: {}'.format(count_nodes(btree)))
+ 
+    elif operation == 'quit':
+        break
+ ```
+Program Explanation
+1. A variable is created to store the binary tree.
+2. The user is presented with a menu to perform operations on the tree.
+3. The corresponding methods are called to perform each operation.
+4. The function count_nodes is called to count the number of nodes in the binary tree.
+
+## Runtime Test Cases
+```
+
+Case 1:
+Menu (this assumes no duplicate keys)
+insert <data> at root
+insert <data> left of <data>
+insert <data> right of <data>
+count
+quit
+inorder traversal of binary tree: 
+What would you like to do? insert 1 at root
+inorder traversal of binary tree: 1 
+What would you like to do? insert 2 left of 1
+inorder traversal of binary tree: 2 1 
+What would you like to do? insert 3 right of 1
+inorder traversal of binary tree: 2 1 3 
+What would you like to do? insert 4 right of 2
+inorder traversal of binary tree: 2 4 1 3 
+What would you like to do? count
+Number of nodes in tree: 4
+inorder traversal of binary tree: 2 4 1 3 
+What would you like to do? quit
+ 
+Case 2:
+Menu (this assumes no duplicate keys)
+insert <data> at root
+insert <data> left of <data>
+insert <data> right of <data>
+count
+quit
+inorder traversal of binary tree: 
+What would you like to do? count
+Number of nodes in tree: 0
+inorder traversal of binary tree: 
+What would you like to do? insert 1 at root
+inorder traversal of binary tree: 1 
+What would you like to do? count
+Number of nodes in tree: 1
+inorder traversal of binary tree: 1 
+What would you like to do? insert 2 right of 1
+inorder traversal of binary tree: 1 2 
+What would you like to do? count
+Number of nodes in tree: 2
+inorder traversal of binary tree: 1 2 
+What would you like to do? quit
+
+```
+
+
