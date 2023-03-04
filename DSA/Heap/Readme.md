@@ -1,7 +1,7 @@
 
 ## 1. Python program to implement a binary heap.
 
-Problem Description
+## Problem Description
 The program creates a binary max-heap and presents a menu to the user to perform various operations on it.
 
 Problem Solution
@@ -339,5 +339,177 @@ Minimum value removed: 5
 What would you like to do? insert 1
 What would you like to do? min extract
 Minimum value removed: 1
+What would you like to do? quit
+```
+
+## 3. Python program to implement a Fibonacci heap.
+
+Problem Description
+The program creates a Fibonacci min-heap and presents a menu to the user to perform various operations on it.
+
+Problem Solution
+1. Create a class FibonacciTree with instance variables key, children and order. children is set to an empty list and order is set to 0 when an object is instantiated.
+2. Define method add_at_end which takes a Fibonacci tree of the same order as argument and adds it to the current tree, increasing its order by 1.
+3. Create a class FibonacciHeap with instance variables trees, least and count. The variable trees is set to an empty list, least to None and count to 0 on instantiation. The list will contain the set of Fibonacci trees, least will point to the tree with the least element and count will contain the number of nodes in the heap.
+4. Define methods get_min, extract_min, consolidate and insert.
+5. The method get_min returns the minimum element in the heap by returning the key of the variable least.
+6. The method extract_min removes and returns the minimum element in the current heap. It does so by removing the tree that least points to from the current heap’s list of trees and then appending the children of the removed node to the list of trees. The method consolidate is then called before returning the key of the least element.
+7. The method consolidate combines the trees in the heap such that there is at most one tree of any order. It also sets the variable least of the heap to the tree with the smallest element.
+8. The method insert takes a key as argument and adds a node with that key to the heap. It does so by creating an order 0 Fibonacci tree with that key and appending it to list of trees of the heap. It then updates count and, if required, least.
+9. Define the function floor_log2 which takes a number as argument and returns the floor of its base 2 logarithm.
+
+Program/Source Code
+Here is the source code of a Python program to implement a Fibonacci heap. The program output is shown below.
+```
+import math
+ 
+class FibonacciTree:
+    def __init__(self, key):
+        self.key = key
+        self.children = []
+        self.order = 0
+ 
+    def add_at_end(self, t):
+        self.children.append(t)
+        self.order = self.order + 1
+ 
+ 
+class FibonacciHeap:
+    def __init__(self):
+        self.trees = []
+        self.least = None
+        self.count = 0
+ 
+    def insert(self, key):
+        new_tree = FibonacciTree(key)
+        self.trees.append(new_tree)
+        if (self.least is None or key < self.least.key):
+            self.least = new_tree
+        self.count = self.count + 1
+ 
+    def get_min(self):
+        if self.least is None:
+            return None
+        return self.least.key
+ 
+    def extract_min(self):
+        smallest = self.least
+        if smallest is not None:
+            for child in smallest.children:
+                self.trees.append(child)
+            self.trees.remove(smallest)
+            if self.trees == []:
+                self.least = None
+            else:
+                self.least = self.trees[0]
+                self.consolidate()
+            self.count = self.count - 1
+            return smallest.key
+ 
+    def consolidate(self):
+        aux = (floor_log2(self.count) + 1)*[None]
+ 
+        while self.trees != []:
+            x = self.trees[0]
+            order = x.order
+            self.trees.remove(x)
+            while aux[order] is not None:
+                y = aux[order]
+                if x.key > y.key:
+                    x, y = y, x
+                x.add_at_end(y)
+                aux[order] = None
+                order = order + 1
+            aux[order] = x
+ 
+        self.least = None
+        for k in aux:
+            if k is not None:
+                self.trees.append(k)
+                if (self.least is None
+                    or k.key < self.least.key):
+                    self.least = k
+ 
+ 
+def floor_log2(x):
+    return math.frexp(x)[1] - 1
+ 
+ 
+fheap = FibonacciHeap()
+ 
+print('Menu')
+print('insert <data>')
+print('min get')
+print('min extract')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        fheap.insert(data)
+    elif operation == 'min':
+        suboperation = do[1].strip().lower()
+        if suboperation == 'get':
+            print('Minimum value: {}'.format(fheap.get_min()))
+        elif suboperation == 'extract':
+            print('Minimum value removed: {}'.format(fheap.extract_min()))
+ 
+    elif operation == 'quit':
+        break
+```
+Program Explanation
+1. Create an instance of FibonacciHeap.
+2. The user is presented with a menu to perform various operations on the heap.
+3. The corresponding methods are called to perform each operation.
+
+
+## Runtime Test Cases
+```
+
+Case 1:
+Menu
+insert <data>
+min get
+min extract
+quit
+What would you like to do? insert 3
+What would you like to do? insert 2
+What would you like to do? insert 7
+What would you like to do? min get
+Minimum value: 2
+What would you like to do? min extract
+Minimum value removed: 2
+What would you like to do? min extract
+Minimum value removed: 3
+What would you like to do? min extract
+Minimum value removed: 7
+What would you like to do? min extract
+Minimum value removed: None
+What would you like to do? quit
+ 
+Case 2:
+Menu
+insert <data>
+min get
+min extract
+quit
+What would you like to do? insert 1
+What would you like to do? insert 2
+What would you like to do? insert 3
+What would you like to do? insert 4
+What would you like to do? insert 0
+What would you like to do? min extract
+Minimum value removed: 0
+What would you like to do? min extract
+Minimum value removed: 1
+What would you like to do? min extract
+Minimum value removed: 2
+What would you like to do? min extract
+Minimum value removed: 3
+What would you like to do? min extract
+Minimum value removed: 4
 What would you like to do? quit
 ```
