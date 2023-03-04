@@ -513,3 +513,156 @@ What would you like to do? min extract
 Minimum value removed: 4
 What would you like to do? quit
 ```
+
+## 4.  Python program to implement a d-ary heap.
+
+Problem Description
+The program creates a d-ary max-heap and presents a menu to the user to perform various operations on it.
+
+Problem Solution
+1. Create a class D_aryHeap with instance variables items set to an empty list and d. The list items is used to store the d-ary heap while d represents the number of children each node can have in the heap.
+2. Define methods size, parent, child, get, get_max, extract_max, max_heapify, swap and insert.
+3. The method size returns the number of elements in the heap.
+4. The method parent takes an index as argument and returns the index of the parent.
+5. The method child takes an index and position as arguments and returns the index of the child at that position from the left.
+6. The method get takes an index as argument and returns the key at the index.
+7. The method get_max returns the maximum element in the heap by returning the first element in the list items.
+8. The method extract_max returns the the maximum element in the heap and removes it.
+9. The method max_heapify takes an index as argument and modifies the heap structure at and below the node at this index to make it satisfy the heap property.
+10. The method swap takes two indexes as arguments and swaps the corresponding elements in the heap.
+11. The method insert takes a key as argument and adds that key to the heap.
+
+Program/Source Code
+Here is the source code of a Python program to implement a d-ary heap. The program output is shown below.
+```
+class D_aryHeap:
+    def __init__(self, d):
+        self.items = []
+        self.d = d
+ 
+    def size(self):
+        return len(self.items)
+ 
+    def parent(self, i):
+        return (i - 1)//self.d
+ 
+    def child(self, index, position):
+        return index*self.d + (position + 1)
+ 
+    def get(self, i):
+        return self.items[i]
+ 
+    def get_max(self):
+        if self.size() == 0:
+            return None
+        return self.items[0]
+ 
+    def extract_max(self):
+        if self.size() == 0:
+            return None
+        largest = self.get_max()
+        self.items[0] = self.items[-1]
+        del self.items[-1]
+        self.max_heapify(0)
+        return largest
+ 
+    def max_heapify(self, i):
+        largest = i
+        for j in range(self.d):
+            c = self.child(i, j)
+            if (c < self.size() and self.get(c) > self.get(largest)):
+                largest = c
+        if (largest != i):
+            self.swap(largest, i)
+            self.max_heapify(largest)
+ 
+    def swap(self, i, j):
+        self.items[i], self.items[j] = self.items[j], self.items[i]
+ 
+    def insert(self, key):
+        index = self.size()
+        self.items.append(key)
+        while (index != 0):
+            p = self.parent(index)
+            if self.get(p) < self.get(index):
+                self.swap(p, index)
+            index = p
+ 
+ 
+d = int(input('Enter the value of D: '));
+dheap = D_aryHeap(d)
+ 
+print('Menu (this assumes no duplicate keys)')
+print('insert <data>')
+print('max get')
+print('max extract')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0].strip().lower()
+    if operation == 'insert':
+        data = int(do[1])
+        dheap.insert(data)
+    elif operation == 'max':
+        suboperation = do[1].strip().lower()
+        if suboperation == 'get':
+            print('Maximum value: {}'.format(dheap.get_max()))
+        elif suboperation == 'extract':
+            print('Maximum value removed: {}'.format(dheap.extract_max()))
+ 
+    elif operation == 'quit':
+        break
+```
+Program Explanation
+1. The user is prompted to enter the value of the number of children for each node in the heap.
+2. An instance of D_aryHeap is created.
+3. The user is presented with a menu to perform various operations on the heap.
+4. The corresponding methods are called to perform each operation.
+
+```
+Runtime Test Cases
+Case 1:
+Enter the value of D: 5
+Menu (this assumes no duplicate keys)
+insert <data>
+max get
+max extract
+quit
+What would you like to do? insert 3
+What would you like to do? insert 4
+What would you like to do? insert 11
+What would you like to do? insert 7
+What would you like to do? max get
+Maximum value: 11
+What would you like to do? max extract
+Maximum value removed: 11
+What would you like to do? max extract
+Maximum value removed: 7
+What would you like to do? max extract
+Maximum value removed: 4
+What would you like to do? max extract
+Maximum value removed: 3
+What would you like to do? max extract
+Maximum value removed: None
+What would you like to do? quit
+ 
+Case 2:
+Enter the value of D: 2
+Menu (this assumes no duplicate keys)
+insert <data>
+max get
+max extract
+quit
+What would you like to do? insert 1
+What would you like to do? insert 3
+What would you like to do? insert 2
+What would you like to do? max extract
+Maximum value removed: 3
+What would you like to do? max extract
+Maximum value removed: 2
+What would you like to do? max extract
+Maximum value removed: 1
+What would you like to do? quit
+```
