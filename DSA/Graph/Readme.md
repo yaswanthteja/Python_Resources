@@ -1470,3 +1470,279 @@ Distance to 2: 1
 What would you like to do? quit
 ```
 
+
+## 7. Python program to implement the Floyd-Warshall algorithm on a directed graph to find the shortest distance between all pairs of vertices.
+
+Problem Description
+The problem is to find the shortest distance between all pairs of vertices in a weighted directed graph that can have negative edge weights. For the problem to be well-defined, there should be no cycles in the graph with a negative total weight.
+
+Problem Solution
+1. Create classes for Graph and Vertex.
+2. Create a function floyd_warshall that takes a Graph object as argument.
+3. A dictionary distance is created that can be indexed with two vertices and all the values set to infinity.
+4. Another dictionary next_v is created that can be indexed with two vertices and all the values set to None.
+5. The above is implemented by creating a dictionary with keys as the start vertices and values as another inner dictionary. This inner dictionary contains keys as the destination vertices and value as the the corresponding distance for each vertex pair.
+6. distance[u][v] will contain the shortest distance from vertex u to v.
+7. next_v[u][v] will be the next vertex after vertex v in the shortest path from u to v. It is None if there is no path between them. next_v[w][w] will be None for all w.
+8. For all edges from v to n, distance[v][n] = weight(edge(v, n)) and next_v[v][n] = n.
+9. For all vertices v, distance[v][v] = 0 and next_v[v][v] = None.
+10. The algorithm then performs distance[v][w] = min(distance[v][w], distance[v][p] + distance[p][w]) for each possible pair v, w of vertices.
+11. The above is repeated for each vertex p in the graph.
+12. Whenever distance[v][w] is given a new minimum value, next_v[v][w] is updated to next_v[v][p].
+13. The dictionaries distance and next_v are returned.
+14. The function print_path is created to print the shortest path from one vertex to another vertex using the dictionary next_v.
+15. Formally, the Floyd-Warshall algorithm defines W(k)[i][j] to refer to the shortest distance from i to j using only the vertices 1, …, k where i and j are not necessarily included.
+16. For all edges (i, j), W(0)[i][j] = weight(edge(i, j)).
+17. To find W(k)[i][j], note that in the shortest path from i to j, we can either have k or not have k included.
+18. If k is not present, W(k)[i][j] = W(k – 1)[i][j].
+19. If k is present, W(k)[i][j] = W(k – 1)[i][k] + W(k – 1)[k][j].
+20. So we simply set W(k)[i][j] equal to the minimum of the above two values.
+21. This program is an implementation of the Floyd-Warshall algorithm but uses only O(n^2) space instead of O(n^3) space which a straightforward implementation of the algorithm would take.
+
+Program/Source Code
+Here is the source code of a Python program to implement Floyd-Warshall algorithm on a graph. The program output is shown below.
+```
+class Graph:
+    def __init__(self):
+        # dictionary containing keys that map to the corresponding vertex object
+        self.vertices = {}
+ 
+    def add_vertex(self, key):
+        """Add a vertex with the given key to the graph."""
+        vertex = Vertex(key)
+        self.vertices[key] = vertex
+ 
+    def get_vertex(self, key):
+        """Return vertex object with the corresponding key."""
+        return self.vertices[key]
+ 
+    def __contains__(self, key):
+        return key in self.vertices
+ 
+    def add_edge(self, src_key, dest_key, weight=1):
+        """Add edge from src_key to dest_key with given weight."""
+        self.vertices[src_key].add_neighbour(self.vertices[dest_key], weight)
+ 
+    def does_edge_exist(self, src_key, dest_key):
+        """Return True if there is an edge from src_key to dest_key."""
+        return self.vertices[src_key].does_it_point_to(self.vertices[dest_key])
+ 
+    def __len__(self):
+        return len(self.vertices)
+ 
+    def __iter__(self):
+        return iter(self.vertices.values())
+ 
+ 
+class Vertex:
+    def __init__(self, key):
+        self.key = key
+        self.points_to = {}
+ 
+    def get_key(self):
+        """Return key corresponding to this vertex object."""
+        return self.key
+ 
+    def add_neighbour(self, dest, weight):
+        """Make this vertex point to dest with given edge weight."""
+        self.points_to[dest] = weight
+ 
+    def get_neighbours(self):
+        """Return all vertices pointed to by this vertex."""
+        return self.points_to.keys()
+ 
+    def get_weight(self, dest):
+        """Get weight of edge from this vertex to dest."""
+        return self.points_to[dest]
+ 
+    def does_it_point_to(self, dest):
+        """Return True if this vertex points to dest."""
+        return dest in self.points_to
+ 
+ 
+def floyd_warshall(g):
+    """Return dictionaries distance and next_v.
+ 
+    distance[u][v] is the shortest distance from vertex u to v.
+    next_v[u][v] is the next vertex after vertex v in the shortest path from u
+    to v. It is None if there is no path between them. next_v[u][u] should be
+    None for all u.
+ 
+    g is a Graph object which can have negative edge weights.
+    """
+    distance = {v:dict.fromkeys(g, float('inf')) for v in g}
+    next_v = {v:dict.fromkeys(g, None) for v in g}
+ 
+    for v in g:
+        for n in v.get_neighbours():
+            distance[v][n] = v.get_weight(n)
+            next_v[v][n] = n
+ 
+    for v in g:
+         distance[v][v] = 0
+         next_v[v][v] = None
+ 
+    for p in g: 
+        for v in g:
+            for w in g:
+                if distance[v][w] > distance[v][p] + distance[p][w]:
+                    distance[v][w] = distance[v][p] + distance[p][w]
+                    next_v[v][w] = next_v[v][p]
+ 
+    return distance, next_v
+ 
+ 
+def print_path(next_v, u, v):
+    """Print shortest path from vertex u to v.
+ 
+    next_v is a dictionary where next_v[u][v] is the next vertex after vertex u
+    in the shortest path from u to v. It is None if there is no path between
+    them. next_v[u][u] should be None for all u.
+ 
+    u and v are Vertex objects.
+    """
+    p = u
+    while (next_v[p][v]):
+        print('{} -> '.format(p.get_key()), end='')
+        p = next_v[p][v]
+    print('{} '.format(v.get_key()), end='')
+ 
+ 
+g = Graph()
+print('Menu')
+print('add vertex <key>')
+print('add edge <src> <dest> <weight>')
+print('floyd-warshall')
+print('display')
+print('quit')
+ 
+while True:
+    do = input('What would you like to do? ').split()
+ 
+    operation = do[0]
+    if operation == 'add':
+        suboperation = do[1]
+        if suboperation == 'vertex':
+            key = int(do[2])
+            if key not in g:
+                g.add_vertex(key)
+            else:
+                print('Vertex already exists.')
+        elif suboperation == 'edge':
+            src = int(do[2])
+            dest = int(do[3])
+            weight = int(do[4])
+            if src not in g:
+                print('Vertex {} does not exist.'.format(src))
+            elif dest not in g:
+                print('Vertex {} does not exist.'.format(dest))
+            else:
+                if not g.does_edge_exist(src, dest):
+                    g.add_edge(src, dest, weight)
+                else:
+                    print('Edge already exists.')
+ 
+    elif operation == 'floyd-warshall':
+        distance, next_v = floyd_warshall(g)
+        print('Shortest distances:')
+        for start in g:
+            for end in g:
+                if next_v[start][end]:
+                    print('From {} to {}: '.format(start.get_key(),
+                                                    end.get_key()),
+                            end = '')
+                    print_path(next_v, start, end)
+                    print('(distance {})'.format(distance[start][end]))
+ 
+    elif operation == 'display':
+        print('Vertices: ', end='')
+        for v in g:
+            print(v.get_key(), end=' ')
+        print()
+ 
+        print('Edges: ')
+        for v in g:
+            for dest in v.get_neighbours():
+                w = v.get_weight(dest)
+                print('(src={}, dest={}, weight={}) '.format(v.get_key(),
+                                                             dest.get_key(), w))
+        print()
+ 
+    elif operation == 'quit':
+        break
+```
+Program Explanation
+1. An instance of Graph is created.
+2. A menu is presented to the user to perform various operations on the graph.
+3. To find shortest distances between all pairs, floyd_warshall is called to get the dictionaries distance, next_v.
+4. print_path is called on the dictionary next_v for each pair of vertices to print the paths and the dictionary distance is used to print the distance between each pair.
+
+
+## Runtime Test Cases
+```
+Case 1:
+Menu
+add vertex <key>
+add edge <src> <dest> <weight>
+floyd-warshall
+display
+quit
+What would you like to do? add vertex 1
+What would you like to do? add vertex 2
+What would you like to do? add vertex 3
+What would you like to do? add vertex 4
+What would you like to do? add vertex 5
+What would you like to do? add edge 1 2 3
+What would you like to do? add edge 1 5 -4
+What would you like to do? add edge 1 3 8
+What would you like to do? add edge 2 5 7
+What would you like to do? add edge 2 4 1
+What would you like to do? add edge 3 2 4
+What would you like to do? add edge 4 3 -5
+What would you like to do? add edge 4 1 2
+What would you like to do? add edge 5 4 6
+What would you like to do? floyd-warshall
+Shortest distances:
+From 1 to 2: 1 -> 5 -> 4 -> 3 -> 2 (distance 1)
+From 1 to 3: 1 -> 5 -> 4 -> 3 (distance -3)
+From 1 to 4: 1 -> 5 -> 4 (distance 2)
+From 1 to 5: 1 -> 5 (distance -4)
+From 2 to 1: 2 -> 4 -> 1 (distance 3)
+From 2 to 3: 2 -> 4 -> 3 (distance -4)
+From 2 to 4: 2 -> 4 (distance 1)
+From 2 to 5: 2 -> 4 -> 1 -> 5 (distance -1)
+From 3 to 1: 3 -> 2 -> 4 -> 1 (distance 7)
+From 3 to 2: 3 -> 2 (distance 4)
+From 3 to 4: 3 -> 2 -> 4 (distance 5)
+From 3 to 5: 3 -> 2 -> 4 -> 1 -> 5 (distance 3)
+From 4 to 1: 4 -> 1 (distance 2)
+From 4 to 2: 4 -> 3 -> 2 (distance -1)
+From 4 to 3: 4 -> 3 (distance -5)
+From 4 to 5: 4 -> 1 -> 5 (distance -2)
+From 5 to 1: 5 -> 4 -> 1 (distance 8)
+From 5 to 2: 5 -> 4 -> 3 -> 2 (distance 5)
+From 5 to 3: 5 -> 4 -> 3 (distance 1)
+From 5 to 4: 5 -> 4 (distance 6)
+What would you like to do? quit
+ 
+Case 2:
+Menu
+add vertex <key>
+add edge <src> <dest> <weight>
+floyd-warshall
+display
+quit
+What would you like to do? add vertex 1
+What would you like to do? add vertex 2
+What would you like to do? add vertex 3
+What would you like to do? add edge 1 2 10
+What would you like to do? add edge 2 3 -7
+What would you like to do? add edge 1 3 5
+What would you like to do? floyd-warshall
+Shortest distances:
+From 1 to 2: 1 -> 2 (distance 10)
+From 1 to 3: 1 -> 2 -> 3 (distance 3)
+From 2 to 3: 2 -> 3 (distance -7)
+What would you like to do? quit
+```
+
