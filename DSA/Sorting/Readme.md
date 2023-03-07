@@ -237,6 +237,71 @@ Sorted list: [1]
 
 
 ```
+## 5. Python program to implement quicksort.
 
+Problem Description
+The program sorts a list by quicksort.
 
+Problem Solution
+1. Create a function quicksort that takes a list and two variables start and end as arguments.
+2. If end – start is not greater than 1, return.
+3. Find the index of the pivot, p by calling the function partition with the list and variables start and end as arguments.
+4. Call quicksort with the list and the variables start and p as arguments to sort the list from start to p – 1.
+5. Call quicksort with the list, the expression p + 1 and end as arguments to sort the list from p + 1 to end – 1.
+6. Define the function partition that takes a list and two variables start and end as arguments.
+7. The function parititon uses Hoare’s partition scheme to partition the list.
 
+Program/Source Code
+Here is the source code of a Python program to implement quicksort. The program output is shown below.
+```
+def quicksort(alist, start, end):
+    '''Sorts the list from indexes start to end - 1 inclusive.'''
+    if end - start > 1:
+        p = partition(alist, start, end)
+        quicksort(alist, start, p)
+        quicksort(alist, p + 1, end)
+ 
+ 
+def partition(alist, start, end):
+    pivot = alist[start]
+    i = start + 1
+    j = end - 1
+ 
+    while True:
+        while (i <= j and alist[i] <= pivot):
+            i = i + 1
+        while (i <= j and alist[j] >= pivot):
+            j = j - 1
+ 
+        if i <= j:
+            alist[i], alist[j] = alist[j], alist[i]
+        else:
+            alist[start], alist[j] = alist[j], alist[start]
+            return j
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+quicksort(alist, 0, len(alist))
+print('Sorted list: ', end='')
+print(alist)
+```
+Program Explanation
+1. The user is prompted to enter a list of numbers.
+2. The list is passed to the quicksort function.
+3. The sorted list is displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Enter the list of numbers: 5 2 8 10 3 0 4
+Sorted list: [0, 2, 3, 4, 5, 8, 10]
+ 
+Case 2:
+Enter the list of numbers: 7 4 3 2 1
+Sorted list: [1, 2, 3, 4, 7]
+ 
+Case 3:
+Enter the list of numbers: 2
+Sorted list: [2]
+```
