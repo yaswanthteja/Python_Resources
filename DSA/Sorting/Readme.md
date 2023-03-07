@@ -158,3 +158,85 @@ Sorted list: [-5, 1, 2, 3, 7, 10]
 
 ```
 
+## 4.Python program to implement merge sort.
+
+Problem Description
+The program sorts a list by merge sort.
+
+Problem Solution
+1. Create a function merge_sort that takes a list and two variables start and end as arguments.
+2. The function merge_sort will sort the list from indexes start to end – 1 inclusive.
+3. If end – start is not greater than 1, then return.
+4. Otherwise, set mid equal to the floor of (start + end)/2.
+5. Call merge_sort with the same list and with start = start and end = mid as arguments.
+6. Call merge_sort with the same list and with start = mid and end = end as arguments.
+7. Call the function merge_list, passing the list and the variables start, mid and end as arguments.
+8. The function merge_list takes a list and three numbers, start, mid and end as arguments and assuming the list is sorted from indexes start to mid – 1 and from mid to end – 1, merges them to create a new sorted list from indexes start to end – 1.
+
+Program/Source Code
+Here is the source code of a Python program to implement merge sort. The program output is shown below.
+```
+def merge_sort(alist, start, end):
+    '''Sorts the list from indexes start to end - 1 inclusive.'''
+    if end - start > 1:
+        mid = (start + end)//2
+        merge_sort(alist, start, mid)
+        merge_sort(alist, mid, end)
+        merge_list(alist, start, mid, end)
+ 
+def merge_list(alist, start, mid, end):
+    left = alist[start:mid]
+    right = alist[mid:end]
+    k = start
+    i = 0
+    j = 0
+    while (start + i < mid and mid + j < end):
+        if (left[i] <= right[j]):
+            alist[k] = left[i]
+            i = i + 1
+        else:
+            alist[k] = right[j]
+            j = j + 1
+        k = k + 1
+    if start + i < mid:
+        while k < end:
+            alist[k] = left[i]
+            i = i + 1
+            k = k + 1
+    else:
+        while k < end:
+            alist[k] = right[j]
+            j = j + 1
+            k = k + 1
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+merge_sort(alist, 0, len(alist))
+print('Sorted list: ', end='')
+print(alist)
+```
+Program Explanation
+1. The user is prompted to enter a list of numbers.
+2. The list is passed to the merge_sort function.
+3. The sorted list is displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Enter the list of numbers: 3 1 5 8 2 5 1 3
+Sorted list: [1, 1, 2, 3, 3, 5, 5, 8]
+ 
+Case 2:
+Enter the list of numbers: 5 3 2 1 0
+Sorted list: [0, 1, 2, 3, 5]
+ 
+Case 3:
+Enter the list of numbers: 1
+Sorted list: [1]
+
+
+```
+
+
+
