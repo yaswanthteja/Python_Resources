@@ -305,3 +305,75 @@ Case 3:
 Enter the list of numbers: 2
 Sorted list: [2]
 ```
+
+## 6.Python program to implement comb sort.
+
+Problem Description
+The program sorts a list by comb sort.
+
+Problem Solution
+1. Create a function comb_sort that takes a list as argument.
+2. Set gap equal to the length of the list.
+3. Choose an appropriate shrink factor. Here shrink = 1.3.
+4. Create a while loop that runs as long as there was at least one swap performed in the previous iteration of the loop (or if this is the first iteration of the loop).
+5. Set gap to the floor of gap/shrink.
+6. If gap becomes less than 1, set it to 1.
+7. Perform bubble sort on the list but only compare and swap elements that are at a distance of gap.
+8. If gap was not one, then continue the loop even if there weren’t any swaps performed.
+
+Program/Source Code
+Here is the source code of a Python program to implement comb sort. The program output is shown below.
+```
+def comb_sort(alist):
+    def swap(i, j):
+        alist[i], alist[j] = alist[j], alist[i]
+ 
+    gap = len(alist)
+    shrink = 1.3
+ 
+    no_swap = False
+    while not no_swap:
+        gap = int(gap/shrink)
+ 
+        if gap < 1:
+            gap = 1
+            no_swap = True
+        else:
+            no_swap = False
+ 
+        i = 0
+        while i + gap < len(alist):
+            if alist[i] > alist[i + gap]:
+                swap(i, i + gap)
+                no_swap = False
+            i = i + 1
+ 
+ 
+alist = input('Enter the list of numbers: ').split()
+alist = [int(x) for x in alist]
+comb_sort(alist)
+print('Sorted list: ', end='')
+print(alist)
+```
+
+Program Explanation
+1. The user is prompted to enter a list of numbers.
+2. The list is passed to the comb_sort function.
+3. The sorted list is displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Enter the list of numbers: 2 8 4 3 7 10 23 4 5
+Sorted list: [2, 3, 4, 4, 5, 7, 8, 10, 23]
+ 
+Case 2:
+Enter the list of numbers: 5 4 3 2 1
+Sorted list: [1, 2, 3, 4, 5]
+ 
+Case 3:
+Enter the list of numbers: 3
+Sorted list: [3]
+
+```
+
