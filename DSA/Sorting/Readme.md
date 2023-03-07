@@ -460,3 +460,52 @@ Sorted list: [3]
 
 ```
 
+## 8. Python Program to sort a list according to the length of the elements.
+
+Problem Description
+The program takes a list and sorts the list according to the length of the elements.
+
+Problem Solution
+1. Take in the number of elements for the first list and store it in a variable.
+2. Take in the elements of the list one by one.
+3. Then sort the list giving the length of the elements as the key.
+4. Display the sorted list.
+5. Exit.
+
+Program/Source Code
+Here is source code of the Python Program to sort a list according to the length of the elements. The program output is also shown below.
+```
+a=[]
+n=int(input("Enter number of elements:"))
+for i in range(1,n+1):
+    b=input("Enter element:")
+    a.append(b)
+a.sort(key=len)
+print(a)
+```
+Program Explanation
+1. User must enter the number of elements for the first list and store it in a variable.
+2. User must then enter the elements of the list one by one using a for loop and store it in a list.
+3. Then the list is sorted using the length of the elements as the key.
+4. The sorted list is then printed.
+
+```
+Runtime Test Cases
+ 
+Case 1:
+Enter number of elements:4
+Enter element:"Apple"
+Enter element:"Ball"
+Enter element:"Cat"
+Enter element:"Dog"
+['Cat', 'Dog', 'Ball', 'Apple']
+ 
+Case 2:
+Enter number of elements:4
+Enter element:"White"
+Enter element:"Red"
+Enter element:"Purple"
+Enter element:"Orange"
+['Red', 'White', 'Purple', 'Orange']
+
+```
