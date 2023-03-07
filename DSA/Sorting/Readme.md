@@ -376,4 +376,87 @@ Enter the list of numbers: 3
 Sorted list: [3]
 
 ```
+## 7.Python program to implement radix sort.
+
+Problem Description
+The program sorts a list by radix sort.
+
+Problem Solution
+1. Create a function radix_sort that takes a list and a variable base as arguments.
+2. Create an inner function key_factory that takes two variables digit and base as arguments and returns a function.
+3. The function key returned takes a list and a variable index as arguments. It returns a digit of the element at that index in the list. The position of the digit it returns is given by the variable digit passed to key_factory. The digit position is found with the element represented in that base. The digit position uses zero-based numbering.
+4. Inside the function radix_sort, find the largest element in the list.
+5. Let exp iterate from 0 to the highest digit position of the largest element in the list.
+6. For each value of exp, sort the elements of the list on digit exp.
+7. The sorting is done by calling the counting_sort function. The function then sorts the list using the fact that the largest element is base – 1 and using the function key. The function key is returned by the key_factory function when it is passed exp as the digit position and base as arguments.
+8. Create a function counting_sort that takes a list, a variable largest and a function key as arguments.
+9. Inside the function create a list c of zeros of length largest + 1.
+10. For each element in the input list, retrieve its key n by calling the function key and then increment the nth index of the list c.
+11. The list c now contains the frequency of each key in the input list.
+12. For each index from 1 to the length of c – 1, add to the current element the previous element. Before the loop, decrement c[0] since this will cause all the elements to be decremented by one after the loop finishes. Thus, the list c will contain the last index of each element in our sorted array.
+13. Create the output array with size the same as that of the input array.
+14. Create a loop where the loop variable i iterates from the length of the input list – 1 to 0.
+15. In each iteration of the loop set the pth element of the output list equal to the ith element of the input list. The value p is the element of the list c at the index given by the key of the element of the input list. The value where p is stored in c is then decremented.
+
+Program/Source Code
+Here is the source code of a Python program to implement radix sort. The program output is shown below.
+```
+def radix_sort(alist, base=10):
+    if alist == []:
+        return
+ 
+    def key_factory(digit, base):
+        def key(alist, index):
+            return ((alist[index]//(base**digit)) % base)
+        return key
+    largest = max(alist)
+    exp = 0
+    while base**exp <= largest:
+        alist = counting_sort(alist, base - 1, key_factory(exp, base))
+        exp = exp + 1
+    return alist
+ 
+def counting_sort(alist, largest, key):
+    c = [0]*(largest + 1)
+    for i in range(len(alist)):
+        c[key(alist, i)] = c[key(alist, i)] + 1
+ 
+    # Find the last index for each element
+    c[0] = c[0] - 1 # to decrement each element for zero-based indexing
+    for i in range(1, largest + 1):
+        c[i] = c[i] + c[i - 1]
+ 
+    result = [None]*len(alist)
+    for i in range(len(alist) - 1, -1, -1):
+        result[c[key(alist, i)]] = alist[i]
+        c[key(alist, i)] = c[key(alist, i)] - 1
+ 
+    return result
+ 
+alist = input('Enter the list of (nonnegative) numbers: ').split()
+alist = [int(x) for x in alist]
+sorted_list = radix_sort(alist)
+print('Sorted list: ', end='')
+print(sorted_list)
+```
+Program Explanation
+1. The user is prompted to enter a list of numbers.
+2. The list is passed to the radix_sort function and the returned list is the sorted list.
+3. The sorted list is displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Enter the list of (nonnegative) numbers: 38 20 1 3 4 0 2 5 1 3 8 2 9 10
+Sorted list: [0, 1, 1, 2, 2, 3, 3, 4, 5, 8, 9, 10, 20, 38]
+ 
+Case 2:
+Enter the list of (nonnegative) numbers: 7 5 3 2 1
+Sorted list: [1, 2, 3, 5, 7]
+ 
+Case 3:
+Enter the list of (nonnegative) numbers: 3
+Sorted list: [3]
+
+```
 
