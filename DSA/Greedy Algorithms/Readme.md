@@ -188,5 +188,75 @@ A maximum-size subset of activities that are mutually compatible is {0}
 ```
 
 
+## 3. Python program to find smallest set of unit-length closed intervals that contains all points using greedy algorithm.
+
+Problem Description
+We are given a set of points on the x-axis. We have to find the minimum number of closed intervals of length 1 that will contain all of these points.
+
+Problem Solution
+1. The function smallest_unit_length_intervals is defined.
+2. It takes a list points as argument.
+3. points is a list of numbers that represent points on the x-axis.
+4. The list points is first sorted in ascending order.
+5. The algorithm works by first including the closed interval [p, p + 1] where p is the rightmost point (i.e. the point with the smallest value).
+6. All the points that are included within this interval are discarded.
+7. The next rightmost point q is selected and the closed interval [q, q + 1] is included.
+8. The above process continues until there are no remaining points.
+9. The solution set is returned which is the smallest-size set of closed intervals that contain all the given points.
+
+Program/Source Code
+Here is the source code of a Python program to find smallest set of unit-length closed smallest_unit_length_intervals that contains all points using greedy algorithm. The program output is shown below.
+```
+def smallest_unit_length_intervals(points):
+    """Return smallest set with unit-length intervals that includes all points.
+ 
+    A smallest set containing closed intervals is returned such that each point
+    is included in some interval.
+    The intervals are in the form of tuples (a, b).
+ 
+    points is a list of points on the x-axis.
+    """
+    points.sort()
+ 
+    smallest_set = set()
+    end_of_last_interval = float('-inf')
+    for p in points:
+        if end_of_last_interval <= p:
+            interval = (p, p + 1)
+            smallest_set.add(interval)
+            end_of_last_interval = p + 1
+ 
+    return smallest_set
+ 
+ 
+points = input('Enter the points: ').split()
+points = [float(p) for p in points]
+ 
+ans = smallest_unit_length_intervals(points)
+print('A smallest-size set containing unit-length intervals '
+      'that contain all of these points is', ans)
+```
+Program Explanation
+1. The user is prompted to enter the points.
+2. The function smallest_unit_length_intervals is called on these points to get the smallest-size set containing unit-length intervals that contain all the given points.
+3. This set is then displayed.
+
+```
+Runtime Test Cases
+Case 1:
+Enter the points: 1 1.5 1.8 2.1 2.2 3.4 4.5 5.6 5.9
+A smallest-size set containing unit-length intervals that contain all of these points is {(1.0, 2.0), (4.5, 5.5), (2.1, 3.1), (3.4, 4.4), (5.6, 6.6)}
+ 
+Case 2:
+Enter the points: 2.1 10.3 11.2
+A smallest-size set containing unit-length intervals that contain all of these points is {(10.3, 11.3), (2.1, 3.1)}
+ 
+Case 3:
+Enter the points: 5
+A smallest-size set containing unit-length intervals that contain all of these points is {(5.0, 6.0)}
+
+```
+
+
 
 
