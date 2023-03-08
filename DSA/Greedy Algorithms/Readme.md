@@ -1,7 +1,8 @@
 
 ## 1.Python program to solve the fractional knapsack problem using greedy algorithm.
 
-Problem Description
+#### Problem Description
+
 In the fractional knapsack problem, we are given a set of n items. Each item i has a value v(i) and a weight w(i) where 0 <= i < n. We are given a maximum weight W. The problem is to find how much of each item we should take such that the total weight does not exceed W and the total value is maximized. Thus, we want to find f such that sum of v(i)f(i) over all i is maximized, w(i)f(i) <= W for all i and 0 <= f(i) <= 1 for all i.
 
 Problem Solution
@@ -101,6 +102,90 @@ The fractions in which the items should be taken: [0.5]
 ```
 
 
+## 2.Python program to solve the interval scheduling problem using greedy algorithm.
+
+Problem Description
+In the interval scheduling problem, we are given n activities numbered 0 to n – 1. Each activity i has a start time s(i) and a finish time f(i). Two activities i and j are mutually compatible if s(i) >= f(j) or s(j) >= f(i). The problem is to find a largest subset of activities that are mutually compatible.
+
+Problem Solution
+1. The function interval_scheduling is defined.
+2. It takes two lists stimes and ftimes as arguments.
+3. stimes[i] is the start time of activity i.
+4. ftimes[i] is the finish time of activity i.
+5. The algorithm works by first sorting the activities in order of earliest finish times.
+6. Then the activity with the earliest finish time is included in the solution set.
+7. All the activities that are incompatible with the activity just added are removed.
+8. The above two steps are repeated until there are no remaining activities.
+9. The solution set is returned which is a maximum-size subset of mutually compatible activities.
+
+Program/Source Code
+Here is the source code of a Python program to solve the interval scheduling problem using greedy algorithm. The program output is shown below.
+```
+def interval_scheduling(stimes, ftimes):
+    """Return largest set of mutually compatible activities.
+ 
+    This will return a maximum-set subset of activities (numbered from 0 to n -
+    1) that are mutually compatible. Two activities are mutually compatible if
+    the start time of one activity is not less then the finish time of the other.
+ 
+    stimes[i] is the start time of activity i.
+    ftimes[i] is the finish time of activity i.
+    """
+    # index = [0, 1, 2, ..., n - 1] for n items
+    index = list(range(len(stimes)))
+    # sort according to finish times
+    index.sort(key=lambda i: ftimes[i])
+ 
+    maximal_set = set()
+    prev_finish_time = 0
+    for i in index:
+        if stimes[i] >= prev_finish_time:
+            maximal_set.add(i)
+            prev_finish_time = ftimes[i]
+ 
+    return maximal_set
+ 
+ 
+n = int(input('Enter number of activities: '))
+stimes = input('Enter the start time of the {} activities in order: '
+              .format(n)).split()
+stimes = [int(st) for st in stimes]
+ftimes = input('Enter the finish times of the {} activities in order: '
+               .format(n)).split()
+ftimes = [int(ft) for ft in ftimes]
+ 
+ans = interval_scheduling(stimes, ftimes)
+print('A maximum-size subset of activities that are mutually compatible is', ans)
+
+```
+Program Explanation
+1. The user is prompted to enter the number of activities n.
+2. The user is then asked to enter the start and finish time of all n activities.
+3. The function interval_scheduling is called to get a largest subset of mutually compatible activities.
+4. The result is then displayed.
+
+
+```
+Runtime Test Cases
+Case 1:
+Enter number of activities: 11
+Enter the start time of the 11 activities in order: 1 3 0 5 3 5 6 8 8 2 12
+Enter the finish times of the 11 activities in order: 4 5 6 7 9 9 10 11 12 14 16
+A maximum-size subset of activities that are mutually compatible is {0, 10, 3, 7}
+ 
+Case 2:
+Enter number of activities: 5
+Enter the start time of the 5 activities in order: 1 2 3 4 5
+Enter the finish times of the 5 activities in order: 2 3 4 5 6
+A maximum-size subset of activities that are mutually compatible is {0, 1, 2, 3, 4}
+ 
+Case 3:
+Enter number of activities: 1
+Enter the start time of the 1 activities in order: 1
+Enter the finish times of the 1 activities in order: 2
+A maximum-size subset of activities that are mutually compatible is {0}
+
+```
 
 
 
