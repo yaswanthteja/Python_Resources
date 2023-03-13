@@ -304,7 +304,7 @@ If we want to run the tests in both files, we can use the following line:
 >>>python -m unittest -v
 ```
 The -v makes the output a bit more verbose, which can be useful when running several tests at once:
-
+```
 test_diff (teste.test.TestCalculations) ... ok
 test_product (teste.test.TestCalculations) ... ok
 test_quotient (teste.test.TestCalculations) ... ok
@@ -315,6 +315,7 @@ test_upper (teste.test_str.TestStringMethods) ... ok
 ----------------------------------------------------------------------
 Ran 7 tests in 0.002s
 OK
+```
 We can also specify a single file to be run:
 ```
 >>>python -m unittest -v tests.test
