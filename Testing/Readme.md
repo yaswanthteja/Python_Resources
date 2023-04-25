@@ -1,11 +1,11 @@
 
 # Python Unit Testing
 
-Unit tests are segments of code written to test other pieces of code, typically a single function or method, that we refer to as a unit. They are a very important part of the software development process, as they help to ensure that code works as intended and catch bugs early on. 
+`Unit tests` are segments of code written to test other pieces of code, typically a single function or method, that we refer to as a unit. They are a very important part of the software development process, as they help to ensure that code works as intended and catch bugs early on. 
 
 the writing of unit tests in Python, from understanding the assert statement to using a framework designed specifically for this kind of task — and following Python unit testing best practices.
 
-Python has two main frameworks to make unit testing easier: unittest and PyTest. The first one has been part of Python’s standard library since Python 2.1 and that’s the one we’re focused on in this article.
+Python has two main frameworks to make unit testing easier: `unittest` and `PyTest`. The first one has been part of Python’s standard library since Python 2.1 and that’s the one we’re focused on in this article.
 
 To follow along with the unit test tutorial, you don’t need any advanced knowledge, but we do expect you to have a basic understanding of how Python functions and classes work.
 
@@ -43,7 +43,7 @@ assert is very simple to use. Understanding it is critical for testing purposes,
 
 
 
-  The unittest Module
+ ##  The unittest Module
 The unittest module is a framework designed to make our lives easier when it comes to testing code. The module works based on some important object-oriented concepts, and that’s why you need to understand the basics of classes and methods in Python.
 
 A test case is considered a single unit of testing, and it’s represented by the TestCase class. Among the numerous tools provided by unittest that allow us to test code, this class is one of the most important ones. It’s used as a base class to create our own test cases that enable us to run multiple tests at once.
