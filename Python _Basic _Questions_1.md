@@ -169,7 +169,7 @@ Ans: Xrange returns the xrange object while range returns the list, and uses the
 ### 25. What is module and package in Python?
 Ans: In Python, module is the way to structure program. Each Python program file is a module, which imports other modules like objects and attributes.
 The folder of Python program is a package of modules. A package can have modules or subfolders.
-
+[Difference between Modules & Packages & Libraries](https://dev.to/yaswanthteja/differences-between-python-modules-packages-libraries-and-frameworks-37f8)
 
 
 
