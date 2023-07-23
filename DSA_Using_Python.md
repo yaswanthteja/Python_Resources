@@ -104,7 +104,7 @@ List after Adding element at last  [34, 54, 11, 67, 89, 43, 94, 11]
  ```
 pop(index): Removes and returns the item at the given index from the list.
 insert(index, item): Add the item at the specified position(index) in the list
-append(item): Add item at the end of the list.
+append(item): Add the item at the end of the list.
 sample_list = [34, 54, 67, 89, 11, 43, 94]
 
 print("Original list ", sample_list)
