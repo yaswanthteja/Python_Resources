@@ -17,7 +17,7 @@ Problem Solution
 10. The method display traverses the list from the first node and prints the data of each node.
 11. Create an instance of LinkedList and present the user with a menu to perform operations on the list.
 
-Program/Source Code
+### Program/Source Code
 Here is the source code of a Python program to create a singly linked list and illustrate its operations. The program output is shown below.
 ```
 class Node:
@@ -132,7 +132,7 @@ while True:
     elif operation == 'quit':
         break
 ```
-Program Explanation
+### Program Explanation
 1. An instance of LinkedList is created.
 2. The user is presented with a menu to perform various operations on the list.
 3. The corresponding methods are called to perform each operation.
@@ -209,7 +209,7 @@ Problem Solution
 10. The method display traverses the list from the first node and prints the data of each node. It stops when it reaches the first node again.
 11. Create an instance of CircularLinkedList and present the user with a menu to perform operations on the list.
 
-Program/Source Code
+### Program/Source Code
 Here is the source code of a Python program to demonstrate a circular single linked list. The program output is shown below.
 ```
 class Node:
@@ -329,7 +329,7 @@ while True:
     elif operation == 'quit':
         break
  ```
-Program Explanation
+### Program Explanation
 1. An instance of CircularLinkedList is created.
 2. The user is presented with a menu to perform various operations on the list.
 3. The corresponding methods are called to perform each operation.
