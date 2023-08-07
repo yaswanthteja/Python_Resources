@@ -16,5 +16,6 @@
 ###  [DSA_Using_Python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/DSA_Using_Python.md)
 
 - [Single Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Single_Linkedlist)
+- [Double Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Double_Linked_List)
 
 
