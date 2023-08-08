@@ -15,6 +15,7 @@
 -  [Testing](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Testing/Readme.md)
 ###  [DSA_Using_Python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/DSA_Using_Python.md)
 
+- [Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Linked_list)
 - [Single Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Single_Linkedlist)
 - [Double Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Double_Linked_List)
 
