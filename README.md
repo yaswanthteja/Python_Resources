@@ -18,5 +18,6 @@
 - [Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Linked_list)
 - [Single Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Single_Linkedlist)
 - [Double Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Double_Linked_List)
+- [Stack](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Stack)
 
 
