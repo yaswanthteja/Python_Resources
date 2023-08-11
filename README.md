@@ -20,5 +20,6 @@
 - [Double Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Double_Linked_List)
 - [Stack](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Stack)
 - [Queue](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Queue)
+- [Trees](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Tree)
 
 
