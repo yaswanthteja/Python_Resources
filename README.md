@@ -22,5 +22,6 @@
 - [Queue](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Queue)
 - [Trees](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Tree)
 - [Heap](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Heap)
+- [Graph](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Graph)
 
 
