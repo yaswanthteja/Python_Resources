@@ -23,5 +23,6 @@
 - [Trees](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Tree)
 - [Heap](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Heap)
 - [Graph](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Graph)
+- [Searching](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Searching)
 
 
