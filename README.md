@@ -25,5 +25,6 @@
 - [Graph](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Graph)
 - [Searching](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Searching)
 - [Sorting](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Sorting)
+- [Greedy Algorithm](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Greedy%20Algorithms)
 
 
