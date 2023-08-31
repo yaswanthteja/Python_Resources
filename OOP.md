@@ -31,31 +31,31 @@ Output:
 Name created = Interviewbit
 
 ### 4. Explain the differences between override and new modifiers.
-Ans: The base class function is not to be utilised; instead, the new modifier instructs the compiler to use the new implementation. When overriding a base class function inside a child class, the Override modifier is helpful.
+Ans: The base class function is not to be utilized; instead, the new modifier instructs the compiler to use the new implementation. When overriding a base class function inside a child class, the Override modifier is helpful.
 
 ### 5. Why do we finalise?
-Ans: Before the trash collection function is called, unmanaged resources are released and cleaned up using the finalise method. Tasks involving memory management are facilitated by this.
+Ans: Before the trash collection function is called, unmanaged resources are released and cleaned up using the finalize method. Tasks involving memory management are facilitated by this.
 
 ### 6. What does Python's init function do?
-Ans: The Java constructors and the init method both function identically. As soon as an object is created, the method is called. When an object is first created, it is helpful for initialising any characteristics or default behaviours.
+Ans: The Java constructors and the init method both function identically. As soon as an object is created, the method is called. When an object is first created, it is helpful for initializing any characteristics or default behaviors.
 
 ### 7. How can you determine whether a class is a subclass of another class?
-Ans: This is accomplished by utilising a Python function called issubclass(). The function returns true or false depending on if a class is a child of another class, indicating whether it is.
+Ans: This is accomplished by utilizing a Python function called issubclass(). The function returns true or false depending on if a class is a child of another class, indicating whether it is.
 
 ### 8. What is a Class in python?
-Ans: Even the class is an object. The purpose of classes is to produce class objects. The characteristics (state) and behaviour of class objects (variables). We may create class variables to hold information that is available in each instance object. Metaclass type is used while creating classes.
+Ans: Even the class is an object. The purpose of classes is to produce class objects. The characteristics (state) and behavior of class objects (variables). We may create class variables to hold information that is available in each instance object. Metaclass type is used while creating classes.
 
 ### 9. How do you make a Python class that is empty?
 Ans: A class with no declared code is said to be empty. The pass keyword is inserted into the class to create an empty class. Python allows us to construct an object of the empty class.
 
 ### 10. What does a class object or instance mean?
-Ans: A class type variable or class instance is an object. A class object must be generated in order to use a class. Allocate RAM to hold the contents of the class variable when you create a class instance. Data from the class's instance variable is transferred to the object or instance when a class object is created. Each class object or instance is distinct. Class objects have attributes and capabilities. Functions are the actions carried out by the object or instance, whereas properties are its qualities.
+Ans: A class-type variable or class instance is an object. A class object must be generated in order to use a class. Allocate RAM to hold the contents of the class variable when you create a class instance. Data from the class's instance variable is transferred to the object or instance when a class object is created. Each class object or instance is distinct. Class objects have attributes and capabilities. Functions are the actions carried out by the object or instance, whereas properties are its qualities.
 
 ### 11. How Can an Object Be Created?
 Ans: The heap allocates a block of memory for the stud object (refer below example). The Student class's memory allocation is determined by the variables and methods of the object. The variables and methods provided in the object of the Student class determine how much memory the object requires. The class's new function manages the object's memory allocation. Following the memory allocation in which the instance variables are declared, the new method invokes the init method. The returned value is the memory address assigned to the Stud object. Self is used to pass the object's or instance's memory location.
 
 ### 12. A class function Object() { [native code] }: What does it do?
-Ans: Python has a unique kind of procedure called a function Object() { [native code] } that is used to set up the class' instance variables. The class's function Object() { [native code] }, often known as the default method, is the init method. The init method is automatically invoked when memory has been allocated by the new function. It is possible to declare instance variables using this function Object() { [native code] } method. The function Object() { [native code] } is executed for each instance if a class generates two.
+Ans: Python has a unique kind of procedure called a function Object() { [native code] } that is used to set up the class' instance variables. The class's function Object() { [native code] }, often known as the default method, is the init method. The init method is automatically invoked when memory has been allocated by the new function. It is possible to declare instance variables using this function Object() { [native code] } method. The function Object() { [native code] } is executed for each instance of a class generates two.
 
 
 
@@ -69,15 +69,15 @@ The following 2 categories of variables are initializable and modifiable within 
   - Instance Variable
   - Class Variable / Static Variable
 ### 14. What in Python is an instance variable?
-Ans: Variables that are specific to an instance of an object are defined in the class; other instances cannot access these variables. The self arguments and the class function Object() { [native code] } method define and initialise instance variables. We may use the self keyword to specify instance variables in the init method. Class variables are less often used than instance variables.
+Ans: Variables that are specific to an instance of an object are defined in the class; other instances cannot access these variables. The self-arguments and the class function Object() { [native code] } method define and initialize instance variables. We may use the self keyword to specify instance variables in the init method. Class variables are less often used than instance variables.
 
 ### 15. What exactly is a static variable or class variable?
 Ans: All instances of the class have access to the class variables. Class variables are declared at the beginning of the Python class. Changes to one class variable have an impact on the class variable of the other instance. Class variables can also be accessed outside of a class; to do so, use the class name and class variable name.
 
 ### 16. What Python function is new?
-Ans: The new method produces a class object. It will employ in order to manage the production of a fresh instance of the class. Memory is set aside for the item. An object's instance variables require memory to store them. When an object is created, this method will be invoked. A type can be sent as the first parameter to the new method, which then returns a fresh instance of that type. The creation of a new instance will be managed by the new method. The new method gives the calling class its new instance back.
+Ans: The new method produces a class object. It will be employed in order to manage the production of a fresh instance of the class. Memory is set aside for the item. An object's instance variables require memory to store them. When an object is created, this method will be invoked. A type can be sent as the first parameter to the new method, which then returns a fresh instance of that type. The creation of a new instance will be managed by the new method. The new method gives the calling class its new instance back.
 
-### 17. What in Python is init?
+### 17. What is Python is init?
 Ans: Python classes have an init function and function Object() { [native code] }. Following memory allocation from the new method, this method is automatically invoked. The init method is present in all classes.
 
 ### 18. What various sorts of Python methods are there?
@@ -92,7 +92,7 @@ Ans: Methods known as instance methods operate on a class's instance variables. 
 Ans: A class method is a method that operates on static and class variables. The @classmethod decorator must be used to create a method that is a member of a class. Cls, which refers to the class itself, is the input argument for the class method.
 
 ### 21. What do Python's static methods mean?
-Ans: When processing that relates to a class but does not need the class or any of its instances is needed, the static method is utilised.
+Ans: When processing that relates to a class but does not need the class or any of its instances is needed, the static method is utilized.
 
 ### 22. What does Python's Nested Class mean?
 Ans: A class is referred to be an inner class or nested class if it is declared inside another class. The code may become more object-oriented by using inner classes. Although it is possible to specify more than one inner class in a class, doing so is not advised.
@@ -103,7 +103,7 @@ Ans: The new class must be derived from the existing class through inheritance. 
 ### 24. What kinds of inheritance are there in Python?
 Ans: The four main forms of inheritance are listed below.
 
-Inheritance gives the power to a class to access all attributes and methods of another class. It aids in code reusability and helps the developer to maintain applications without redundant code. The class inheriting from another class is a child class or also called a derived class. The class from which a child class derives the members are called parent class or superclass.
+Inheritance gives the power to a class to access all attributes and methods of another class. It aids in code reusability and helps the developer to maintain applications without redundant code. The class inheriting from another class is a child class also called a derived class. The class from which a child class derives the members is called the parent class or superclass.
 
 - Single Inheritance
 - Multi-level Inheritance
@@ -141,7 +141,7 @@ class University:
  
 class College (University):
   def __init__(self):
-    self.name = 'Yale School of Medicine'
+    self.name = 'Yale School of Medicine
     print('You are in college Class Constructor')
  
   def show(self):
@@ -164,7 +164,7 @@ class University:
 class College (University):
   def __init__(self):
     super().__init__()
-    self.name = 'Yale School of Medicine'
+    self.name = 'Yale School of Medicine
     print('You are in college Class Constructor')
  
   def show(self):
@@ -178,7 +178,7 @@ college.disp()
 
 Ans: The class inherits a feature from another derived class via multi-level inheritance (Child Class). The class under Multi-Level Inheritance derives a different child class. The University class inherits from the College class in the example below, and the Student class inherits from the College class. The Student class in this sort of inheritance has access to the variables and methods from the University and College classes.
 
- The members of the parent class, A, are inherited by child class which is then inherited by another child class, B. The features of the base class and the derived class are further inherited into the new derived class, C. Here, A is the grandfather class of class C.
+ The members of the parent class, A, are inherited by the child class which is then inherited by another child class, B. The features of the base class and the derived class are further inherited into the new derived class, C. Here, A is the grandfather class of class C.
 ![image](https://user-images.githubusercontent.com/93423367/215339714-cb246104-695b-4a88-bae6-378f80afe8d1.png)
 
 
@@ -227,7 +227,7 @@ obj1.display_names()
  
 class College (University):
   def __init__(self):
-    self.name = 'Yale School of Medicine'
+    self.name = 'Yale School of Medicine
     print('You are in college Class Constructor')
  
   def show(self):
@@ -250,11 +250,11 @@ student.disp()
 
 
 
-Ans: We may inherit a class from many classes via hierarchical inheritance. The MedicalCollege and LawCollege classes in the example below have inherited the University Base/Parent class. Both of the child classes may now access the parent class's variables and methods.
+Ans: We may inherit a class from many classes via hierarchical inheritance. The Medical College and Law College classes in the example below have inherited the University Base/Parent class. Both of the child classes may now access the parent class's variables and methods.
 
 
 
-When a parent class is derived by more than one child class, it is called hierarchical inheritance.
+When a parent class is derived from more than one child class, it is called hierarchical inheritance.
 ![image](https://user-images.githubusercontent.com/93423367/215339797-6321cb5b-eca9-4c9f-b9b0-58a3de4c5d41.png)
 
 ```
@@ -268,7 +268,7 @@ class University:
  
 class MedicalCollege (University):
   def __init__(self):
-    self.name = 'Yale School of Medicine'
+    self.name = 'Yale School of Medicine
     print('You are in Medical college Class Constructor')
  
   def show(self):
@@ -354,8 +354,8 @@ A class inherits from many classes under multiple inheritance.
 If we attempt to access a method by building an object from the child class, the methods of the child class are first searched for the method.
 If the method is not found in the child class, the inheritance classes are searched from left to right.
 The display method is present in both the Father and Mother classes in the example presented below.
-In MRO, methods and variables are searched from left to right because while conducting inheritance, father class is written first and mother class is written afterwards.
-After the kid class, the father class's factors and research methodologies are prioritised in
+In MRO, methods and variables are searched from left to right because while conducting inheritance, the father class is written first and the mother class is written afterward.
+After the kid class, the father class's factors and research methodologies are prioritized in
 
 ```
 class Father:
@@ -404,7 +404,7 @@ class Child(Parent):
 obj = Child("Interviewbit", 6)
 obj.display()
 ```
-By using super(): The parent class members can be accessed in child class using the super keyword.
+By using super(): The parent class members can be accessed in the child class using the super keyword.
 
 ```
 class Parent(object):
@@ -431,7 +431,7 @@ obj = Child("Interviewbit", 6)
 obj.display()
 
 ```
-## 33. Are access specifiers used in python?
+## 33. Are access specifiers used in Python?
 Python does not make use of access specifiers specifically like private, public, protected, etc. However, it does not derive this from any variables. It has the concept of imitating the behaviour of variables by making use of a single (protected) or double underscore (private) as prefixed to the variable names. By default, the variables without prefixed underscores are public.
 
 Example:
@@ -457,11 +457,11 @@ class InterviewbitEmployee:
     def display():
         print(self._emp_name +" "+self._age+" "+self.__branch)
 ```
-## 34. Is it possible to call parent class without its instance creation?
+## 34. Is it possible to call the parent class without its instance creation?
 Yes, it is possible if the base class is instantiated by other child classes or if the base class is a static method.
 
 
-## 35.How to overload constructors or methods in Python?
+## 35. How to overload constructors or methods in Python?
 Python's constructor: _init__ () is the first method of a class. Whenever we try to instantiate an object __init__() is automatically invoked by python to initialize members of an object. We can't overload constructors or methods in Python. It shows an error if we try to overload.
 
 Example:
