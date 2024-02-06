@@ -14,6 +14,8 @@
 - [OOp](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/OOP.md)
 -  [Testing](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Testing/Readme.md)
 -  [Game Development](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Game_Development)
+-  [Python Data Base Connectivity](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Python_DataBase_Connectivity/Python_DataBase_Connectivity.md)
+
 ###  [DSA_Using_Python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/DSA_Using_Python.md)
 - [Recursion](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/recursion.ipynb)
 - [Linked List](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/DSA/Linked_list)
