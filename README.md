@@ -7,9 +7,6 @@
 
 
 
-- [Beginner Programms](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
-- [Patterns Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Patterns.md)
-- [Interview Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions.md) 
 - [python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions_1.md)
 - [OOp](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/OOP.md)
 -  [Testing](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Testing/Readme.md)
@@ -17,6 +14,9 @@
 -  [Python Data Base Connectivity](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Python_DataBase_Connectivity/Python_DataBase_Connectivity.md)
 -  [File Handling](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/File_Handling/README.md)
 -  
+- [Beginner Programms](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
+- [Patterns Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Patterns.md)
+- [Interview Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions.md) 
 
 ###  [DSA_Using_Python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/DSA_Using_Python.md)
 - [Recursion](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/recursion.ipynb)
