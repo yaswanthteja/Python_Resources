@@ -15,7 +15,7 @@
 -  [File Handling](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/File_Handling/README.md)
 -  [Pickling& unPickling](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Pickling%26unpickling.md)
 -  [In-built Data Structures](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Inbuilt_Data_Structures)
-- [Beginner Programms](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
+- [Beginner Programs](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
 - [Patterns Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Patterns.md)
 - [Interview Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions.md) 
 
