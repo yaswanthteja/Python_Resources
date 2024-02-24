@@ -9,6 +9,7 @@
 
 - [python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions_1.md)
 - [Operators](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Operators/readme.md)
+- [Data Types](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Data%20Types)
 - [OOp](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/OOP.md)
 -  [Testing](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Testing/Readme.md)
 -  [Game Development](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Game_Development)
