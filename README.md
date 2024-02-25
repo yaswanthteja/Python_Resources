@@ -11,6 +11,7 @@
 - [Operators](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Operators/readme.md)
 - [Data Types](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Data%20Types)
 - [OOp](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/OOP.md)
+- [libraries](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/libraries/)
 -  [Testing](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Testing/Readme.md)
 -  [Game Development](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Game_Development)
 -  [Python Data Base Connectivity](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Python_DataBase_Connectivity/Python_DataBase_Connectivity.md)
