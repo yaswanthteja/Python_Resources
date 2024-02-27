@@ -1,5 +1,3 @@
-# List programs
-
 ### 1. Find the Sum of List Elements:
 
 Write a Python function to find the sum of all elements in a given list.
@@ -81,6 +79,18 @@ Within the loop, we check if the current element **`item`** is equal to the **`t
 After iterating through all elements in the list, we return the final value of the **`count`** variable, which represents the number of occurrences of the **`target`** element in the list.
 6. **Example Usage:**
 Finally, we demonstrate how to use the function by creating a sample list **`my_list`** and specifying the **`target_element`** whose occurrences we want to count. We call the **`count_occurrences`** function with **`my_list`** and **`target_element`** as arguments and print the result.
+
+### count the no of elements in list
+
+```python
+def count_lst(lst):
+	count=0
+	for i in lst:
+		count+=1
+	return count
+
+print("Count of elements is",count_lst(lst))
+```
 
 ### 3. Reverse a List:
 
@@ -478,3 +488,150 @@ Average of list elements: 3.0
                             - Sample lists **`main_list`** and **`sub_list`** are defined.
                             - The **`is_sublist`** function is called with **`sub_list`** and **`main_list`** as arguments.
                             - The result of whether **`sub_list`** is a sublist of **`main_list`** is printed.
+                        
+                    
+                    ## 15. Write a program that prompts user to specify the length of a list and then requests numbers to populate that list. Display the final list as the output.
+                    
+                    ```python
+                    list_length=int(input("Enter the length: "))
+                    result=[]
+                    for i in range(list_length):
+                    	num=int(input(f"Enter the value at position {i} = "))
+                    	result.append(num)
+                    print(result)
+                    ```
+                    
+                    ```python
+                    Enter the length: 3
+                    Enter the value at position 0 = 10
+                    Enter the value at position 1 = 25
+                    Enter the value at position 2 = 564
+                    [10, 25, 564]
+                    ```
+                    
+                    ### 16. Replace element in list
+                    
+                    ```python
+                    def replace(lst,old,new):
+                    	for i in range(len(lst)):
+                    		if lst[i]==old:
+                    			lst[i]=new
+                    	return lst
+                    
+                    lst=[52,25,5,10,5,8,6,5]
+                    old=int(input("Enter the replacing element: "))
+                    new=int(input("Enter the new element: "))
+                    print(replace(lst,old,new))
+                    ```
+                    
+                    ```python
+                    Enter the replacing element: 5
+                    Enter the new element: 2
+                    [52, 25, 2, 10, 2, 8, 6, 2]
+                    ```
+                    
+                    ### 17. Remove all even elements from the list
+                    
+                    ```python
+                    
+                    lst=[5,6,3,8,9,12,2]
+                    od_lst=[]
+                    for i in range(len(lst)):
+                    	if lst[i]%2!=0:
+                    		od_lst.append(lst[i])
+                    print(od_lst) 
+                    ```
+                    
+                    ```python
+                    [5, 3, 9]
+                    ```
+                    
+                    ### 18. Remove the elements which are not divisible by the number entered by the user
+                    
+                    ```python
+                    
+                    def remove_divisible(lst, divisor):
+                        return [x for x in lst if x % divisor != 0]
+                    
+                    # Example usage
+                    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    divisor = 3
+                    result = remove_divisible(numbers, divisor)
+                    print("Original List:", numbers)
+                    print("Divisor:", divisor)
+                    print("List after removing elements divisible by", divisor, ":", result)
+                    
+                    ```
+                    
+                    ```python
+                    Original List: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    Divisor: 3
+                    List after removing elements divisible by 3 : [1, 2, 4, 5, 7, 8, 10]
+                    ```
+                    
+                    ```python
+                    def remove_divisible(lst, divisor):
+                        result = []
+                        for i in lst:
+                            if i % divisor != 0:
+                                result.append(i)
+                        return result
+                    
+                    # Example usage
+                    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    divisor = 3
+                    result = remove_divisible(numbers, divisor)
+                    print("Original List:", numbers)
+                    print("Divisor:", divisor)
+                    print("List after removing elements divisible by", divisor, ":", result)
+                    
+                    ```
+                    
+                    ### 19. Take a list and pull out odd and even numbers from the list.
+                    
+                    ```python
+                    lst=[1,25,65,46,99,3,4,5]
+                    odd=[]
+                    even=[]
+                    for i in lst:
+                    	if i%2==0:
+                    		even.append(i)
+                    	else:
+                    		odd.append(i)
+                    print("odd list: ",odd)
+                    print("even list: ",even)
+                    
+                    ```
+                    
+                    ```python
+                    odd list:  [1, 25, 65, 99, 3, 5]
+                    even list:  [46, 4]
+                    ```
+                    
+                    ### 20. Create a program that merges elements of two lists into a single list.
+                    
+                    ```python
+                    lst1=[1,2,3,4,5]
+                    lst2=[6,7,8,9,10]
+                    lst3=[]
+                    for i in lst1:
+                    	lst3.append(i)
+                    for j in lst2:
+                    	lst3.append(j)
+                    print(lst3)
+                    ```
+                    
+                    ```python
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    ```
+                    
+                    ```python
+                    lst1=[1,2,3,4,5]
+                    lst2=[6,7,8,9,10]
+                    lst3=lst1+lst2
+                    print(lst3)
+                    ```
+                    
+                    ```python
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                    ```
