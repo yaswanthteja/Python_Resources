@@ -79,7 +79,6 @@ In a web application, the view is the final page the user sees in their browser.
 3. You retrieve and organize all the Legos you need to construct the spaceship.
 4. You use the Legos to build the spaceship and present the finished spaceship back to your brother.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a54135ea-1538-4737-b865-4d7c21d480ee/Untitled.png)
 
 **And in a web app:**
 
@@ -87,8 +86,6 @@ In a web application, the view is the final page the user sees in their browser.
 2. The **Controller** receives that request.
 3. It uses the **Models** to retrieve all of the necessary data, organizes it, and sends it off to the…
 4. **View**, which then uses that data to render the final webpage presented to the the user in their browser.
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ba6c767e-6800-4990-8bf2-4b5b0ea2abd5/Untitled.png)
 
 ## **From a more technical standpoint**
 
@@ -101,7 +98,7 @@ In a web application, the view is the final page the user sees in their browser.
 
 Each route is associated with a controller - more specifically, a certain function *within* a controller, known as a **controller action**. So when you enter a URL, the application attempts to find a matching route, and, if it’s successful, it calls that route’s associated controller action.
 
-Let’s look at a basic [Flask](https://realpython.com/python-web-applications-with-flask-part-i/) route as an example:
+
 
 ```python
 @app.route('/')
@@ -463,7 +460,6 @@ if __name__ == '__main__':
 - The **`url_for`** function takes the name of the endpoint as its argument, and returns a URL that is appropriate for the current application context. The generated URL will include any necessary query string parameters, and will be relative to the current request's host and port.
 - Overall, the **`url_for`** function is a useful tool for generating URLs dynamically in Flask applications, and is often used in conjunction with the **`redirect`** function to implement client-side redirects.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6f51f156-8d5d-4c6e-bdda-c91f5883276a/Untitled.png)
 
 login.py
 
