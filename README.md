@@ -17,6 +17,7 @@
 -  [Python Data Base Connectivity](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Python_DataBase_Connectivity/Python_DataBase_Connectivity.md)
 -  [File Handling](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/File_Handling/README.md)
 -  [Pickling& unPickling](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Pickling%26unpickling.md)
+-  [Socket Programming](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Socket%20Programing)
 -  [In-built Data Structures](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Inbuilt_Data_Structures)
 - [Beginner Programs](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
 - [Patterns Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Patterns.md)
