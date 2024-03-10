@@ -2,7 +2,7 @@
 ## Flask
 
 <aside>
-💡 **Flask** is a micro web framework for Python that allows developers to build web applications quickly and easily. It is designed to be simple, lightweight, and modular, with minimal dependencies and a flexible architecture that allows developers to customize and extend it as needed.
+💡 Flask is a micro web framework for Python that allows developers to build web applications quickly and easily. It is designed to be simple, lightweight, and modular, with minimal dependencies and a flexible architecture that allows developers to customize and extend it as needed.
 
 </aside>
 
@@ -11,7 +11,7 @@ Some key features of Flask include:
 - **Routing**: Flask provides a simple way to map URLs to functions, allowing developers to define routes for different parts of their application and handle HTTP requests and responses.
 - **Templates**: Flask includes a powerful templating engine that allows developers to separate the presentation of their web application from the underlying logic, making it easier to maintain and update the application over time.
 - **Extensions**: Flask provides a modular architecture that allows developers to add or remove functionality as needed, with a large number of third-party extensions available for common tasks such as database integration, user authentication, and more.
-- **Testing**: Flask includes built-in support for testing, with a testing client that allows developers to simulate HTTP requests and responses and automate testing of their web application.
+- **Testing**: Flask includes built-in support for testing, with a testing client that allows developers to simulate HTTP requests and responses and automate testing of their web applications.
 
 # Flask architecture
 
@@ -23,16 +23,16 @@ The Flask architecture is based on the Model-View-Controller (MVC) design patter
 
 ## Model View Control (MVC ) Example
 
-To demonstrate how a web application structured using the **[Model-View-Controller](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)**
+To demonstrate how a web application is structured using the **[Model-View-Controller](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)**
  pattern (or **MVC**) works in practice,
 
-You’re ten years old, sitting on your family room floor, and in front of you is a big bucket of Legos. There are Legos of all different shapes and sizes. Some blue, tall, and long. Like a tractor trailer. Some red and almost cube shaped. And some are yellow - big wide planes, like sheets of glass. With all these different types of Legos, there’s no telling what you could build.
+You’re ten years old, sitting on your family room floor, and in front of you is a big bucket of Legos. There are Legos of all different shapes and sizes. Some blue, tall, and long. Like a tractor-trailer. Some are red and almost cube-shaped. And some are yellow - big wide planes, like sheets of glass. With all these different types of Legos, there’s no telling what you could build.
 
 But surprise, surprise, there’s already a **request**. Your older brother runs up and says, “Hey! Build me a spaceship!”
 
-“Alright,” you think, “that could actually be pretty cool!” A spaceship it is.
+“Alright,” you think, “that could be pretty cool!” A spaceship it is.
 
-So you get to work. You start pulling out the Legos you think you’re going to need. Some big, some small. Different colors for the outside of the spaceship, different colors for the engines. Oh, and different colors for the blaster guns. (You gotta have blaster guns!)
+So you get to work. You start pulling out the Legos you think you’re going to need. Some big, some small. Different colors for the outside of the spaceship, different colors for the engines. Oh, and different colors for the blaster guns. (You have to have blaster guns!)
 
 Now that you have all of your **building blocks** in place, it’s time to assemble the spaceship. And after a few hours of hard work, you now have in front of you - a spaceship!
 
