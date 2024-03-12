@@ -635,3 +635,117 @@ Average of list elements: 3.0
                     ```python
                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                     ```
+
+		     ### 21. write a program that has two lists and make a new list that contains only the common elements between them without duplicates.
+
+```python
+lst1=[1,2,3,4,5]
+lst2=[3,4,5,6,7]
+lst3=[]
+for i in lst1:
+		if i in lst2:
+			lst3.append(i)
+print(lst3)
+```
+
+```python
+[3, 4, 5]
+```
+
+### 22. write a program to find second largest num in the list
+
+```python
+lst=[1,2,3,4,5]
+
+largest=0
+second_largest=0
+for num in lst:
+	if num>largest:
+		second_largest=largest
+		largest=num
+	elif num> second_largest and num< largest:
+		second_largest=num
+print(second_largest)
+```
+
+```python
+4
+```
+
+### 23 . write a program that takes a list of integers and returns the product of all the elements.
+
+```python
+my_list=[1,2,3,4,5]
+product=1
+
+for num in my_list:
+	product=product*num
+print(product)
+ 
+```
+
+```python
+120
+```
+
+## 24. write a program to find and print all prime numbers with in a given list.
+
+```python
+my_list=[2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+for num in my_list:
+	factors=0
+	for i in range(1,num+1):
+		if num%i==0:
+			factors+=1
+	if factors==2:
+		print(num)
+```
+
+```python
+2
+3
+5
+7
+11
+13
+```
+
+### 25. write a program to split a given list into two halves.
+
+```python
+def split_list(lst):
+    mid = len(lst) // 2
+    first_half = lst[:mid]
+    second_half = lst[mid:]
+    return first_half, second_half
+
+my_list = [1, 2, 3, 4, 5, 6, 7, 8]
+first_half, second_half = split_list(my_list)
+print("First half:", first_half)
+print("Second half:", second_half)
+
+```
+
+```python
+First half: [1, 2, 3, 4]
+Second half: [5, 6, 7, 8]
+```
+
+### 26. write a program to swap the first and last elements of a given list.
+
+```python
+def swap_first_last(lst):
+    if len(lst) >= 2:
+        lst[0], lst[-1] = lst[-1], lst[0]
+    return lst
+
+my_list = [1, 2, 3, 4, 5]
+swapped_list = swap_first_last(my_list)
+print("List after swapping first and last elements:", swapped_list)
+
+```
+
+```python
+List after swapping first and last elements: [5, 2, 3, 4, 1]
+```
+
