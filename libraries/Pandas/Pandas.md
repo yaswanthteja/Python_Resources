@@ -91,8 +91,9 @@ DataFrame    |   2D      |    Single Sheet
 Panel        |   3D      |    Multiple Sheets
 
 ```
+![image](https://github.com/yaswanthteja/Python-Interview-Questions/assets/93423367/f8644d95-c2b5-4cbc-8866-211d5b1e8b76)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a898e757-613c-4037-87c2-dbd727725984/Untitled.png)
+
 
 Pandas provides two main data structures for working with tabular data: **`Series`** and **`DataFrame`**. These structures are built on top of the NumPy library and offer powerful capabilities for data manipulation, analysis, and exploration.
 
