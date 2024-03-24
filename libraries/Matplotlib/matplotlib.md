@@ -61,3 +61,26 @@ plt.show()
 ```
 
 ![image](https://github.com/yaswanthteja/Python-Interview-Questions/assets/93423367/32d3d99a-0498-4fd7-aa12-df98042400be)
+
+
+
+
+### Markers
+You can use the keyword argument marker to emphasize each point with a specified marker:
+
+Example: Get your own Python Server
+Mark each point with a circle:
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+ypoints = np.array([3, 8, 1, 10])
+
+plt.plot(ypoints, marker = 'o')
+plt.show()
+```
+
+Result:
+![image](https://github.com/yaswanthteja/Python-Interview-Questions/assets/93423367/2fe0c514-267d-4072-bab5-97d5f75d2680)
+
