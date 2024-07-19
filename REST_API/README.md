@@ -2,6 +2,10 @@
 ### Usage
 
 
+```
+pip install requirements.txt
+```
+and run the app.py
 
 - flask
 
