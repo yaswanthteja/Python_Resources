@@ -18,11 +18,11 @@ print("Sum of list elements:", sum_of_list(my_list))
 Sum of list elements: 15
 ```
 
-1. We define a function called **`sum_of_list`** that takes one parameter **`lst`**, which represents the input list whose elements we want to sum.
+1. We define a function called **`sum_of_list`** that takes one parameter **`lst`**, representing the input list whose elements we want to sum.
 2. **Initialization:**
 Inside the function, we initialize a variable named **`total`** to store the sum of elements. We set its initial value to 0.
 3. **Iterating through the List:**
-We use a for loop to iterate through each element **`num`** in the input list **`lst`**.
+We use a for loop to iterate through each element **`num`** in the input list **`lst**.
 4. **Adding Elements to Total:**
 Within the loop, we add each element **`num`** to the **`total`** variable.
 5. **Returning the Total Sum:**
@@ -67,7 +67,7 @@ Occurrences of 2 is 4
 
 1. **Function Definition:**
 We define a function called **`count_occurrences`** that takes two parameters:
-    - **`lst`**: The input list in which we want to count occurrences.
+    - **`lst`**: The input list where we want to count occurrences.
     - **`target`**: The specific element whose occurrences we want to count.
 2. **Initialization:**
 Inside the function, we initialize a variable named **`count`** to store the count of occurrences. We set its initial value to 0.
