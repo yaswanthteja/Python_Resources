@@ -16,7 +16,7 @@ are not used by Python. But it doesn't get this information from any variables. 
 Ans: Yes, it is feasible if the base class is a static method or if additional child classes instantiate the base class.
 
 ### 3. How do you make a Python class that is empty?
-Ans: A class that is empty has no defined members. By employing the pass keyword, it is made (the pass command does nothing in python). Outside of the class, we can produce objects for this class.
+Ans: An empty class has no defined members. By employing the pass keyword, it is made (the pass command does nothing in python). Outside of the class, we can produce objects for this class.
 
 - An empty class does not have any members defined in it. It is created by using the pass keyword (the pass command does nothing in python). We can create objects for this class outside the class.
 For example-
@@ -42,7 +42,7 @@ Ans: The Java constructors and the init method both function identically. As soo
 ### 7. How can you determine whether a class is a subclass of another class?
 Ans: This is accomplished by utilizing a Python function called issubclass(). The function returns true or false depending on if a class is a child of another class, indicating whether it is.
 
-### 8. What is a Class in python?
+### 8. What is a Class in Python?
 Ans: Even the class is an object. The purpose of classes is to produce class objects. The characteristics (state) and behavior of class objects (variables). We may create class variables to hold information that is available in each instance object. Metaclass type is used while creating classes.
 
 ### 9. How do you make a Python class that is empty?
