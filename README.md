@@ -24,9 +24,9 @@
 -  [REST API](https://github.com/yaswanthteja/Python_Resources/tree/main/REST_API)
 -  [Socket Programming](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Socket%20Programing)
 -  [In-built Data Structures](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Inbuilt_Data_Structures)
-- [Beginner Programs](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
-- [Patterns Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Patterns.md)
-- [Interview Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions.md) 
+-  [Interview Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Interview_Questions.md) 
+     - [Beginner Programs](https://github.com/yaswanthteja/Python-Interview-Questions/tree/main/Beginner_Programs)
+     - [Patterns Questions](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/Patterns.md)
 
 ###  [DSA_Using_Python](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/DSA_Using_Python.md)
 - [Recursion](https://github.com/yaswanthteja/Python-Interview-Questions/blob/main/recursion.ipynb)
