@@ -1,6 +1,6 @@
-# Modern Python 101 - Thinking With Types
+# Modern Python 
 
-![](assets/twitter_octallium_modern_python_101_1.png)
+
 
 This is your guide to get started with Python Programming Language. This is a simple to understand and free guide to learn Python, we don't expect you to have any programming knowledge and teach everything from scratch.
 
@@ -96,12 +96,3 @@ Following is the list of topics covered, they are listed in no specific order an
 
 Last But Most Important - Solve More Problems...!!!
 
-## Contact
-
-I would love to hear any feedback from you!
-
-Website - [www.octallium.com](https://www.octallium.com)
-
-Twitter - [@octallium](https://twitter.com/octallium)
-
-YouTube - [Octallium](https://www.youtube.com/channel/UCd0MaWAxZklFtCyNPEpSl0w)
