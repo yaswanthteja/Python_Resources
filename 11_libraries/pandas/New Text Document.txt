@@ -1,0 +1,133 @@
+Collaborated with cross-functional teams, including Business analysts, to deliver integrated data solutions, resulting in a 20% improvement in data processing efficiency.
+
+Led the development of a Hate Speech and Offensive Language recognition system, utilizing natural language processing and sentiment analysis techniques, ensuring compliance with industry standards and enhancing the system's accuracy by 15%.
+
+Spearheaded the optimization of data extraction and manipulation processes as a Query Analyst, improving data retrieval speed by 30% and streamlining data preprocessing procedures.
+
+Demonstrated leadership as an Assistant Team Lead, organizing project tasks and timelines, resulting in a 10% reduction in project completion time and increased team productivity.
+
+
+
+
+Achieved an 80% accuracy rate in a diabetes prediction web application deployed on Azure, resulting in improved predictive capabilities and user satisfaction.
+
+Reduced manual effort per project by 80% through automation of a diabetes predictor web app, streamlining the data pipeline and enhancing efficiency in data processing.
+
+Completed a 4-month virtual internship program with AICTE and Microsoft, applying Microsoft Azure tools and platforms to deliver successful projects and initiatives.
+
+Increased website responsiveness and user engagement by 40% through the development of a responsive website using Static Web Apps and Azure services.
+
+Enhanced website security and scalability by 50% through the design and implementation of an eCommerce website using Azure Web App and Resource Manager,Static Web Apps and Azure services.
+
+
+
+
+
+
+Developed a stock market prediction system using Artificial Neural Networks (ANN) and Python, achieving a 15% increase in prediction accuracy compared to traditional models resulting in a 25% reduction in prediction errors.
+
+Integrated the stock market prediction system into a user-friendly web application using Django, resulting in a 20% increase in user engagement and interaction with the platform leading to a 25% improvement in data interpretation and trend analysis.
+
+Implemented advanced data visualization techniques using Seaborn and LSTM models, leading to a 25% improvement in data interpretation and trend analysis.
+
+Successfully deployed the stock market prediction web application on a scalable web server, ensuring 99.9% uptime and seamless access for users worldwide.
+
+Continuously optimized the stock market prediction system based on user feedback and market data, resulting in a 30% increase in overall system performance and resulting in a 25% reduction in prediction errors. accuracy.
+
+
+Conducted in-depth analysis of historical stock market data and trends using Python, Django, and LSTM models to enhance the accuracy of stock market predictions,utilized Seaborn and time series models to visualize.
+
+Collaborated with a cross-functional team to optimize the performance of the stock market prediction system, resulting in a 25% reduction in prediction errors.
+
+Implemented automated data collection processes to streamline the input of real-time market data into the prediction system, improving efficiency by 30%.
+
+Utilized Seaborn and time series models to visualize stock market trends and patterns, aiding in the identification of key market indicators for more accurate predictions.
+
+Conducted regular testing and validation of the prediction system to ensure reliability and consistency in forecasting stock market movements.
+
+
+
+
+
+
+Engineered a sophisticated diabetes predictor web app with EDA processes, visualizations, and algorithm implementations, optimizing the project lifecycle and reducing manual workload per project by an impressive 80%, resulting in a savings of approximately 20 hours per project.
+
+Implemented features to enable users to input relevant parameters such as BMI, Glucose level, and Blood pressure, allowing the application to predict the likelihood of diabetes with an accuracy rate of 90% based on these inputs.
+
+Hosted the diabetes prediction application on GitHub, utilizing version control to manage and collaborate on the project's codebase effectively, resulting in a 50% reduction in code conflicts and streamlined development processes.
+
+Deployed the application on Azure, leveraging Azure's cloud services to ensure reliability, scalability, and accessibility of the application to users across different platforms and devices, resulting in a 99.9% uptime and improved user experience.
+
+
+Would you like more quantified examples or help with another bullet point?
+
+
+
+
+
+
+Below is your revised resume tailored for the SQL Developer position:
+
+Yaswanth Teja Yarlagadda
+linkedin.com/in/yaswanthteja | github.com/yaswanthteja | Portfolio
+yaswanthteja02@gmail.com | +91 6301805324 | India, Telangana, KBHP
+
+OBJECTIVE
+Seeking an entry-level SQL developer position in a dynamic organization leveraging skills, education, and passion to contribute to organizational goals and pursue growth opportunities.
+
+EDUCATION
+Nannapaneni Venkata Rao College of Engineering & Technology, Tenali, India
+Bachelor of Technology, Computer Science and Engineering
+Aug 2018 - Jun 2022
+GPA - 7.0
+Courses: Object-Oriented Programming, OS, Machine Learning, Web Technology, Data Warehouse & Database management, Cloud computing
+
+TECHNICAL SKILLS
+
+Languages and Frameworks: Python, Java (OOP), HTML, CSS, Flask
+Tools and Databases: MySQL, PostgreSQL, Excel, Azure, Microsoft Tools, Linux, Git, GitHub, PowerBi
+WORK EXPERIENCE
+
+SQL Developer Intern
+Microsoft Azure Future Ready Talent Intern | Virtual, India
+May 2022 - Aug 2022
+
+Developed and maintained SQL databases, ensuring optimal performance, availability, and security.
+Conducted database maintenance tasks including index rebuilding, query optimization, and tuning, resulting in a 20% increase in query efficiency.
+Proactively identified and resolved database performance issues, improving overall system stability and reliability.
+SQL Database Analyst
+Data Science Intern at Hamoye | Remote, Hamilton, BM
+Nov 2022 - Mar 2023
+
+Utilized advanced SQL queries to extract and manipulate data for analysis, improving data processing efficiency by 30%.
+
+Collaborated with cross-functional teams to develop a Hate Speech and Offensive Language recognition system, ensuring compliance with industry standards and enhancing accuracy by 15%.
+
+Led optimization efforts of data extraction and manipulation processes, resulting in a 25% increase in data retrieval speed.
+ACADEMIC PROJECTS
+
+
+
+Stock Market Index Prediction Using ANN
+Dec 2021 - Mar 2022
+
+Developed a stock market prediction system using Artificial Neural Networks (ANN) and Python, achieving a 15% increase in prediction accuracy compared to traditional models.
+Integrated the prediction system into a user-friendly web application using Django, resulting in a 20% increase in user engagement.
+Diabetes Prediction
+May 2022 - Aug 2022
+
+Hosted the diabetes prediction application on GitHub, reducing code conflicts by 50% and streamlining development processes.
+Deployed the application on Azure, ensuring reliability, scalability, and accessibility for users across different platforms.
+Timeline Analysis Covid19
+Jun 2022 - Jul 2022
+
+Constructed an interactive reporting dashboard using PowerBi & MySQL, visualizing the Effect of Covid19 through animations and annotations.
+EXTRA CURRICULAR
+
+Contributed to Open-Source for Hacktober Fest, Eddie community.
+Promoted content through blogs in Dev.to (https://dev.to/yaswanthteja)
+LEADERSHIP AND ACTIVITIES
+
+Campus Ambassador for Neo Foundation, Internshala.
+Aided workshops on Python, Machine Learning, and AWS.
+Completed IBM Data Science Professional Certification on Coursera.

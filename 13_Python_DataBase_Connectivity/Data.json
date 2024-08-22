@@ -1,0 +1,53 @@
+[
+{
+    "name":"yaswanth Teja",
+    "age":23,
+    "salary":50000
+},
+{
+    "name":"Teja",
+    "age":22,
+    "salary":45000
+
+},
+{
+    "name":"ravi",
+    "age":21,
+    "salary":40000
+},
+{
+    "name":"sai",
+    "age":20,
+    "salary":35000
+},
+{
+    "name":"siva",
+    "age":19,
+    "salary":30000
+},
+{
+    "name":"sai",
+    "age":18,
+    "salary":25000
+},
+{
+    "name":"surya",
+    "age":17,
+    "salary":20000
+},
+{
+    "name":"suri",
+    "age":16,
+    "salary":15000
+},
+{
+    "name":"sesi",
+    "age":15,
+    "salary":10000
+},
+{
+    "name":"miku",
+    "age":14,
+    "salary":5000
+}
+]
