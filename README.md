@@ -1,4 +1,6 @@
-# Modern Python 
+
+# This repository contains python reources which are collected from internet.
+## Modern Python 
 
 
 
@@ -96,3 +98,11 @@ Following is the list of topics covered, they are listed in no specific order an
 
 Last But Most Important - Solve More Problems...!!!
 
+
+
+# Resources Collected 
+
+- Octallium ⚡️(major part)
+- Durga soft
+- all in one python
+- python documentation
