@@ -4,7 +4,7 @@ Topics Covered -
 
 1. Introduction to Classes
 2. Not Everything Needs To Be a Class
-3. Data & Behavior - Attributes, Fields/Members, Methods
+3. Data & Behavior - Attributes, Fields/Members, Methods ,Variables
 4. Create Your First Python Class
 5. What Do You Mean By Class Instances?
 6. Adding Methods or Behavior to Your Python Class
