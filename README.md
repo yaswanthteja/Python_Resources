@@ -80,7 +80,7 @@ Following is the list of topics covered, they are listed in no specific order an
 9. Projects -
    1. Cash Register -> VOC-DTP Walk through
    2. Game - Save Zortan -> Thinking In Layers
-10. What To Learn Next -(will be added soon)
+10. What To Learn Next -
     1. File & Folder Handling
     2. Iterators & Generators
     3. List Comprehensions
@@ -93,7 +93,6 @@ Following is the list of topics covered, they are listed in no specific order an
     10. Testing
     11. Web Frameworks - Django, Flask & Fastapi
     12. Machine Learning & Deep Learning
-
 
 ## Final Words
 
