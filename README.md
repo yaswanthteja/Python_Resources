@@ -1,14 +1,14 @@
 
-# This repository contains python reources which are collected from internet.
+# This repository contains python resources which are collected from the internet.
 ## Modern Python 
 
 
 
-This is your guide to get started with Python Programming Language. This is a simple to understand and free guide to learn Python, we don't expect you to have any programming knowledge and teach everything from scratch.
+This is your guide to getting started with the Python Programming Language. It is simple to understand and free. We don't expect you to have any programming knowledge, and we teach everything from scratch.
 
-Did you check instagram today or watched YouTube? Well, you just used Python based applications! All fortune 500 companies use Python in some form or another, so fear not, learning Python is always a good decision!
+Did you check Instagram today or watch YouTube? Well, you just used Python-based applications! All Fortune 500 companies use Python in some form or another, so fear not—learning Python is always a good decision!
 
-Python is the perfect language to learn for beginners. With Python you can do almost anything, create your own web applications, create games, desktop applications, data science projects, AI, etc, the list is endless! Python is well suited for beginners because of its simplicity and you would be writing your own programs in no time!
+Python is the perfect language for beginners. With Python, you can do almost anything: create your own web applications, games, desktop applications, data science projects, AI, etc. The list is endless! Python is well suited for beginners because of its simplicity, and you will be writing your own programs in no time!
 
 Python is one of the easiest language to learn, while this may be true, but it often takes a lot of time and practice to really master it. People often confuse learning `language syntax` with learning `programming`, we make this difference very clear and guide you through the basic principles needed to learn Python in an efficient manner.
 
